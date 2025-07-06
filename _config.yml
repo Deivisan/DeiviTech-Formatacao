@@ -1,0 +1,6 @@
+plugins:
+  - jekyll-sitemap
+title: "DeiviTech Formatação"
+description: "Site profissional especializado em formatação de PCs e notebooks"
+url: "https://deivisan.github.io"
+baseurl: "/DeiviTech-Formatacao"
