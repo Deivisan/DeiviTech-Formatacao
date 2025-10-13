@@ -1,0 +1,33 @@
+:root{
+  --site-nav-height: 64px;
+  --z-header: 1000;
+}
+
+/* Ensure the fixed navigation does not cover content */
+.site-nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-header);
+  background-color: rgba(31,41,55,0.95); /* tailwind gray-800 fallback */
+}
+
+/* The page content will be pushed down by the nav height */
+body{
+  padding-top: var(--site-nav-height);
+}
+
+/* Small utilities to keep consistent spacing */
+main, header, section, footer, .container{
+  transition: padding-top 150ms ease;
+}
+
+/* Make sure images and videos don't overflow under the nav */
+img, video, canvas{
+  max-width: 100%;
+}
+
+@media (max-width: 640px){
+  :root{ --site-nav-height: 56px; }
+}
