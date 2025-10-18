@@ -1708,50 +1708,7 @@
         document.getElementById("cartModal").classList.add("hidden");
       });
 
-      // Análise com IA
-      document
-        .getElementById("analyzeBtn")
-        .addEventListener("click", async function () {
-          const cpu = document.getElementById("cpu").value;
-          const currentRam = document.getElementById("currentRam").value;
-          const currentStorage =
-            document.getElementById("currentStorage").value;
-          const usage = document.getElementById("usage").value;
-          const budget = document.getElementById("budget").value;
 
-          if (!cpu || !currentRam || !currentStorage || !usage || !budget) {
-            alert("Por favor, preencha todas as informações");
-            return;
-          }
-
-          const loadingDiv = document.getElementById("loadingAnalysis");
-          const resultDiv = document.getElementById("analysisResult");
-
-          loadingDiv.classList.remove("hidden");
-          resultDiv.classList.add("hidden");
-
-          try {
-            const analysis = await analyzePC(
-              cpu,
-              currentRam,
-              currentStorage,
-              usage,
-              budget
-            );
-            displayAnalysis(analysis);
-          } catch (error) {
-            console.error("Erro na análise:", error);
-            resultDiv.innerHTML = `
-            <div class="text-red-400 text-center">
-              <i class="fas fa-exclamation-triangle text-2xl mb-2"></i>
-              <p>Erro na análise. Tente novamente.</p>
-            </div>
-          `;
-          } finally {
-            loadingDiv.classList.add("hidden");
-            resultDiv.classList.remove("hidden");
-          }
-        });
 
       async function analyzePC(cpu, currentRam, currentStorage, usage, budget) {
         // Simulação de análise com IA (substituir por API real posteriormente)
@@ -1816,86 +1773,11 @@
         };
       }
 
-      function calculateBenefit(recommendations) {
-        if (recommendations.length === 0)
-          return "Seu PC já está bem configurado!";
-        if (recommendations.some((r) => r.component === "Armazenamento"))
-          return "Alto";
-        if (recommendations.some((r) => r.component === "Memória RAM"))
-          return "Médio-Alto";
-        return "Médio";
-      }
 
-      function calculatePerformanceGain(recommendations, usage) {
-        let gain = 0;
-        recommendations.forEach((rec) => {
-          if (rec.component === "Armazenamento") gain += 40;
-          if (rec.component === "Memória RAM") gain += 25;
-        });
-        return Math.min(gain, 80) + "%";
-      }
 
-      function displayAnalysis(analysis) {
-        const resultDiv = document.getElementById("analysisResult");
 
-        if (analysis.recommendations.length === 0) {
-          resultDiv.innerHTML = `
-            <div class="text-green-400 text-center">
-              <i class="fas fa-check-circle text-4xl mb-4"></i>
-              <h5 class="font-bold text-lg mb-2">Parabéns!</h5>
-              <p>Seu PC já está bem configurado para o uso informado. Considere apenas manutenção preventiva.</p>
-            </div>
-          `;
-          return;
-        }
 
-        let html = `
-          <div class="space-y-4">
-            <div class="bg-gradient-to-r from-green-600 to-blue-600 p-3 rounded-lg text-center">
-              <h5 class="font-bold">Ganho de Performance Estimado</h5>
-              <div class="text-2xl font-bold">${analysis.estimatedGain}</div>
-            </div>
-        `;
 
-        analysis.recommendations.forEach((rec, index) => {
-          html += `
-            <div class="bg-gray-700 p-4 rounded-lg">
-              <div class="flex justify-between items-start mb-2">
-                <h6 class="font-bold text-blue-300">${rec.component}</h6>
-                <span class="bg-red-500 text-xs px-2 py-1 rounded">PRIORIDADE ${rec.priority}</span>
-              </div>
-              <div class="text-sm space-y-1">
-                <div>Atual: <span class="text-gray-400">${rec.current}</span></div>
-                <div>Recomendado: <span class="text-green-400">${rec.recommended}</span></div>
-                <div>Preço: <span class="text-yellow-400">${rec.price}</span></div>
-                <div class="text-blue-300">${rec.impact}</div>
-              </div>
-            </div>
-          `;
-        });
-
-        html += `
-            <div class="bg-purple-600 p-3 rounded-lg text-center">
-              <h6 class="font-bold mb-1">Benefício Geral: ${analysis.totalBenefit}</h6>
-              <p class="text-sm">Compatibilidade: ${analysis.compatibility}</p>
-            </div>
-
-            <button onclick="addRecommendationsToCart()"
-                    class="w-full bg-green-500 hover:bg-green-600 py-3 rounded font-bold">
-              <i class="fas fa-cart-plus mr-2"></i>Adicionar Recomendações ao Carrinho
-            </button>
-          </div>
-        `;
-
-        resultDiv.innerHTML = html;
-      }
-
-      function addRecommendationsToCart() {
-        // Simular adição das recomendações ao carrinho
-        alert(
-          "Funcionalidade em desenvolvimento! Por enquanto, adicione os itens manualmente baseado nas recomendações."
-        );
-      }
 
       // Checkout
       document.getElementById("checkoutBtn").addEventListener("click", () => {
