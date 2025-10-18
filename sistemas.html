@@ -28,16 +28,6 @@
         transform: translateY(-5px);
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
       }
-
-      
-
-      .chart-container {
-        position: relative;
-        height: 300px !important;
-        max-height: 300px !important;
-        width: 100% !important;
-        overflow: hidden;
-      }
     </style>
   </head>
   <body class="bg-gray-900 text-white font-sans">
@@ -64,11 +54,6 @@
               >Hardware</a
             >
             <a
-              href="analise.html"
-              class="bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded"
-              >Análise IA</a
-            >
-            <a
               href="agendamento.html"
               class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded"
               >Agendar</a
@@ -85,31 +70,6 @@
         </div>
       </div>
     </header>
-
-    <!-- Comparação Visual -->
-    <section class="py-12">
-      <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-8">
-          Performance Comparativa
-        </h2>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          <!-- Gráfico de RAM -->
-          <div class="bg-gray-800 rounded-xl p-6">
-            <h3 class="text-xl font-bold mb-4 text-center">
-              Uso de RAM (8GB total)
-            </h3>
-          </div>
-
-          <!-- Gráfico de Boot -->
-          <div class="bg-gray-800 rounded-xl p-6">
-            <h3 class="text-xl font-bold mb-4 text-center">
-              Tempo de Boot (segundos)
-            </h3>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Sistemas Detalhados -->
     <section class="py-12 bg-gray-800">
@@ -156,7 +116,7 @@
               <li>• Programas antigos</li>
             </ul>
 
-            <div class="text-green-400 text-2xl font-bold">R$ 50,00</div>
+            <div class="text-green-400 text-sm">Sistema profissional</div>
           </div>
 
           <!-- Windows 11 -->
@@ -196,7 +156,7 @@
               <li>• PCs novos</li>
             </ul>
 
-            <div class="text-green-400 text-2xl font-bold">R$ 60,00</div>
+            <div class="text-green-400 text-2xl font-bold">Instalação Profissional</div>
           </div>
 
           <!-- Ghost Spectre -->
@@ -262,7 +222,7 @@
               </p>
             </div>
 
-            <div class="text-green-400 text-2xl font-bold">R$ 50,00</div>
+            <div class="text-purple-400 text-sm">Otimização avançada</div>
           </div>
 
           <!-- Chrome OS Flex -->
@@ -300,7 +260,7 @@
               </div>
               <div class="bg-gray-600 p-3 rounded">
                 <div class="text-sm text-gray-300">Custo Sistema</div>
-                <div class="text-xl font-bold text-green-400">R$ 0</div>
+                <div class="text-xl font-bold text-green-400">Disponível</div>
               </div>
             </div>
 
@@ -327,7 +287,7 @@
               </p>
             </div>
 
-            <div class="text-green-400 text-2xl font-bold">R$ 40,00*</div>
+            <div class="text-green-400 text-2xl font-bold">Dual Boot</div>
             <p class="text-xs text-gray-400">
               *Apenas instalação e configuração
             </p>
@@ -426,37 +386,11 @@
       </div>
     </section>
 
-    <!-- Gráficos Comparativos (FIX SCROLL INFINITO) -->
-    <section class="py-12 bg-gray-800">
-      <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-8">
-          📊 Comparativo de Performance
-        </h2>
-
-        <div class="max-w-6xl mx-auto">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Gráfico de RAM -->
-            <div class="bg-gray-700 rounded-xl p-6">
-              <h3 class="text-xl font-bold mb-4 text-center">
-                <i class="fas fa-memory mr-2 text-purple-400"></i>
-                Uso de RAM (GB)
-              </h3>
-            </div>
-
-            <!-- Gráfico de Boot -->
-            <div class="bg-gray-700 rounded-xl p-6">
-              <h3 class="text-xl font-bold mb-4 text-center">
-                <i class="fas fa-stopwatch mr-2 text-blue-400"></i>
-                Tempo de Boot (segundos)
-              </h3>
-            </div>
-          </div>
-
-          <!-- Tabela Comparativa -->
-          <div class="mt-8 bg-gray-700 rounded-xl p-6">
+    <!-- Mini Menu Overclocking -->
+          <div class="bg-gray-700 rounded-xl p-6">
             <h3 class="text-xl font-bold mb-6 text-center">
               <i class="fas fa-table mr-2 text-green-400"></i>
-              Comparativo Detalhado
+              Comparativo de Sistemas
             </h3>
             <div class="overflow-x-auto">
               <table class="w-full text-sm">
@@ -519,16 +453,29 @@
       </div>
     </section>
 
-    <!-- Guia de Overclocking -->
+    <!-- Mini Menu Overclocking -->
     <section class="py-12 bg-gradient-to-r from-red-600 to-orange-600">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-8">
-          <i class="fas fa-fire mr-3 text-white"></i>
-          🔥 Guia de Overclocking
-        </h2>
+        <div class="max-w-4xl mx-auto">
+          <!-- Botão do Mini Menu -->
+          <button 
+            onclick="toggleOverclock()" 
+            class="overclock-menu w-full bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-4 flex items-center justify-between"
+          >
+            <div class="flex items-center">
+              <i class="fas fa-fire text-4xl text-yellow-300 mr-4"></i>
+              <div class="text-left">
+                <h2 class="text-2xl font-bold">🔥 Guia de Overclocking</h2>
+                <p class="text-sm text-gray-200">Clique para ver como ganhar até 30% mais performance</p>
+              </div>
+            </div>
+            <i id="oc-arrow" class="fas fa-chevron-down text-2xl transition-transform"></i>
+          </button>
 
-        <div class="max-w-6xl mx-auto">
-          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8">
+          <!-- Conteúdo Colapsável -->
+          <!-- Conteúdo Colapsável -->
+          <div id="overclock-content" class="overclock-content">
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-4">
             <div class="text-center mb-8">
               <h3 class="text-2xl font-bold mb-4">
                 ⚡ Extraia 100% do seu Hardware
@@ -786,12 +733,36 @@
               </p>
               <a
                 href="https://wa.me/5575981231019?text=Olá! Gostaria de ajuda com overclocking seguro."
-                class="bg-white text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-gray-100"
+                class="bg-white text-gray-900 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 inline-block"
               >
                 <i class="fab fa-whatsapp mr-2"></i>Consultoria Profissional
               </a>
             </div>
           </div>
+          
+          <!-- Botão de Solicitar Serviço de Overclocking -->
+          <div class="bg-green-600 hover:bg-green-700 rounded-xl p-6 text-center transition-all">
+            <h3 class="text-2xl font-bold mb-3">
+              <i class="fas fa-hands-helping mr-2"></i>
+              Precisa de Ajuda Profissional?
+            </h3>
+            <p class="text-gray-100 mb-4">
+              Deixe a DeiviTech fazer o overclocking seguro do seu PC com garantia de estabilidade e máxima performance!
+            </p>
+            <a
+              href="https://wa.me/5575981231019?text=Olá! Gostaria de contratar o serviço de overclocking profissional."
+              class="bg-white text-green-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 inline-block text-lg"
+            >
+              <i class="fab fa-whatsapp mr-2"></i>Solicitar Serviço de Overclocking
+            </a>
+            <p class="text-sm text-gray-200 mt-3">
+              ✓ Overclocking seguro e testado<br>
+              ✓ Testes de estabilidade inclusos<br>
+              ✓ Monitoramento de temperatura
+            </p>
+          </div>
+          
+          </div> <!-- Fecha overclock-content -->
         </div>
       </div>
     </section>
@@ -801,7 +772,7 @@
       <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold mb-4">Pronto para Escolher?</h2>
         <p class="text-xl text-gray-300 mb-8">
-          Ainda tem dúvidas? Entre em contato para uma consultoria gratuita!
+          Escolha o sistema ideal para suas necessidades.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -822,5 +793,17 @@
       </div>
     </section>
 
+    <script>
+      // Toggle do menu de overclocking
+      function toggleOverclock() {
+        const content = document.getElementById('overclock-content');
+        const arrow = document.getElementById('oc-arrow');
+        
+        content.classList.toggle('open');
+        arrow.style.transform = content.classList.contains('open') 
+          ? 'rotate(180deg)' 
+          : 'rotate(0deg)';
+      }
+    </script>
   </body>
 </html>
