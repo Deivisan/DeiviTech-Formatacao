@@ -30,21 +30,7 @@
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
       }
 
-      /* FIX SCROLL INFINITO - Canvas Charts */
-      canvas {
-        max-height: 300px !important;
-        height: 300px !important;
-        max-width: 100% !important;
-        width: 100% !important;
-      }
-
-      #ramChart,
-      #bootChart {
-        max-height: 300px !important;
-        height: 300px !important;
-        max-width: 100% !important;
-        width: 100% !important;
-      }
+      
 
       .chart-container {
         position: relative;
@@ -114,7 +100,6 @@
             <h3 class="text-xl font-bold mb-4 text-center">
               Uso de RAM (8GB total)
             </h3>
-            <canvas id="ramChart" width="400" height="200"></canvas>
           </div>
 
           <!-- Gráfico de Boot -->
@@ -122,7 +107,6 @@
             <h3 class="text-xl font-bold mb-4 text-center">
               Tempo de Boot (segundos)
             </h3>
-            <canvas id="bootChart" width="400" height="200"></canvas>
           </div>
         </div>
       </div>
@@ -458,9 +442,6 @@
                 <i class="fas fa-memory mr-2 text-purple-400"></i>
                 Uso de RAM (GB)
               </h3>
-              <div class="chart-container">
-                <canvas id="ramChart"></canvas>
-              </div>
             </div>
 
             <!-- Gráfico de Boot -->
@@ -469,9 +450,6 @@
                 <i class="fas fa-stopwatch mr-2 text-blue-400"></i>
                 Tempo de Boot (segundos)
               </h3>
-              <div class="chart-container">
-                <canvas id="bootChart"></canvas>
-              </div>
             </div>
           </div>
 
@@ -845,144 +823,5 @@
       </div>
     </section>
 
-    <script>
-      // FIX SCROLL INFINITO - Forçar dimensões nos canvas
-      document.addEventListener("DOMContentLoaded", function () {
-        const ramCanvas = document.getElementById("ramChart");
-        const bootCanvas = document.getElementById("bootChart");
-
-        if (ramCanvas) {
-          ramCanvas.style.maxHeight = "300px";
-          ramCanvas.style.height = "300px";
-          ramCanvas.style.maxWidth = "100%";
-          ramCanvas.style.width = "100%";
-        }
-
-        if (bootCanvas) {
-          bootCanvas.style.maxHeight = "300px";
-          bootCanvas.style.height = "300px";
-          bootCanvas.style.maxWidth = "100%";
-          bootCanvas.style.width = "100%";
-        }
-      });
-
-      // FIX SCROLL INFINITO - Gráfico de uso de RAM
-      const ramCtx = document.getElementById("ramChart");
-      if (ramCtx) {
-        new Chart(ramCtx, {
-          type: "doughnut",
-          data: {
-            labels: [
-              "Windows 10",
-              "Windows 11",
-              "Ghost Spectre",
-              "Chrome OS",
-              "Linux",
-            ],
-            datasets: [
-              {
-                data: [2.8, 3.2, 1.1, 0.6, 0.8],
-                backgroundColor: [
-                  "#3b82f6",
-                  "#6366f1",
-                  "#a855f7",
-                  "#10b981",
-                  "#f59e0b",
-                ],
-                borderWidth: 0,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: {
-                position: "bottom",
-                labels: {
-                  color: "#ffffff",
-                  usePointStyle: true,
-                  padding: 15,
-                },
-              },
-            },
-            layout: {
-              padding: 10,
-            },
-            animation: {
-              duration: 1000,
-            },
-          },
-        });
-      }
-
-      // FIX SCROLL INFINITO - Gráfico de tempo de boot
-      const bootCtx = document.getElementById("bootChart");
-      if (bootCtx) {
-        new Chart(bootCtx, {
-          type: "bar",
-          data: {
-            labels: [
-              "Windows 10",
-              "Windows 11",
-              "Ghost Spectre",
-              "Chrome OS",
-              "Linux",
-            ],
-            datasets: [
-              {
-                data: [35, 30, 15, 8, 12],
-                backgroundColor: [
-                  "#3b82f6",
-                  "#6366f1",
-                  "#a855f7",
-                  "#10b981",
-                  "#f59e0b",
-                ],
-                borderWidth: 0,
-                borderRadius: 4,
-              },
-            ],
-          },
-          options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-              legend: {
-                display: false,
-              },
-            },
-            scales: {
-              y: {
-                beginAtZero: true,
-                max: 40,
-                ticks: {
-                  color: "#ffffff",
-                  stepSize: 10,
-                },
-                grid: {
-                  color: "#374151",
-                },
-              },
-              x: {
-                ticks: {
-                  color: "#ffffff",
-                  maxRotation: 45,
-                },
-                grid: {
-                  color: "#374151",
-                },
-              },
-            },
-            layout: {
-              padding: 10,
-            },
-            animation: {
-              duration: 1000,
-            },
-          },
-        });
-      }
-    </script>
   </body>
 </html>
