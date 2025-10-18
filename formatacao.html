@@ -29,8 +29,36 @@
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
       }
       .selected {
-        border: 2px solid #3b82f6 !important;
-        background: rgba(59, 130, 246, 0.1);
+        border: 3px solid #3b82f6 !important;
+        background: rgba(59, 130, 246, 0.15);
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+      }
+      
+      /* Sistema de detalhes expansíveis */
+      .system-details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out, opacity 0.3s ease;
+        opacity: 0;
+      }
+      
+      .system-details.active {
+        max-height: 800px;
+        opacity: 1;
+        margin-top: 1rem;
+      }
+      
+      @keyframes glow {
+        0%, 100% {
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(59, 130, 246, 0.8);
+        }
+      }
+      
+      .selected {
+        animation: glow 2s ease-in-out infinite;
       }
     </style>
   </head>
@@ -92,17 +120,55 @@
           <div
             class="bg-gray-800 rounded-xl p-6 card-hover cursor-pointer system-option"
             data-system="win10"
-            data-price="50"
+            onclick="toggleSystemDetails('win10')"
           >
             <div class="text-center">
               <i class="fab fa-windows text-4xl text-blue-400 mb-4"></i>
               <h3 class="text-xl font-bold mb-2">Windows 10</h3>
-              <div class="text-blue-400 text-lg font-bold mb-3">R$ 50,00</div>
-              <ul class="text-sm text-gray-300 text-left">
+              <ul class="text-sm text-gray-300 text-left mt-4">
                 <li>• Máxima compatibilidade</li>
                 <li>• Interface clássica</li>
                 <li>• Suporte até 2025</li>
                 <li>• Ideal para trabalho</li>
+              </ul>
+            </div>
+            
+            <!-- Detalhes Windows 10 -->
+            <div id="details-win10" class="system-details bg-gray-700 rounded-lg p-4 mt-4">
+              <h4 class="font-bold text-blue-400 mb-3">📋 Especificações Técnicas</h4>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span>Versão:</span>
+                  <span class="font-bold">Pro 22H2</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Build:</span>
+                  <span class="font-bold">19045</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>RAM Mínima:</span>
+                  <span class="font-bold">2GB (4GB recomendado)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Espaço HD:</span>
+                  <span class="font-bold">20GB</span>
+                </div>
+              </div>
+              
+              <h4 class="font-bold text-green-400 mb-2 mt-4">✅ Vantagens</h4>
+              <ul class="text-xs space-y-1">
+                <li>• 100% compatível com hardware antigo (2010+)</li>
+                <li>• Todos os programas corporativos funcionam</li>
+                <li>• Interface familiar e estável</li>
+                <li>• Suporte extendido até outubro 2025</li>
+                <li>• Leve comparado ao Windows 11</li>
+              </ul>
+              
+              <h4 class="font-bold text-red-400 mb-2 mt-4">⚠️ Desvantagens</h4>
+              <ul class="text-xs space-y-1">
+                <li>• Fim do suporte oficial em 2025</li>
+                <li>• Sem novas features de segurança</li>
+                <li>• Interface datada</li>
               </ul>
             </div>
           </div>
@@ -111,37 +177,140 @@
           <div
             class="bg-gray-800 rounded-xl p-6 card-hover cursor-pointer system-option"
             data-system="win11"
-            data-price="60"
+            onclick="toggleSystemDetails('win11')"
           >
             <div class="text-center">
               <i class="fab fa-windows text-4xl text-blue-500 mb-4"></i>
               <h3 class="text-xl font-bold mb-2">Windows 11</h3>
-              <div class="text-blue-500 text-lg font-bold mb-3">R$ 60,00</div>
-              <ul class="text-sm text-gray-300 text-left">
+              <ul class="text-sm text-gray-300 text-left mt-4">
                 <li>• Interface moderna</li>
                 <li>• Melhor segurança</li>
                 <li>• Suporte até 2031</li>
                 <li>• Widgets integrados</li>
               </ul>
             </div>
+            
+            <!-- Detalhes Windows 11 -->
+            <div id="details-win11" class="system-details bg-gray-700 rounded-lg p-4 mt-4">
+              <h4 class="font-bold text-blue-400 mb-3">📋 Especificações Técnicas</h4>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span>Versão:</span>
+                  <span class="font-bold">Pro 24H2</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Build:</span>
+                  <span class="font-bold">26100+</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>RAM Mínima:</span>
+                  <span class="font-bold">4GB (8GB recomendado)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Espaço HD:</span>
+                  <span class="font-bold">64GB</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>TPM:</span>
+                  <span class="font-bold">2.0 Obrigatório</span>
+                </div>
+              </div>
+              
+              <h4 class="font-bold text-green-400 mb-2 mt-4">✅ Vantagens</h4>
+              <ul class="text-xs space-y-1">
+                <li>• Design moderno e limpo (Fluent Design)</li>
+                <li>• Segurança máxima (TPM 2.0, Secure Boot)</li>
+                <li>• Suporte até 2031 (10 anos)</li>
+                <li>• Integração Microsoft 365 aprimorada</li>
+                <li>• DirectStorage para gaming</li>
+                <li>• Widgets e Copilot AI nativo</li>
+              </ul>
+              
+              <h4 class="font-bold text-red-400 mb-2 mt-4">⚠️ Desvantagens</h4>
+              <ul class="text-xs space-y-1">
+                <li>• Requisitos rígidos (TPM 2.0, CPU 8ª gen+)</li>
+                <li>• Usa mais RAM que Windows 10</li>
+                <li>• PCs antigos incompatíveis</li>
+                <li>• Menu iniciar diferente (adaptar)</li>
+              </ul>
+              
+              <div class="bg-yellow-600 p-2 rounded mt-3">
+                <p class="text-xs text-gray-900"><strong>💡 Importante:</strong> Requer CPU Intel 8ª geração+ ou AMD Ryzen 2000+</p>
+              </div>
+            </div>
           </div>
 
           <!-- Ghost Spectre -->
           <div
-            class="bg-gray-800 rounded-xl p-6 card-hover cursor-pointer system-option"
+            class="bg-gray-800 rounded-xl p-6 card-hover cursor-pointer system-option border-2 border-purple-400"
             data-system="ghost"
-            data-price="50"
+            onclick="toggleSystemDetails('ghost')"
           >
             <div class="text-center">
+              <div class="bg-purple-500 text-white px-2 py-1 rounded text-xs font-bold mb-2">MAIS RÁPIDO</div>
               <i class="fas fa-ghost text-4xl text-purple-400 mb-4"></i>
               <h3 class="text-xl font-bold mb-2">Ghost Spectre</h3>
-              <div class="text-purple-400 text-lg font-bold mb-3">R$ 50,00</div>
-              <ul class="text-sm text-gray-300 text-left">
+              <ul class="text-sm text-gray-300 text-left mt-4">
                 <li>• Windows super otimizado</li>
                 <li>• 70% menos RAM</li>
                 <li>• Boot em 15 segundos</li>
                 <li>• Ideal para gaming</li>
               </ul>
+            </div>
+            
+            <!-- Detalhes Ghost Spectre -->
+            <div id="details-ghost" class="system-details bg-gray-700 rounded-lg p-4 mt-4">
+              <h4 class="font-bold text-purple-400 mb-3">📋 Especificações Técnicas</h4>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span>Base:</span>
+                  <span class="font-bold">Windows 10/11 Modificado</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>RAM Uso:</span>
+                  <span class="font-bold text-green-400">1.1GB (vs 2.8GB normal)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Serviços:</span>
+                  <span class="font-bold text-green-400">45 (vs 120 normal)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Boot:</span>
+                  <span class="font-bold text-green-400">15s (vs 35s normal)</span>
+                </div>
+              </div>
+              
+              <h4 class="font-bold text-green-400 mb-2 mt-4">✅ O que foi REMOVIDO</h4>
+              <ul class="text-xs space-y-1">
+                <li>• ❌ Telemetria Microsoft (zero espionagem)</li>
+                <li>• ❌ Cortana e assistentes</li>
+                <li>• ❌ Windows Defender (usa menos recursos)</li>
+                <li>• ❌ OneDrive forçado</li>
+                <li>• ❌ Apps pré-instalados (Candy Crush, etc)</li>
+                <li>• ❌ Serviços desnecessários em background</li>
+                <li>• ❌ Atualizações automáticas forçadas</li>
+              </ul>
+              
+              <h4 class="font-bold text-blue-400 mb-2 mt-4">🚀 Otimizações Aplicadas</h4>
+              <ul class="text-xs space-y-1">
+                <li>• ✅ Registry tweaks para performance</li>
+                <li>• ✅ Services.msc otimizado (apenas essencial)</li>
+                <li>• ✅ Paginação de memória ajustada</li>
+                <li>• ✅ Prioridade alta para games</li>
+                <li>• ✅ Drivers genéricos leves</li>
+              </ul>
+              
+              <h4 class="font-bold text-red-400 mb-2 mt-4">⚠️ Limitações</h4>
+              <ul class="text-xs space-y-1">
+                <li>• Alguns apps Microsoft Store não funcionam</li>
+                <li>• Sem Windows Update automático</li>
+                <li>• Xbox Game Bar desabilitado</li>
+                <li>• Requer conhecimento intermediário</li>
+              </ul>
+              
+              <div class="bg-yellow-600 p-2 rounded mt-3">
+                <p class="text-xs text-gray-900"><strong>⚡ Ideal para:</strong> PCs com 4GB RAM ou menos, gamers buscando FPS máximo, usuários que querem privacidade total</p>
+              </div>
             </div>
           </div>
 
@@ -149,68 +318,76 @@
           <div
             class="bg-gray-800 rounded-xl p-6 card-hover cursor-pointer system-option"
             data-system="linux"
-            data-price="50"
+            onclick="toggleSystemDetails('linux')"
           >
             <div class="text-center">
               <i class="fab fa-linux text-4xl text-green-400 mb-4"></i>
               <h3 class="text-xl font-bold mb-2">Linux Ubuntu</h3>
-              <div class="text-green-400 text-lg font-bold mb-3">R$ 50,00</div>
-              <ul class="text-sm text-gray-300 text-left">
+              <ul class="text-sm text-gray-300 text-left mt-4">
                 <li>• Sistema gratuito</li>
                 <li>• Máxima segurança</li>
                 <li>• Super rápido</li>
                 <li>• Ideal para estudos</li>
               </ul>
             </div>
-          </div>
-        </div>
-
-        <!-- Detalhes do Ghost Spectre -->
-        <div class="bg-gray-800 rounded-xl p-6 mb-8">
-          <h3 class="text-2xl font-bold mb-4 text-center">
-            <i class="fas fa-ghost text-purple-400 mr-2"></i>
-            O que é o Ghost Spectre?
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h4 class="text-lg font-bold mb-3 text-purple-400">
-                Características:
-              </h4>
-              <ul class="space-y-2 text-sm">
-                <li>• <strong>Versão modificada</strong> do Windows 10/11</li>
-                <li>
-                  • <strong>Telemetria removida</strong> - zero espionagem
-                </li>
-                <li>
-                  • <strong>Bloatwares eliminados</strong> - só o essencial
-                </li>
-                <li>
-                  • <strong>Serviços otimizados</strong> - máxima performance
-                </li>
-                <li>• <strong>Registry ajustado</strong> para gaming</li>
+            
+            <!-- Detalhes Linux Ubuntu -->
+            <div id="details-linux" class="system-details bg-gray-700 rounded-lg p-4 mt-4">
+              <h4 class="font-bold text-green-400 mb-3">📋 Especificações Técnicas</h4>
+              <div class="space-y-2 text-sm">
+                <div class="flex justify-between">
+                  <span>Versão:</span>
+                  <span class="font-bold">Ubuntu 24.04 LTS</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Desktop:</span>
+                  <span class="font-bold">GNOME 46</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>RAM Mínima:</span>
+                  <span class="font-bold">2GB (4GB recomendado)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Espaço HD:</span>
+                  <span class="font-bold">25GB</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Custo:</span>
+                  <span class="font-bold text-green-400">100% GRÁTIS</span>
+                </div>
+              </div>
+              
+              <h4 class="font-bold text-green-400 mb-2 mt-4">✅ Vantagens</h4>
+              <ul class="text-xs space-y-1">
+                <li>• 🆓 Completamente gratuito (SO + todos programas)</li>
+                <li>• 🛡️ Virtualmente imune a vírus</li>
+                <li>• ⚡ Extremamente rápido e leve</li>
+                <li>• 🔄 Atualizações automáticas e seguras</li>
+                <li>• 💻 Perfeito para programação (Python, Node, etc)</li>
+                <li>• 🎓 Ideal para estudos de TI</li>
+                <li>• ♻️ Ressurreição de PCs antigos</li>
               </ul>
-            </div>
-            <div>
-              <h4 class="text-lg font-bold mb-3 text-green-400">
-                Performance:
-              </h4>
-              <ul class="space-y-2 text-sm">
-                <li>• <strong>1,1GB RAM</strong> vs 2,8GB Windows normal</li>
-                <li>• <strong>45 serviços</strong> vs 120 Windows normal</li>
-                <li>• <strong>15 segundos</strong> de boot vs 35 segundos</li>
-                <li>
-                  • <strong>Ideal para PCs antigos</strong> ou com pouca RAM
-                </li>
-                <li>• <strong>Melhor FPS</strong> em jogos</li>
+              
+              <h4 class="font-bold text-blue-400 mb-2 mt-4">📦 Programas Inclusos</h4>
+              <ul class="text-xs space-y-1">
+                <li>• LibreOffice (Word, Excel, PowerPoint grátis)</li>
+                <li>• Firefox navegador</li>
+                <li>• Terminal poderoso</li>
+                <li>• Loja de apps com 1000s de programas</li>
               </ul>
+              
+              <h4 class="font-bold text-red-400 mb-2 mt-4">⚠️ Limitações</h4>
+              <ul class="text-xs space-y-1">
+                <li>• Photoshop, MS Office não nativos</li>
+                <li>• Alguns jogos AAA não rodam</li>
+                <li>• Curva de aprendizado inicial</li>
+                <li>• Drivers específicos podem precisar config</li>
+              </ul>
+              
+              <div class="bg-green-600 p-2 rounded mt-3">
+                <p class="text-xs text-white"><strong>🎯 Perfeito para:</strong> Estudantes, programadores, PCs antigos, quem quer economizar, usuários básicos (internet + office)</p>
+              </div>
             </div>
-          </div>
-          <div class="mt-4 p-4 bg-yellow-600 rounded-lg">
-            <p class="text-sm text-gray-900">
-              <strong>⚠️ Importante:</strong> Por ser uma versão modificada,
-              alguns programas específicos podem não funcionar. Recomendado para
-              usuários que buscam máxima performance.
-            </p>
           </div>
         </div>
       </div>
@@ -234,7 +411,9 @@
               <li>✓ Adobe Reader DC</li>
               <li>✓ VLC Media Player</li>
               <li>✓ WinRAR</li>
-              <li>✓ Antivírus Avast</li>
+                            <li>✓ Drivers atualizados</li>
+              <li>✓ Windows Defender ativado</li>
+              <li>✓ Programas essenciais</li>
               <li>✓ Windows Defender</li>
             </ul>
           </div>
@@ -242,7 +421,7 @@
           <!-- Produtividade -->
           <div class="bg-gray-700 rounded-xl p-6">
             <h3 class="text-xl font-bold mb-4 text-blue-400">
-              💼 Produtividade (+R$ 30)
+              💼 Produtividade
             </h3>
             <ul class="space-y-2 text-sm">
               <li>✓ LibreOffice Complete</li>
@@ -257,7 +436,7 @@
           <!-- Gaming -->
           <div class="bg-gray-700 rounded-xl p-6">
             <h3 class="text-xl font-bold mb-4 text-red-400">
-              🎮 Gaming (+R$ 50)
+              🎮 Gaming
             </h3>
             <ul class="space-y-2 text-sm">
               <li>✓ Steam + Epic Games Store</li>
@@ -323,27 +502,20 @@
       </div>
     </section>
 
-    <!-- Checkout -->
+    <!-- Contato Direto -->
     <section class="py-12 bg-gray-800">
       <div class="container mx-auto px-6">
         <div class="max-w-md mx-auto text-center">
-          <h2 class="text-2xl font-bold mb-6">Finalizar Pedido</h2>
+          <h2 class="text-2xl font-bold mb-6">Agende seu Atendimento</h2>
 
-          <div id="orderSummary" class="bg-gray-700 rounded-lg p-6 mb-6">
-            <p class="text-gray-300 mb-4">
-              Selecione um sistema operacional acima
-            </p>
-            <div class="text-2xl font-bold" id="totalPrice">R$ 0,00</div>
-          </div>
-
-          <button
-            id="checkoutBtn"
-            disabled
-            class="w-full bg-green-500 hover:bg-green-600 disabled:bg-gray-600 disabled:cursor-not-allowed py-4 rounded-lg text-lg font-bold"
+          <a
+            href="https://wa.me/5575981231019?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20or%C3%A7amento%20para%20formata%C3%A7%C3%A3o"
+            target="_blank"
+            class="block w-full bg-green-500 hover:bg-green-600 py-4 rounded-lg text-lg font-bold"
           >
             <i class="fab fa-whatsapp mr-2"></i>
-            Solicitar Orçamento
-          </button>
+            Solicitar Orçamento WhatsApp
+          </a>
 
           <div class="mt-4 text-sm text-gray-400">
             <p><i class="fas fa-clock mr-2"></i>Prazo: até 24 horas</p>
@@ -354,88 +526,39 @@
     </section>
 
     <script>
-      let selectedSystem = null;
-      let selectedPackage = "basico";
-
-      // Seleção de sistema
-      document.querySelectorAll(".system-option").forEach((option) => {
-        option.addEventListener("click", () => {
-          document
-            .querySelectorAll(".system-option")
-            .forEach((o) => o.classList.remove("selected"));
-          option.classList.add("selected");
-
-          selectedSystem = {
-            name: option.querySelector("h3").textContent,
-            system: option.dataset.system,
-            price: parseFloat(option.dataset.price),
-          };
-
-          updateOrderSummary();
-        });
-      });
-
-      function updateOrderSummary() {
-        const orderSummary = document.getElementById("orderSummary");
-        const totalPrice = document.getElementById("totalPrice");
-        const checkoutBtn = document.getElementById("checkoutBtn");
-
-        if (selectedSystem) {
-          let packagePrice = 0;
-          let packageName = "Básico";
-
-          // Se implementar seleção de pacotes no futuro
-          const total = selectedSystem.price + packagePrice;
-
-          orderSummary.innerHTML = `
-            <div class="text-left">
-              <div class="flex justify-between mb-2">
-                <span>Sistema: ${selectedSystem.name}</span>
-                <span>R$ ${selectedSystem.price
-                  .toFixed(2)
-                  .replace(".", ",")}</span>
-              </div>
-              <div class="flex justify-between mb-2">
-                <span>Pacote: ${packageName}</span>
-                <span>R$ ${packagePrice.toFixed(2).replace(".", ",")}</span>
-              </div>
-              <hr class="my-2 border-gray-600">
-              <div class="flex justify-between font-bold">
-                <span>Total:</span>
-                <span>R$ ${total.toFixed(2).replace(".", ",")}</span>
-              </div>
-            </div>
-          `;
-
-          totalPrice.textContent = `R$ ${total.toFixed(2).replace(".", ",")}`;
-          checkoutBtn.disabled = false;
-        } else {
-          orderSummary.innerHTML =
-            '<p class="text-gray-300">Selecione um sistema operacional acima</p>';
-          totalPrice.textContent = "R$ 0,00";
-          checkoutBtn.disabled = true;
+      // Sistema de toggle de detalhes dos sistemas operacionais
+      let currentlyOpenSystem = null;
+      
+      function toggleSystemDetails(systemId) {
+        const detailsDiv = document.getElementById(`details-${systemId}`);
+        const systemCard = document.querySelector(`[data-system="${systemId}"]`);
+        
+        // Se clicou no mesmo sistema que já está aberto, fecha
+        if (currentlyOpenSystem === systemId) {
+          detailsDiv.classList.remove('active');
+          systemCard.classList.remove('selected');
+          currentlyOpenSystem = null;
+          return;
         }
+        
+        // Fecha o sistema anteriormente aberto
+        if (currentlyOpenSystem) {
+          const prevDetails = document.getElementById(`details-${currentlyOpenSystem}`);
+          const prevCard = document.querySelector(`[data-system="${currentlyOpenSystem}"]`);
+          if (prevDetails) prevDetails.classList.remove('active');
+          if (prevCard) prevCard.classList.remove('selected');
+        }
+        
+        // Abre o novo sistema
+        detailsDiv.classList.add('active');
+        systemCard.classList.add('selected');
+        currentlyOpenSystem = systemId;
+        
+        // Scroll suave para o card
+        setTimeout(() => {
+          systemCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
       }
-
-      // Checkout
-      document.getElementById("checkoutBtn").addEventListener("click", () => {
-        if (!selectedSystem) return;
-
-        let message = `🖥️ *Solicitação de Formatação - DeiviTech*\n\n`;
-        message += `💻 *Sistema:* ${selectedSystem.name}\n`;
-        message += `💰 *Valor:* R$ ${selectedSystem.price
-          .toFixed(2)
-          .replace(".", ",")}\n\n`;
-        message += `📦 *Incluso:* Pacote Básico\n`;
-        message += `⏰ *Prazo:* Até 24 horas\n`;
-        message += `🛡️ *Garantia:* 30 dias\n\n`;
-        message += `📍 *Local:* Feira de Santana, BA`;
-
-        const whatsappUrl = `https://wa.me/5575981231019?text=${encodeURIComponent(
-          message
-        )}`;
-        window.open(whatsappUrl, "_blank");
-      });
     </script>
   </body>
 </html>
