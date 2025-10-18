@@ -12,6 +12,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
       .hero-bg {
         background: linear-gradient(
@@ -27,6 +28,30 @@
       .card-hover:hover {
         transform: translateY(-5px);
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+      }
+
+      /* FIX SCROLL INFINITO - Canvas Charts */
+      canvas {
+        max-height: 300px !important;
+        height: 300px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+
+      #ramChart,
+      #bootChart {
+        max-height: 300px !important;
+        height: 300px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+
+      .chart-container {
+        position: relative;
+        height: 300px !important;
+        max-height: 300px !important;
+        width: 100% !important;
+        overflow: hidden;
       }
     </style>
   </head>
@@ -148,7 +173,7 @@
               <li>• Programas antigos</li>
             </ul>
 
-            <div class="text-green-400 text-sm">Sistema profissional</div>
+            <div class="text-green-400 text-2xl font-bold">R$ 50,00</div>
           </div>
 
           <!-- Windows 11 -->
@@ -188,7 +213,7 @@
               <li>• PCs novos</li>
             </ul>
 
-            <div class="text-green-400 text-2xl font-bold">Instalação Profissional</div>
+            <div class="text-green-400 text-2xl font-bold">R$ 60,00</div>
           </div>
 
           <!-- Ghost Spectre -->
@@ -254,7 +279,7 @@
               </p>
             </div>
 
-            <div class="text-purple-400 text-sm">Otimização avançada</div>
+            <div class="text-green-400 text-2xl font-bold">R$ 50,00</div>
           </div>
 
           <!-- Chrome OS Flex -->
@@ -292,7 +317,7 @@
               </div>
               <div class="bg-gray-600 p-3 rounded">
                 <div class="text-sm text-gray-300">Custo Sistema</div>
-                <div class="text-xl font-bold text-green-400">Disponível</div>
+                <div class="text-xl font-bold text-green-400">R$ 0</div>
               </div>
             </div>
 
@@ -319,7 +344,7 @@
               </p>
             </div>
 
-            <div class="text-green-400 text-2xl font-bold">Dual Boot</div>
+            <div class="text-green-400 text-2xl font-bold">R$ 40,00*</div>
             <p class="text-xs text-gray-400">
               *Apenas instalação e configuração
             </p>
@@ -427,6 +452,29 @@
 
         <div class="max-w-6xl mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Gráfico de RAM -->
+            <div class="bg-gray-700 rounded-xl p-6">
+              <h3 class="text-xl font-bold mb-4 text-center">
+                <i class="fas fa-memory mr-2 text-purple-400"></i>
+                Uso de RAM (GB)
+              </h3>
+              <div class="chart-container">
+                <canvas id="ramChart"></canvas>
+              </div>
+            </div>
+
+            <!-- Gráfico de Boot -->
+            <div class="bg-gray-700 rounded-xl p-6">
+              <h3 class="text-xl font-bold mb-4 text-center">
+                <i class="fas fa-stopwatch mr-2 text-blue-400"></i>
+                Tempo de Boot (segundos)
+              </h3>
+              <div class="chart-container">
+                <canvas id="bootChart"></canvas>
+              </div>
+            </div>
+          </div>
+
           <!-- Tabela Comparativa -->
           <div class="mt-8 bg-gray-700 rounded-xl p-6">
             <h3 class="text-xl font-bold mb-6 text-center">
@@ -494,168 +542,67 @@
       </div>
     </section>
 
-    <!-- Mini Menu Overclocking -->
+    <!-- Guia de Overclocking -->
     <section class="py-12 bg-gradient-to-r from-red-600 to-orange-600">
       <div class="container mx-auto px-6">
-        <div class="max-w-4xl mx-auto">
-          <!-- Cabeçalho com Botão -->
-          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-4">
-            <div class="flex items-center justify-between">
-              <div>
-                <h2 class="text-2xl font-bold mb-2">
-                  <i class="fas fa-fire mr-2"></i>
-                  🔥 Overclocking Profissional
-                </h2>
-                <p class="text-gray-200">Extraia até 30% mais performance do seu hardware com segurança</p>
-              </div>
-              <button 
-                onclick="toggleOverclockingGuide()" 
-                class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg font-bold transition-all flex items-center gap-2">
-                <span id="oc-btn-text">Ver Guia</span>
-                <i id="oc-btn-icon" class="fas fa-chevron-down"></i>
-              </button>
-            </div>
-          </div>
+        <h2 class="text-3xl font-bold text-center mb-8">
+          <i class="fas fa-fire mr-3 text-white"></i>
+          🔥 Guia de Overclocking
+        </h2>
 
-          <!-- Conteúdo Colapsável -->
-          <div id="overclocking-guide" class="hidden">
-            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-4">
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <!-- CPU -->
-                <div class="bg-gray-800 rounded-xl p-4">
-                  <div class="text-center mb-3">
-                    <i class="fas fa-microchip text-3xl text-blue-400 mb-2"></i>
-                    <h4 class="font-bold">CPU Overclocking</h4>
-                  </div>
-                  <div class="bg-gray-700 p-3 rounded mb-3">
-                    <h5 class="font-bold text-blue-300 text-sm mb-2">🎯 Ganhos</h5>
-                    <ul class="text-xs space-y-1">
+        <div class="max-w-6xl mx-auto">
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8">
+            <div class="text-center mb-8">
+              <h3 class="text-2xl font-bold mb-4">
+                ⚡ Extraia 100% do seu Hardware
+              </h3>
+              <p class="text-gray-200">
+                Aprenda a fazer overclocking seguro e ganhar até 30% mais
+                performance
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <!-- CPU Overclocking -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <div class="text-center mb-4">
+                  <i class="fas fa-microchip text-4xl text-blue-400 mb-3"></i>
+                  <h4 class="text-xl font-bold">CPU Overclocking</h4>
+                </div>
+
+                <div class="space-y-4">
+                  <div class="bg-gray-700 p-3 rounded">
+                    <h5 class="font-bold text-blue-300 mb-2">
+                      🎯 Ganhos Típicos
+                    </h5>
+                    <ul class="text-sm space-y-1">
                       <li>• Gaming: +10-20% FPS</li>
                       <li>• Renderização: +15-25%</li>
                       <li>• Multitarefas: +5-15%</li>
                     </ul>
                   </div>
+
                   <div class="bg-gray-700 p-3 rounded">
-                    <h5 class="font-bold text-green-300 text-sm mb-2">✅ Requisitos</h5>
-                    <ul class="text-xs space-y-1">
-                      <li>• CPU K/X desbloqueado</li>
-                      <li>• Placa-mãe compativel</li>
+                    <h5 class="font-bold text-green-300 mb-2">✅ Requisitos</h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• CPU desbloqueado (K/X)</li>
+                      <li>• Placa-mãe compatível</li>
                       <li>• Cooler adequado</li>
+                      <li>• PSU estável</li>
                     </ul>
                   </div>
-                </div>
 
-                <!-- GPU -->
-                <div class="bg-gray-800 rounded-xl p-4">
-                  <div class="text-center mb-3">
-                    <i class="fas fa-tv text-3xl text-green-400 mb-2"></i>
-                    <h4 class="font-bold">GPU Overclocking</h4>
-                  </div>
-                  <div class="bg-gray-700 p-3 rounded mb-3">
-                    <h5 class="font-bold text-blue-300 text-sm mb-2">🎯 Ganhos</h5>
-                    <ul class="text-xs space-y-1">
-                      <li>• FPS Games: +15-30%</li>
-                      <li>• Benchmarks: +10-25%</li>
-                      <li>• Rendering: +20-35%</li>
-                    </ul>
-                  </div>
                   <div class="bg-gray-700 p-3 rounded">
-                    <h5 class="font-bold text-yellow-300 text-sm mb-2">🛠️ Ferramentas</h5>
-                    <ul class="text-xs space-y-1">
-                      <li>• MSI Afterburner</li>
-                      <li>• GPU-Z</li>
-                      <li>• FurMark (stress)</li>
+                    <h5 class="font-bold text-yellow-300 mb-2">
+                      🛠️ Ferramentas
+                    </h5>
+                    <ul class="text-sm space-y-1">
+                      <li>• CPU-Z (monitoramento)</li>
+                      <li>• Prime95 (teste stress)</li>
+                      <li>• HWiNFO64 (temperatura)</li>
+                      <li>• BIOS/UEFI</li>
                     </ul>
                   </div>
-                </div>
-
-                <!-- RAM -->
-                <div class="bg-gray-800 rounded-xl p-4">
-                  <div class="text-center mb-3">
-                    <i class="fas fa-memory text-3xl text-purple-400 mb-2"></i>
-                    <h4 class="font-bold">RAM Overclocking</h4>
-                  </div>
-                  <div class="bg-gray-700 p-3 rounded mb-3">
-                    <h5 class="font-bold text-blue-300 text-sm mb-2">🎯 Ganhos</h5>
-                    <ul class="text-xs space-y-1">
-                      <li>• Gaming: +5-10% FPS</li>
-                      <li>• Latência reduzida</li>
-                      <li>• Responsividade +15%</li>
-                    </ul>
-                  </div>
-                  <div class="bg-gray-700 p-3 rounded">
-                    <h5 class="font-bold text-green-300 text-sm mb-2">✅ XMP Profile</h5>
-                    <ul class="text-xs space-y-1">
-                      <li>• Ativar na BIOS</li>
-                      <li>• Automático e seguro</li>
-                      <li>• Ganho instantâneo</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Aviso de Segurança -->
-              <div class="bg-yellow-600 rounded-lg p-4 mb-4">
-                <h5 class="font-bold text-gray-900 mb-2">⚠️ IMPORTANTE - Segurança</h5>
-                <p class="text-sm text-gray-900">
-                  Overclocking aumenta temperatura e consumo elétrico. É ESSENCIAL fazer testes de estabilidade (Prime95, FurMark) 
-                  e monitorar temperaturas (HWiNFO64). Overclocking incorreto pode danificar hardware permanentemente.
-                </p>
-              </div>
-
-              <!-- CTA para Serviços -->
-              <div class="bg-gradient-to-r from-green-600 to-blue-600 rounded-xl p-6 text-center">
-                <i class="fas fa-user-cog text-4xl mb-3"></i>
-                <h4 class="text-2xl font-bold mb-2">👨‍🔧 Precisa de Ajuda Profissional?</h4>
-                <p class="text-gray-200 mb-4">
-                  DeiviTech oferece serviço de <strong>overclocking seguro e profissional</strong>.
-                  Extraia máximo desempenho do seu hardware com garantia!
-                </p>
-                <a 
-                  href="https://wa.me/5575981231019?text=Olá!%20Gostaria%20de%20solicitar%20o%20serviço%20de%20overclocking%20profissional." 
-                  target="_blank"
-                  class="inline-block bg-white text-green-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
-                  <i class="fab fa-whatsapp mr-2"></i>Solicitar Orçamento via WhatsApp
-                </a>
-                <p class="text-sm text-gray-200 mt-3">
-                  📍 Feira de Santana, BA | ⌚ Segunda a Sábado: 8h às 18h
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <script>
-      // Função toggle do guia de overclocking
-      function toggleOverclockingGuide() {
-        const guide = document.getElementById('overclocking-guide');
-        const btnText = document.getElementById('oc-btn-text');
-        const btnIcon = document.getElementById('oc-btn-icon');
-        
-        if (guide.classList.contains('hidden')) {
-          guide.classList.remove('hidden');
-          guide.style.animation = 'fadeIn 0.5s ease-in';
-          btnText.textContent = 'Ocultar Guia';
-          btnIcon.className = 'fas fa-chevron-up';
-        } else {
-          guide.classList.add('hidden');
-          btnText.textContent = 'Ver Guia';
-          btnIcon.className = 'fas fa-chevron-down';
-        }
-      }
-
-      // Animação CSS
-      const style = document.createElement('style');
-      style.textContent = `
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(-10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-      `;
-      document.head.appendChild(style);
-    </script>
                 </div>
               </div>
 
@@ -877,7 +824,7 @@
       <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold mb-4">Pronto para Escolher?</h2>
         <p class="text-xl text-gray-300 mb-8">
-          Escolha o sistema ideal para suas necessidades.
+          Ainda tem dúvidas? Entre em contato para uma consultoria gratuita!
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -898,6 +845,144 @@
       </div>
     </section>
 
+    <script>
+      // FIX SCROLL INFINITO - Forçar dimensões nos canvas
+      document.addEventListener("DOMContentLoaded", function () {
+        const ramCanvas = document.getElementById("ramChart");
+        const bootCanvas = document.getElementById("bootChart");
 
+        if (ramCanvas) {
+          ramCanvas.style.maxHeight = "300px";
+          ramCanvas.style.height = "300px";
+          ramCanvas.style.maxWidth = "100%";
+          ramCanvas.style.width = "100%";
+        }
+
+        if (bootCanvas) {
+          bootCanvas.style.maxHeight = "300px";
+          bootCanvas.style.height = "300px";
+          bootCanvas.style.maxWidth = "100%";
+          bootCanvas.style.width = "100%";
+        }
+      });
+
+      // FIX SCROLL INFINITO - Gráfico de uso de RAM
+      const ramCtx = document.getElementById("ramChart");
+      if (ramCtx) {
+        new Chart(ramCtx, {
+          type: "doughnut",
+          data: {
+            labels: [
+              "Windows 10",
+              "Windows 11",
+              "Ghost Spectre",
+              "Chrome OS",
+              "Linux",
+            ],
+            datasets: [
+              {
+                data: [2.8, 3.2, 1.1, 0.6, 0.8],
+                backgroundColor: [
+                  "#3b82f6",
+                  "#6366f1",
+                  "#a855f7",
+                  "#10b981",
+                  "#f59e0b",
+                ],
+                borderWidth: 0,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  color: "#ffffff",
+                  usePointStyle: true,
+                  padding: 15,
+                },
+              },
+            },
+            layout: {
+              padding: 10,
+            },
+            animation: {
+              duration: 1000,
+            },
+          },
+        });
+      }
+
+      // FIX SCROLL INFINITO - Gráfico de tempo de boot
+      const bootCtx = document.getElementById("bootChart");
+      if (bootCtx) {
+        new Chart(bootCtx, {
+          type: "bar",
+          data: {
+            labels: [
+              "Windows 10",
+              "Windows 11",
+              "Ghost Spectre",
+              "Chrome OS",
+              "Linux",
+            ],
+            datasets: [
+              {
+                data: [35, 30, 15, 8, 12],
+                backgroundColor: [
+                  "#3b82f6",
+                  "#6366f1",
+                  "#a855f7",
+                  "#10b981",
+                  "#f59e0b",
+                ],
+                borderWidth: 0,
+                borderRadius: 4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: false,
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 40,
+                ticks: {
+                  color: "#ffffff",
+                  stepSize: 10,
+                },
+                grid: {
+                  color: "#374151",
+                },
+              },
+              x: {
+                ticks: {
+                  color: "#ffffff",
+                  maxRotation: 45,
+                },
+                grid: {
+                  color: "#374151",
+                },
+              },
+            },
+            layout: {
+              padding: 10,
+            },
+            animation: {
+              duration: 1000,
+            },
+          },
+        });
+      }
+    </script>
   </body>
 </html>

@@ -35,7 +35,20 @@
         z-index: 1000;
       }
 
-      /* Animações do Carrinho */
+      /* Animações de Combo Sutis */
+      @keyframes comboGlow {
+        0% {
+          box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(16, 185, 129, 0.8),
+            0 0 30px rgba(16, 185, 129, 0.6);
+        }
+        100% {
+          box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
+        }
+      }
+
       @keyframes cartShake {
         0%,
         100% {
@@ -49,8 +62,157 @@
         }
       }
 
+      @keyframes addToCartPulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
       .cart-shake {
         animation: cartShake 0.5s ease-in-out;
+      }
+
+      .add-to-cart-pulse {
+        animation: addToCartPulse 0.3s ease-in-out;
+      }
+
+      /* Loading States */
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loading-spinner {
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes comboBounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-5px);
+        }
+        60% {
+          transform: translateY(-3px);
+        }
+      }
+
+      @keyframes subtlePulse {
+        0% {
+          border-color: rgba(16, 185, 129, 0.3);
+        }
+        50% {
+          border-color: rgba(16, 185, 129, 0.8);
+        }
+        100% {
+          border-color: rgba(16, 185, 129, 0.3);
+        }
+      }
+
+      .combo-glow {
+        animation: comboGlow 2s ease-in-out infinite;
+      }
+
+      .combo-bounce {
+        animation: comboBounce 0.6s ease-in-out;
+      }
+
+      .combo-highlight {
+        border: 2px solid rgba(16, 185, 129, 0.6);
+        animation: subtlePulse 1.5s ease-in-out infinite;
+        background: linear-gradient(
+          135deg,
+          rgba(16, 185, 129, 0.05),
+          rgba(59, 130, 246, 0.05)
+        );
+      }
+
+      .slide-in-right {
+        animation: slideInRight 0.5s ease-out;
+      }
+
+      @keyframes slideInRight {
+        from {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInFromTop {
+        0% {
+          transform: translateY(-100px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInScale {
+        0% {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .combo-active {
+        animation: comboGlow 2s infinite;
+        border: 2px solid #10b981 !important;
+        background: linear-gradient(
+          45deg,
+          rgba(16, 185, 129, 0.1),
+          rgba(52, 211, 153, 0.1)
+        );
+      }
+
+      .combo-discount {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background: linear-gradient(45deg, #ef4444, #dc2626);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        animation: slideInFromTop 0.5s ease-out;
+        box-shadow: 0 2px 10px rgba(239, 68, 68, 0.5);
+      }
+
+      .add-to-cart-animated {
+        animation: pulse 0.6s ease-in-out;
+      }
+
+      .cart-bounce {
+        animation: shake 0.5s ease-in-out;
+      }
+
+      .price-animation {
+        animation: fadeInScale 0.3s ease-out;
       }
 
       /* Efeitos hover aprimorados */
@@ -188,7 +350,37 @@
       </div>
     </header>
 
-
+    <!-- Smart Combo Detector (Sutil e Responsivo) -->
+    <div
+      id="smart-combo-detector"
+      class="fixed top-20 right-4 z-50 hidden md:right-4 right-2 md:top-20 top-16"
+    >
+      <div
+        class="bg-gradient-to-r from-green-500 to-blue-500 text-white p-3 md:p-4 rounded-lg shadow-xl max-w-sm md:max-w-sm max-w-xs combo-bounce text-sm md:text-base"
+      >
+        <div class="flex items-center mb-2">
+          <i class="fas fa-sparkles text-yellow-300 mr-2"></i>
+          <span class="font-bold text-sm">✨ Combo Inteligente Detectado!</span>
+        </div>
+        <p class="text-xs mb-3 opacity-90">
+          SSD + Memória selecionados = <strong>10% OFF</strong>
+        </p>
+        <div class="flex gap-2">
+          <button
+            id="apply-smart-combo"
+            class="bg-white text-green-600 px-3 py-1 rounded text-xs font-bold hover:bg-gray-100 flex-1"
+          >
+            <i class="fas fa-percent mr-1"></i>Aplicar
+          </button>
+          <button
+            id="dismiss-combo"
+            class="bg-red-500 text-white px-3 py-1 rounded text-xs hover:bg-red-600"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- Armazenamento -->
     <section class="py-12">
@@ -214,13 +406,22 @@
                 <li>• Interface SATA</li>
                 <li>• Garantia: 1 ano</li>
               </ul>
-              <button
-                class="add-to-cart bg-green-500 hover:bg-green-600 px-4 py-2 rounded w-full"
-                data-name="HD 500GB"
-                data-price="80"
-              >
-                <i class="fas fa-cart-plus mr-2"></i>Adicionar
-              </button>
+              <div class="space-y-2">
+                <button
+                  class="select-for-combo bg-white text-yellow-600 border-2 border-yellow-600 px-3 py-1 rounded-lg text-sm w-full hover:bg-yellow-50 transition-colors"
+                  data-category="storage"
+                  onclick="selectProduct('HD 500GB', 'storage', this)"
+                >
+                  🎯 Selecionar para Combo
+                </button>
+                <button
+                  class="add-to-cart bg-green-500 hover:bg-green-600 px-4 py-2 rounded w-full"
+                  data-name="HD 500GB"
+                  data-price="80"
+                >
+                  <i class="fas fa-cart-plus mr-2"></i>Adicionar
+                </button>
+              </div>
             </div>
           </div>
 
@@ -241,13 +442,22 @@
                 <li>• Interface SATA</li>
                 <li>• Garantia: 1 ano</li>
               </ul>
-              <button
-                class="add-to-cart bg-green-500 hover:bg-green-600 px-4 py-2 rounded w-full"
-                data-name="HD 1TB"
-                data-price="100"
-              >
-                <i class="fas fa-cart-plus mr-2"></i>Adicionar
-              </button>
+              <div class="space-y-2">
+                <button
+                  class="select-for-combo bg-white text-yellow-600 border-2 border-yellow-600 px-3 py-1 rounded-lg text-sm w-full hover:bg-yellow-50 transition-colors"
+                  data-category="storage"
+                  onclick="selectProduct('HD 1TB', 'storage', this)"
+                >
+                  🎯 Selecionar para Combo
+                </button>
+                <button
+                  class="add-to-cart bg-green-500 hover:bg-green-600 px-4 py-2 rounded w-full"
+                  data-name="HD 1TB"
+                  data-price="100"
+                >
+                  <i class="fas fa-cart-plus mr-2"></i>Adicionar
+                </button>
+              </div>
             </div>
           </div>
 
@@ -275,13 +485,22 @@
                 <li>• Interface SATA</li>
                 <li>• Garantia: 2 anos</li>
               </ul>
-              <button
-                class="add-to-cart bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded w-full"
-                data-name="SSD 240GB"
-                data-price="120"
-              >
-                <i class="fas fa-cart-plus mr-2"></i>Adicionar
-              </button>
+              <div class="space-y-2">
+                <button
+                  class="select-for-combo bg-white text-blue-600 border-2 border-blue-600 px-3 py-1 rounded-lg text-sm w-full hover:bg-blue-50 transition-colors"
+                  data-category="storage"
+                  onclick="selectProduct('SSD 240GB', 'storage', this)"
+                >
+                  🎯 Selecionar para Combo
+                </button>
+                <button
+                  class="add-to-cart bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded w-full"
+                  data-name="SSD 240GB"
+                  data-price="120"
+                >
+                  <i class="fas fa-cart-plus mr-2"></i>Adicionar
+                </button>
+              </div>
             </div>
           </div>
 
@@ -302,13 +521,22 @@
                 <li>• Interface SATA</li>
                 <li>• Garantia: 3 anos</li>
               </ul>
-              <button
-                class="add-to-cart bg-green-500 hover:bg-green-600 px-4 py-2 rounded w-full"
-                data-name="SSD 480GB"
-                data-price="180"
-              >
-                <i class="fas fa-cart-plus mr-2"></i>Adicionar
-              </button>
+              <div class="space-y-2">
+                <button
+                  class="select-for-combo bg-white text-green-600 border-2 border-green-600 px-3 py-1 rounded-lg text-sm w-full hover:bg-green-50 transition-colors"
+                  data-category="storage"
+                  onclick="selectProduct('SSD 480GB', 'storage', this)"
+                >
+                  🎯 Selecionar para Combo
+                </button>
+                <button
+                  class="add-to-cart bg-green-500 hover:bg-green-600 px-4 py-2 rounded w-full"
+                  data-name="SSD 480GB"
+                  data-price="180"
+                >
+                  <i class="fas fa-cart-plus mr-2"></i>Adicionar
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -869,6 +1097,177 @@
       </div>
     </section>
 
+    <!-- Análise Inteligente com IA -->
+    <section class="py-12 bg-gradient-to-r from-blue-600 to-purple-600">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">
+          <i class="fas fa-brain mr-3 text-white"></i>
+          🤖 Análise Inteligente com IA
+        </h2>
+
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8">
+            <h3 class="text-xl font-bold mb-4 text-center">
+              💡 Descubra o upgrade ideal para seu PC
+            </h3>
+            <p class="text-center text-gray-200 mb-6">
+              Nossa IA analisa as especificações do seu PC e sugere os melhores
+              upgrades baseado no seu uso e orçamento
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Formulário de entrada -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <h4 class="font-bold mb-4">📋 Informações do seu PC</h4>
+
+                <div class="space-y-4">
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >Processador</label
+                    >
+                    <input
+                      type="text"
+                      id="cpu"
+                      placeholder="Ex: Intel Core i5-4460"
+                      class="w-full bg-gray-700 text-white p-3 rounded border border-gray-600 focus:border-blue-400"
+                    />
+                  </div>
+
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >Memória RAM atual</label
+                    >
+                    <select
+                      id="currentRam"
+                      class="w-full bg-gray-700 text-white p-3 rounded border border-gray-600"
+                    >
+                      <option value="">Selecione</option>
+                      <option value="2">2GB</option>
+                      <option value="4">4GB</option>
+                      <option value="6">6GB</option>
+                      <option value="8">8GB</option>
+                      <option value="12">12GB</option>
+                      <option value="16">16GB</option>
+                      <option value="32">32GB ou mais</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >Armazenamento atual</label
+                    >
+                    <select
+                      id="currentStorage"
+                      class="w-full bg-gray-700 text-white p-3 rounded border border-gray-600"
+                    >
+                      <option value="">Selecione</option>
+                      <option value="hdd">HD tradicional</option>
+                      <option value="ssd">SSD</option>
+                      <option value="mixed">HD + SSD</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >Principal uso do PC</label
+                    >
+                    <select
+                      id="usage"
+                      class="w-full bg-gray-700 text-white p-3 rounded border border-gray-600"
+                    >
+                      <option value="">Selecione</option>
+                      <option value="basic">Navegação e office básico</option>
+                      <option value="work">Trabalho (multitarefas)</option>
+                      <option value="gaming">Gaming</option>
+                      <option value="creative">Edição/Design</option>
+                      <option value="programming">Programação</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label class="block text-sm font-medium mb-2"
+                      >Orçamento disponível</label
+                    >
+                    <select
+                      id="budget"
+                      class="w-full bg-gray-700 text-white p-3 rounded border border-gray-600"
+                    >
+                      <option value="">Selecione</option>
+                      <option value="100">Até R$ 100</option>
+                      <option value="200">R$ 100 - R$ 200</option>
+                      <option value="300">R$ 200 - R$ 300</option>
+                      <option value="500">R$ 300 - R$ 500</option>
+                      <option value="1000">Acima de R$ 500</option>
+                    </select>
+                  </div>
+
+                  <button
+                    id="analyzeBtn"
+                    class="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 py-3 rounded font-bold text-white disabled:opacity-50"
+                  >
+                    <i class="fas fa-magic mr-2"></i>Analisar com IA
+                  </button>
+                </div>
+              </div>
+
+              <!-- Resultado da análise -->
+              <div class="bg-gray-800 rounded-xl p-6">
+                <h4 class="font-bold mb-4">🎯 Recomendações Personalizadas</h4>
+
+                <div id="analysisResult" class="text-gray-400 text-center py-8">
+                  <i class="fas fa-robot text-4xl mb-4"></i>
+                  <p>
+                    Preencha as informações ao lado para receber uma análise
+                    personalizada
+                  </p>
+                </div>
+
+                <div id="loadingAnalysis" class="hidden text-center py-8">
+                  <div
+                    class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-400 mx-auto mb-4"
+                  ></div>
+                  <p>Nossa IA está analisando seu PC...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Badges de funcionalidades -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div
+              class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center"
+            >
+              <i class="fas fa-chart-line text-2xl text-blue-300 mb-2"></i>
+              <h5 class="font-bold mb-1">Análise de Performance</h5>
+              <p class="text-sm text-gray-300">
+                Identificamos gargalos e melhorias
+              </p>
+            </div>
+
+            <div
+              class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center"
+            >
+              <i class="fas fa-dollar-sign text-2xl text-green-300 mb-2"></i>
+              <h5 class="font-bold mb-1">Custo-Benefício</h5>
+              <p class="text-sm text-gray-300">
+                Máximo ganho pelo menor investimento
+              </p>
+            </div>
+
+            <div
+              class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center"
+            >
+              <i class="fas fa-shield-alt text-2xl text-purple-300 mb-2"></i>
+              <h5 class="font-bold mb-1">Compatibilidade</h5>
+              <p class="text-sm text-gray-300">
+                100% compatível com seu hardware
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Por que Upgrade? -->
     <section class="py-12 bg-gray-800">
       <div class="container mx-auto px-6">
@@ -1043,7 +1442,170 @@
         discount: 0,
       };
 
+      function detectCombo() {
+        const comboDetector = document.getElementById("combo-detector");
 
+        if (selectedItems.storage && selectedItems.memory) {
+          // Mostrar loading state por 200ms para feedback visual
+          comboDetector.innerHTML = `
+            <div class="flex items-center justify-center p-3">
+              <i class="fas fa-spinner loading-spinner text-green-500 mr-2"></i>
+              <span class="text-sm text-gray-800">Detectando combo...</span>
+            </div>
+          `;
+          comboDetector.classList.remove("hidden");
+
+          setTimeout(() => {
+            const storageType = selectedItems.storage.includes("SSD")
+              ? "SSD"
+              : "HDD";
+            const memoryAmount = parseInt(selectedItems.memory.match(/\d+/)[0]);
+
+            let discount = 0;
+            let message = "";
+
+            // Lógica inteligente de combos
+            if (storageType === "SSD" && memoryAmount >= 16) {
+              discount = 15;
+              message = `🚀 Combo Performance: ${selectedItems.storage} + ${selectedItems.memory}`;
+            } else if (storageType === "SSD" && memoryAmount >= 8) {
+              discount = 12;
+              message = `⚡ Combo Rápido: ${selectedItems.storage} + ${selectedItems.memory}`;
+            } else if (storageType === "HDD" && memoryAmount >= 8) {
+              discount = 8;
+              message = `💾 Combo Econômico: ${selectedItems.storage} + ${selectedItems.memory}`;
+            } else {
+              discount = 5;
+              message = `🔧 Combo Básico: ${selectedItems.storage} + ${selectedItems.memory}`;
+            }
+
+            selectedItems.discount = discount;
+
+            // Atualizar detector com animação sutil
+            comboDetector.innerHTML = `
+              <div class="flex items-center justify-between p-3">
+                <div class="flex items-center space-x-2">
+                  <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span class="text-sm font-medium text-gray-800">${message}</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <span class="text-xs text-gray-600">Desconto:</span>
+                  <span class="bg-green-500 text-white px-2 py-1 rounded text-sm font-bold">${discount}%</span>
+                </div>
+              </div>
+            `;
+
+            comboDetector.classList.add("slide-in-right");
+
+            // Adicionar efeito de highlight nos produtos selecionados
+            highlightSelectedProducts();
+          }, 200);
+        } else {
+          comboDetector.classList.add("hidden");
+          removeProductHighlights();
+        }
+      }
+
+      function highlightSelectedProducts() {
+        // Remove highlights anteriores
+        document.querySelectorAll(".combo-highlight").forEach((el) => {
+          el.classList.remove("combo-highlight");
+        });
+
+        // Adiciona highlight aos produtos selecionados
+        document.querySelectorAll(".product-card").forEach((card) => {
+          const productName = card.querySelector("h3").textContent;
+          if (
+            selectedItems.storage &&
+            productName.includes(selectedItems.storage.split(" ")[0])
+          ) {
+            card.classList.add("combo-highlight");
+          }
+          if (
+            selectedItems.memory &&
+            productName.includes(selectedItems.memory.split(" ")[0])
+          ) {
+            card.classList.add("combo-highlight");
+          }
+        });
+      }
+
+      function removeProductHighlights() {
+        document.querySelectorAll(".combo-highlight").forEach((el) => {
+          el.classList.remove("combo-highlight");
+        });
+      }
+
+      function selectProduct(productName, category, button) {
+        // Remover seleção anterior da categoria
+        document
+          .querySelectorAll(`button[data-category="${category}"]`)
+          .forEach((btn) => {
+            btn.classList.remove("bg-blue-600", "text-white");
+            btn.classList.add("bg-white", "text-blue-600");
+          });
+
+        // Adicionar seleção ao produto atual
+        button.classList.remove("bg-white", "text-blue-600");
+        button.classList.add("bg-blue-600", "text-white");
+        button.classList.add("combo-bounce");
+
+        // Salvar seleção
+        if (category === "storage") {
+          selectedItems.storage = productName;
+        } else if (category === "memory") {
+          selectedItems.memory = productName;
+        }
+
+        // Detectar combo
+        setTimeout(() => {
+          button.classList.remove("combo-bounce");
+          detectCombo();
+        }, 600);
+      }
+
+      function addToCartWithCombo(productName, price) {
+        let finalPrice = price;
+        let discountText = "";
+
+        if (selectedItems.discount > 0) {
+          finalPrice = price * (1 - selectedItems.discount / 100);
+          discountText = ` (${selectedItems.discount}% desconto aplicado!)`;
+        }
+
+        // Adicionar ao carrinho
+        cart.push({
+          name: productName + discountText,
+          price: finalPrice,
+          quantity: 1,
+        });
+
+        updateCartDisplay();
+
+        // Animação de sucesso
+        const notification = document.createElement("div");
+        notification.className =
+          "fixed top-4 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg z-50 slide-in-right";
+        notification.innerHTML = `
+          <div class="flex items-center space-x-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <div>
+              <div class="font-semibold">${productName}</div>
+              <div class="text-sm">R$ ${finalPrice.toFixed(
+                2
+              )}${discountText}</div>
+            </div>
+          </div>
+        `;
+
+        document.body.appendChild(notification);
+
+        setTimeout(() => {
+          notification.remove();
+        }, 3000);
+      }
 
       // Lógica para seletores de RAM com sistema de combos
       document.querySelectorAll(".ram-select").forEach((select) => {
