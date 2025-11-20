@@ -2,6 +2,10 @@
 
 **Site profissional especializado em formatação de PCs e notebooks**
 
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-green)](https://deivisan.github.io/DeiviTech-Formatacao/)
+[![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
+[![HTML5](https://img.shields.io/badge/HTML5-Valid-orange)](https://validator.w3.org/)
+
 ## 🚀 Especialidades
 
 ### Windows 11 Pro
@@ -83,12 +87,21 @@
 
 ### 🔧 Tecnologias do Site
 
-- HTML5 & CSS3
-- TailwindCSS
-- JavaScript
-- Chart.js
-- Font Awesome
-- Design Responsivo
+- **Frontend:** HTML5, CSS3, JavaScript ES6+
+- **Framework CSS:** Tailwind CSS 2.2.19
+- **Icons:** Font Awesome 6.0.0
+- **Charts:** Chart.js (sistemas.html)
+- **Animation:** CSS3 keyframes + transitions
+- **APIs:** Navigator API para detecção de hardware
+- **Deploy:** GitHub Pages
+
+### 🎯 Funcionalidades
+
+- **Análise IA:** Detecção automática de hardware via navegador
+- **Carrinho Inteligente:** Sistema de compras com combos
+- **Agendamento Online:** Calendário interativo
+- **Progressive Disclosure:** Interface adaptável
+- **Responsivo:** Mobile-first design
 
 ---
 

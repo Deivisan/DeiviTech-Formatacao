@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DeiviTech Formatação - Serviços Especializados</title>
+    <meta name="description" content="Serviços especializados em formatação de PCs, upgrades de hardware e análise IA inteligente. Formatação profissional com garantia de 30 dias.">
+    <meta name="keywords" content="formatação PC, upgrade hardware, análise IA, Windows, Linux, SSD, RAM">
+    <meta name="author" content="DeiviTech">
+    <meta property="og:title" content="DeiviTech Formatação - Serviços Especializados">
+    <meta property="og:description" content="Formatação • Hardware • Sistemas Otimizados">
+    <meta property="og:image" content="https://deivisan.github.io/DeiviTech-Formatacao/preview.jpg">
+    <meta property="og:url" content="https://deivisan.github.io/DeiviTech-Formatacao/">
+    <meta name="twitter:card" content="summary_large_image">
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
@@ -58,20 +63,20 @@
     <!-- Navegação Seções - Menu Superior -->
     <nav class="bg-gray-800 text-white p-4 fixed top-0 left-0 right-0 z-50">
       <div class="container mx-auto flex justify-center space-x-4">
-        <a href="formatacao.html" class="block bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded text-center text-sm">
-          <i class="fas fa-desktop mr-2"></i>Formatação
+        <a href="formatacao.html" class="block bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded text-center text-sm" aria-label="Ir para página de Formatação">
+          <i class="fas fa-desktop mr-2" aria-hidden="true"></i>Formatação
         </a>
-        <a href="hardware.html" class="block bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-center text-sm">
-          <i class="fas fa-microchip mr-2"></i>Hardware
+        <a href="hardware.html" class="block bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-center text-sm" aria-label="Ir para página de Hardware">
+          <i class="fas fa-microchip mr-2" aria-hidden="true"></i>Hardware
         </a>
-        <a href="sistemas.html" class="block bg-purple-500 hover:bg-purple-600 px-4 py-2 rounded text-center text-sm">
-          <i class="fas fa-cog mr-2"></i>Sistemas
+        <a href="sistemas.html" class="block bg-purple-500 hover:bg-purple-600 px-4 py-2 rounded text-center text-sm" aria-label="Ir para página de Sistemas">
+          <i class="fas fa-cog mr-2" aria-hidden="true"></i>Sistemas
         </a>
-        <a href="analise.html" class="block bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded text-center text-sm">
-          <i class="fas fa-brain mr-2"></i>Análise IA
+        <a href="analise.html" class="block bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded text-center text-sm" aria-label="Ir para página de Análise IA">
+          <i class="fas fa-brain mr-2" aria-hidden="true"></i>Análise IA
         </a>
-        <a href="agendamento.html" class="block bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-center text-sm">
-          <i class="fas fa-calendar-check mr-2"></i>Agendar
+        <a href="agendamento.html" class="block bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-center text-sm" aria-label="Ir para página de Agendamento">
+          <i class="fas fa-calendar-check mr-2" aria-hidden="true"></i>Agendar
         </a>
       </div>
     </nav>
@@ -321,5 +326,26 @@
       </div>
     </footer>
 
-  </body>
-</html>
+    <!-- Botão Voltar ao Topo -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300" style="display: none;" aria-label="Voltar ao topo">
+      <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script>
+      // Botão voltar ao topo
+      const backToTopBtn = document.getElementById('backToTop');
+      
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.style.display = 'block';
+          setTimeout(() => backToTopBtn.classList.remove('opacity-0'), 10);
+        } else {
+          backToTopBtn.classList.add('opacity-0');
+          setTimeout(() => backToTopBtn.style.display = 'none', 300);
+        }
+      });
+      
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
