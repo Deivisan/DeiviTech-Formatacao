@@ -16,7 +16,16 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />    <style>
+    />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    <style>
       .hero-bg {
         background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%);
       }
@@ -63,21 +72,14 @@
     <!-- Navegação Seções - Menu Superior -->
     <nav class="bg-gray-800 text-white p-4 fixed top-0 left-0 right-0 z-50">
       <div class="container mx-auto flex justify-center space-x-4">
-        <a href="formatacao.html" class="block bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded text-center text-sm" aria-label="Ir para página de Formatação">
-          <i class="fas fa-desktop mr-2" aria-hidden="true"></i>Formatação
-        </a>
-        <a href="hardware.html" class="block bg-green-500 hover:bg-green-600 px-4 py-2 rounded text-center text-sm" aria-label="Ir para página de Hardware">
-          <i class="fas fa-microchip mr-2" aria-hidden="true"></i>Hardware
-        </a>
-        <a href="sistemas.html" class="block bg-purple-500 hover:bg-purple-600 px-4 py-2 rounded text-center text-sm" aria-label="Ir para página de Sistemas">
-          <i class="fas fa-cog mr-2" aria-hidden="true"></i>Sistemas
-        </a>
-        <a href="analise.html" class="block bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded text-center text-sm" aria-label="Ir para página de Análise IA">
-          <i class="fas fa-brain mr-2" aria-hidden="true"></i>Análise IA
-        </a>
-        <a href="agendamento.html" class="block bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded text-center text-sm" aria-label="Ir para página de Agendamento">
-          <i class="fas fa-calendar-check mr-2" aria-hidden="true"></i>Agendar
-        </a>
+        <a href="index.html" class="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded">Início</a>
+        <a href="formatacao.html" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">Formatação</a>
+        <a href="hardware.html" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded">Hardware</a>
+        <a href="sistemas.html" class="bg-purple-500 hover:bg-purple-600 px-4 py-2 rounded">Sistemas</a>
+        <a href="analise.html" class="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded">Análise IA</a>
+        <a href="agendamento.html" class="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded">Agendar</a>
+        <a href="faq.html" class="bg-indigo-500 hover:bg-indigo-600 px-4 py-2 rounded">FAQ</a>
+        <a href="sobre.html" class="bg-pink-500 hover:bg-pink-600 px-4 py-2 rounded">Sobre</a>
       </div>
     </nav>
 
@@ -94,8 +96,8 @@
 
         <div class="flex justify-center space-x-8 text-center">
           <div>
-            <div class="text-2xl font-bold text-green-400">200+</div>
-            <div class="text-sm opacity-75">PCs Formatados</div>
+            <div class="text-2xl font-bold text-green-400">Atendendo clientes</div>
+            <div class="text-sm opacity-75">em todo Brasil</div>
           </div>
           <div>
             <div class="text-2xl font-bold text-blue-400">24h</div>
@@ -125,16 +127,16 @@
 
               <div class="space-y-2 mb-6">
                 <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-green-400">✓</span> Windows 10/11 Original
+                  <span class="text-green-400">✓</span> Windows 10/11 Ativado
                 </div>
                 <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-purple-400">⚡</span> Ghost Spectre (Super Rápido)
+                  <span class="text-purple-400">⚡</span> Versões modificadas
                 </div>
                 <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-green-400">🆓</span> Chrome OS Flex (Gratuito)
+                  <span class="text-green-400">🆓</span> Chrome OS (Gratuito)
                 </div>
                 <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-orange-400">🐧</span> Linux Ubuntu
+                  <span class="text-orange-400">🐧</span> Linux
                 </div>
               </div>
 
@@ -146,18 +148,15 @@
           </div>
 
           <!-- Hardware -->
-          <div class="bg-gray-800 rounded-xl p-8 card-hover cursor-pointer border-2 border-green-400 animate-fadeInUp animate-delay-200" onclick="window.location='hardware.html'">
+          <div class="bg-gray-800 rounded-xl p-8 card-hover cursor-pointer animate-fadeInUp animate-delay-200" onclick="window.location='hardware.html'">
             <div class="text-center">
-              <div class="bg-green-500 text-white px-3 py-1 rounded text-sm font-bold mb-4">
-                🤖 COM IA
-              </div>
               <i class="fas fa-microchip text-5xl text-green-400 mb-6"></i>
-              <h3 class="text-2xl font-bold mb-4">Hardware & Upgrades</h3>
-              <p class="text-gray-300 mb-4">Turbine seu PC com componentes de qualidade e análise inteligente</p>
+              <h3 class="text-2xl font-bold mb-4">Hardware & Upgrade</h3>
+              <p class="text-gray-300 mb-4">Turbine seu PC com componentes de qualidade</p>
 
               <div class="space-y-2 mb-6">
                 <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-blue-400">🧠</span> Análise IA personalizada
+                  <span class="text-blue-400">🧠</span> Diagnóstico completo
                 </div>
                 <div class="bg-gray-700 p-2 rounded text-sm">
                   <span class="text-purple-400">💾</span> RAM DDR2/3/4/5 (Desktop/Notebook)
@@ -199,7 +198,7 @@
                 </div>
               </div>
 
-              <div class="text-3xl font-bold text-purple-400 mb-4">Consultoria Gratuita</div>
+              <div class="text-3xl font-bold text-purple-400 mb-4">Otimização Personalizada</div>
               <button class="bg-purple-500 hover:bg-purple-600 px-6 py-3 rounded-lg w-full">
                 Explorar Sistemas
               </button>
@@ -207,11 +206,8 @@
           </div>
 
           <!-- Análise IA -->
-          <div class="bg-gray-800 rounded-xl p-8 card-hover cursor-pointer border-2 border-orange-400 animate-fadeInUp animate-delay-600" onclick="window.location='analise.html'">
+          <div class="bg-gray-800 rounded-xl p-8 card-hover cursor-pointer animate-fadeInUp animate-delay-600" onclick="window.location='analise.html'">
             <div class="text-center">
-              <div class="bg-orange-500 text-white px-3 py-1 rounded text-sm font-bold mb-4">
-                🧠 NOVO
-              </div>
               <i class="fas fa-brain text-5xl text-orange-400 mb-6"></i>
               <h3 class="text-2xl font-bold mb-4">Análise IA Inteligente</h3>
               <p class="text-gray-300 mb-4">3 formas de analisar seu PC e receber recomendações personalizadas</p>
@@ -231,7 +227,7 @@
                 </div>
               </div>
 
-              <div class="text-3xl font-bold text-orange-400 mb-4">Gratuito</div>
+              <div class="text-sm text-gray-300 mb-4">Análise profissional do seu hardware</div>
               <button class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg w-full">
                 Analisar PC
               </button>
@@ -239,11 +235,8 @@
           </div>
 
           <!-- Agendamento Online -->
-          <div class="bg-gray-800 rounded-xl p-8 card-hover cursor-pointer border-2 border-purple-600 animate-fadeInUp animate-delay-800" onclick="window.location='agendamento.html'">
+          <div class="bg-gray-800 rounded-xl p-8 card-hover cursor-pointer animate-fadeInUp animate-delay-800" onclick="window.location='agendamento.html'">
             <div class="text-center">
-              <div class="bg-purple-600 text-white px-3 py-1 rounded text-sm font-bold mb-4">
-                📱 NOVO
-              </div>
               <i class="fas fa-calendar-check text-5xl text-purple-400 mb-6"></i>
               <h3 class="text-2xl font-bold mb-4">Agendamento Online</h3>
               <p class="text-gray-300 mb-4">Agende seu atendimento de forma rápida e prática pelo site</p>
@@ -263,8 +256,8 @@
                 </div>
               </div>
 
-              <div class="text-3xl font-bold text-purple-400 mb-4">Fácil e Rápido</div>
-              <button class="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg w-full">
+              <div class="text-sm text-gray-300 mb-4">Agendamento fácil e rápido</div>
+              <button class="bg-teal-500 hover:bg-teal-600 px-6 py-3 rounded-lg w-full">
                 Agendar Agora
               </button>
             </div>
@@ -296,6 +289,12 @@
             <h3 class="text-lg font-bold mb-2">Atendimento</h3>
             <p class="text-sm text-gray-300">Domicílio ou balcão</p>
           </div>
+
+          <div class="text-center">
+            <i class="fas fa-star text-3xl text-blue-400 mb-4"></i>
+            <h3 class="text-lg font-bold mb-2">Expertise</h3>
+            <p class="text-sm text-gray-300">Experiência comprovada</p>
+          </div>
         </div>
       </div>
     </section>
@@ -322,7 +321,10 @@
     <!-- Footer -->
     <footer class="bg-gray-800 py-6">
       <div class="container mx-auto px-6 text-center">
-        <p class="text-gray-400">© 2025 DeiviTech Formatação - Feira de Santana, BA</p>
+        <p class="text-gray-400 mb-4">© 2025 DeiviTech Formatação - Feira de Santana, BA</p>
+        <a href="https://github.com/Deivisan" target="_blank" class="inline-flex items-center text-gray-500 hover:text-gray-300">
+          <i class="fab fa-github mr-2"></i>GitHub
+        </a>
       </div>
     </footer>
 
@@ -347,5 +349,38 @@
       
       backToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Formulário de contato
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const phone = formData.get('phone');
+        const service = formData.get('service');
+        const message = formData.get('message');
+
+        const serviceNames = {
+          'formatacao': 'Formatação Completa',
+          'hardware': 'Hardware & Upgrade',
+          'sistemas': 'Sistemas & Overclocking',
+          'analise': 'Análise IA',
+          'agendamento': 'Agendamento',
+          'outros': 'Outros'
+        };
+
+        const whatsappMessage = `*Nova mensagem do site DeiviTech*%0A%0A👤 *Nome:* ${name}%0A📧 *E-mail:* ${email}%0A📱 *WhatsApp:* ${phone}%0A🛠️ *Serviço:* ${serviceNames[service]}%0A💬 *Mensagem:* ${message}%0A%0A--- Enviado via formulário do site ---`;
+
+        const whatsappUrl = `https://wa.me/5575981231019?text=${whatsappMessage}`;
+
+        window.open(whatsappUrl, '_blank');
+
+        // Reset form
+        this.reset();
+
+        // Show success message
+        alert('Mensagem enviada com sucesso! Você será redirecionado para o WhatsApp.');
       });
     </script>

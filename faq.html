@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - DeiviTech Formatação</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .hero-bg {
+        background: linear-gradient(
+          135deg,
+          #7c3aed 0%,
+          #a855f7 50%,
+          #c084fc 100%
+        );
+      }
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+      }
+      .faq-item {
+        transition: all 0.3s ease;
+      }
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+        opacity: 1;
+      }
+      .faq-answer {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <!-- Header -->
+    <header class="hero-bg py-8">
+      <div class="container mx-auto px-6">
+        <nav class="flex justify-between items-center mb-6">
+          <a
+            href="index.html"
+            class="flex items-center text-white hover:text-purple-200"
+          >
+            <i class="fas fa-arrow-left mr-2"></i>
+            <span>Voltar</span>
+          </a>
+          <div class="flex space-x-4">
+            <a
+              href="index.html"
+              class="bg-gray-500 hover:bg-gray-600 px-4 py-2 rounded"
+              >Início</a
+            >
+            <a
+              href="formatacao.html"
+              class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded"
+              >Formatação</a
+            >
+            <a
+              href="hardware.html"
+              class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded"
+              >Hardware</a
+            >
+            <a
+              href="sistemas.html"
+              class="bg-purple-500 hover:bg-purple-600 px-4 py-2 rounded"
+              >Sistemas</a
+            >
+            <a
+              href="analise.html"
+              class="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded"
+              >Análise IA</a
+            >
+            <a
+              href="agendamento.html"
+              class="bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded"
+              >Agendar</a
+            >
+            <a
+              href="faq.html"
+              class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded"
+              >FAQ</a
+            >
+            <a
+              href="sobre.html"
+              class="bg-pink-500 hover:bg-pink-600 px-4 py-2 rounded"
+              >Sobre</a
+            >
+          </div>
+        </nav>
+
+        <div class="text-center">
+          <i class="fas fa-question-circle text-5xl text-white mb-4"></i>
+          <h1 class="text-4xl font-bold mb-4">Perguntas Frequentes</h1>
+          <p class="text-xl opacity-90">
+            Tire suas dúvidas sobre nossos serviços
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- FAQ Section -->
+    <section class="py-12 bg-gray-800">
+      <div class="container mx-auto px-6 max-w-4xl">
+        <div class="space-y-4">
+          <!-- Formatação -->
+          <div class="faq-item bg-gray-700 rounded-xl overflow-hidden">
+            <button
+              class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-600 transition-colors"
+              onclick="toggleFAQ(this)"
+            >
+              <span class="text-xl font-bold">💻 Sobre Formatação</span>
+              <i class="fas fa-chevron-down transition-transform"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="p-6 pt-0 space-y-6">
+                <div>
+                  <h4 class="font-bold text-blue-400 mb-2">Quanto tempo leva uma formatação?</h4>
+                  <p>Uma formatação completa leva em média 2-3 horas. Trabalhamos para entregar em até 24 horas.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-blue-400 mb-2">Vocês fazem backup dos meus arquivos?</h4>
+                  <p>Sim! Oferecemos backup completo opcional. Seus arquivos ficam seguros em nuvem durante o processo.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-blue-400 mb-2">Qual a garantia do serviço?</h4>
+                  <p>Oferecemos 30 dias de garantia. Se houver qualquer problema, retornamos gratuitamente.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-blue-400 mb-2">Posso escolher qual sistema operacional instalar?</h4>
+                  <p>Sim! Windows 10/11, Ghost Spectre (otimizado), Chrome OS ou Linux Ubuntu.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hardware -->
+          <div class="faq-item bg-gray-700 rounded-xl overflow-hidden">
+            <button
+              class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-600 transition-colors"
+              onclick="toggleFAQ(this)"
+            >
+              <span class="text-xl font-bold">🔧 Sobre Hardware</span>
+              <i class="fas fa-chevron-down transition-transform"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="p-6 pt-0 space-y-6">
+                <div>
+                  <h4 class="font-bold text-green-400 mb-2">Vocês vendem peças ou só instalam?</h4>
+                  <p>Instalamos peças que você fornecer ou podemos adquirir para você com preços competitivos.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-400 mb-2">Quanto custa instalar uma SSD?</h4>
+                  <p>A instalação básica custa R$ 50. Migração de dados adicional R$ 30.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-400 mb-2">Fazem overclocking?</h4>
+                  <p>Sim! Overclocking seguro com garantia de estabilidade. Consulte valores.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-green-400 mb-2">Qual a garantia das peças instaladas?</h4>
+                  <p>Garantia do fabricante + nossos 30 dias de garantia de instalação.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sistemas -->
+          <div class="faq-item bg-gray-700 rounded-xl overflow-hidden">
+            <button
+              class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-600 transition-colors"
+              onclick="toggleFAQ(this)"
+            >
+              <span class="text-xl font-bold">⚙️ Sobre Sistemas</span>
+              <i class="fas fa-chevron-down transition-transform"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="p-6 pt-0 space-y-6">
+                <div>
+                  <h4 class="font-bold text-purple-400 mb-2">Qual sistema é melhor para jogos?</h4>
+                  <p>Ghost Spectre oferece melhor performance para jogos com baixo uso de RAM.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-purple-400 mb-2">Windows 11 funciona em PCs antigos?</h4>
+                  <p>Windows 11 requer TPM 2.0. PCs sem TPM podem usar Windows 10 ou Ghost Spectre.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-purple-400 mb-2">Chrome OS é seguro?</h4>
+                  <p>Muito seguro! Atualizações automáticas e antivírus integrado.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-purple-400 mb-2">Linux é difícil de usar?</h4>
+                  <p>Ubuntu é amigável. Oferecemos suporte completo para primeiros passos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Agendamento -->
+          <div class="faq-item bg-gray-700 rounded-xl overflow-hidden">
+            <button
+              class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-600 transition-colors"
+              onclick="toggleFAQ(this)"
+            >
+              <span class="text-xl font-bold">📅 Sobre Agendamento</span>
+              <i class="fas fa-chevron-down transition-transform"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="p-6 pt-0 space-y-6">
+                <div>
+                  <h4 class="font-bold text-teal-400 mb-2">Como funciona o atendimento domiciliar?</h4>
+                  <p>Técnico vai até sua casa com todas as ferramentas. Atendemos em Feira de Santana e região.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-teal-400 mb-2">Posso cancelar ou reagendar?</h4>
+                  <p>Sim! Cancele gratuitamente até 24h antes. Reagendamento sem custo adicional.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-teal-400 mb-2">Qual o horário de atendimento?</h4>
+                  <p>Segunda a sábado, das 8h às 18h. Atendimento domiciliar conforme disponibilidade.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-teal-400 mb-2">Como pago pelo serviço?</h4>
+                  <p>Pagamento após conclusão do serviço. Aceitamos PIX, cartão ou dinheiro.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Geral -->
+          <div class="faq-item bg-gray-700 rounded-xl overflow-hidden">
+            <button
+              class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-600 transition-colors"
+              onclick="toggleFAQ(this)"
+            >
+              <span class="text-xl font-bold">📞 Informações Gerais</span>
+              <i class="fas fa-chevron-down transition-transform"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="p-6 pt-0 space-y-6">
+                <div>
+                  <h4 class="font-bold text-yellow-400 mb-2">Atendem fora de Feira de Santana?</h4>
+                  <p>Atendemos toda região de Feira de Santana. Consulte disponibilidade para outras cidades.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-yellow-400 mb-2">Trabalham com empresas?</h4>
+                  <p>Sim! Oferecemos atendimento corporativo com condições especiais.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-yellow-400 mb-2">Fazem orçamento sem compromisso?</h4>
+                  <p>Sim! Orçamento gratuito via WhatsApp. Visita técnica sem custo.</p>
+                </div>
+                <div>
+                  <h4 class="font-bold text-yellow-400 mb-2">Como entro em contato?</h4>
+                  <p>WhatsApp: (75) 98123-1019 | Atendimento: Seg-Sáb 8h-18h</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-12">
+          <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8">
+            <h3 class="text-2xl font-bold mb-4">Não encontrou sua resposta?</h3>
+            <p class="text-lg mb-6">Entre em contato conosco! Estamos aqui para ajudar.</p>
+            <a
+              href="https://wa.me/5575981231019?text=Olá! Tenho uma dúvida sobre os serviços."
+              class="inline-flex items-center bg-white text-gray-900 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors"
+            >
+              <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+              Falar no WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function toggleFAQ(button) {
+        const faqItem = button.parentElement;
+        const answer = faqItem.querySelector('.faq-answer');
+        const icon = button.querySelector('i');
+
+        // Toggle active class
+        faqItem.classList.toggle('active');
+
+        // Rotate icon
+        if (faqItem.classList.contains('active')) {
+          icon.style.transform = 'rotate(180deg)';
+        } else {
+          icon.style.transform = 'rotate(0deg)';
+        }
+      }
+    </script>
+  </body>
+</html>
