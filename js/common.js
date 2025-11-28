@@ -2,17 +2,92 @@
 
 // Header offset adjustment
 document.addEventListener('DOMContentLoaded', function(){
-  const nav = document.querySelector('.site-nav');
-  if(!nav) return; // only adjust pages with a fixed site nav
+  const nav = document.querySelector('nav.fixed, nav.bg-gray-800');
+  if(!nav) return;
+  
   const setOffset = () => {
     const h = Math.ceil(nav.getBoundingClientRect().height || 0);
     document.documentElement.style.setProperty('--site-nav-height', h + 'px');
-    // also set body padding for immediate effect
     document.body.style.paddingTop = h + 'px';
   };
   setOffset();
   window.addEventListener('resize', setOffset);
+  
+  // Mobile menu - apenas adiciona toggle, não altera estrutura
+  initMobileMenu();
 });
+
+// Mobile Menu - Simples toggle
+function initMobileMenu() {
+  const nav = document.querySelector('nav.fixed, nav.bg-gray-800');
+  if (!nav) return;
+  
+  // Verificar se já existe
+  if (document.getElementById('mobileMenuBtn')) return;
+  
+  const container = nav.querySelector('.container') || nav.querySelector('div');
+  if (!container) return;
+  
+  // Pegar todos os links existentes
+  const existingLinks = container.querySelectorAll('a');
+  if (existingLinks.length < 2) return;
+  
+  // Criar botão hamburger (aparece só em mobile via CSS)
+  const menuBtn = document.createElement('button');
+  menuBtn.id = 'mobileMenuBtn';
+  menuBtn.className = 'mobile-menu-btn';
+  menuBtn.setAttribute('aria-label', 'Menu');
+  menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+  
+  // Criar wrapper para links com classe específica
+  const linksDiv = document.createElement('div');
+  linksDiv.id = 'navLinks';
+  linksDiv.className = 'nav-links';
+  
+  // Mover links para o wrapper (não clonar para preservar event listeners)
+  existingLinks.forEach(link => {
+    linksDiv.appendChild(link);
+  });
+  
+  // Limpar e reconstruir container
+  container.innerHTML = '';
+  container.className = 'container mx-auto flex items-center justify-between px-4';
+  
+  // Logo para mobile
+  const logo = document.createElement('a');
+  logo.href = 'index.html';
+  logo.className = 'mobile-logo';
+  logo.innerHTML = '<i class="fas fa-microchip mr-2"></i>DeiviTech';
+  
+  container.appendChild(logo);
+  container.appendChild(linksDiv);
+  container.appendChild(menuBtn);
+  
+  // Toggle
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    linksDiv.classList.toggle('active');
+    menuBtn.innerHTML = linksDiv.classList.contains('active') 
+      ? '<i class="fas fa-times"></i>' 
+      : '<i class="fas fa-bars"></i>';
+  });
+  
+  // Fechar ao clicar em link
+  linksDiv.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      linksDiv.classList.remove('active');
+      menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+  });
+  
+  // Fechar ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target)) {
+      linksDiv.classList.remove('active');
+      menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+  });
+}
 
 // Utility functions
 function debounce(func, wait) {
