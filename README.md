@@ -3,61 +3,85 @@
 [![Site Online](https://img.shields.io/badge/🌐_Site_Online-Acesse_Aqui-blue?style=for-the-badge)](https://deivisan.github.io/DeiviTech-Formatacao/)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp_Contato-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5575981231019?text=Olá!%20Gostaria%20de%20agendar%20uma%20formatação%20DeiviTech)
 
-**Serviços profissionais de formatação de PCs e manutenção técnica. Site moderno com animações e design responsivo. Atendimento domiciliar em Feira de Santana e região.**
+**Serviços especializados em formatação de PCs, upgrades de hardware e manutenção técnica. Atendimento domiciliar em Feira de Santana e região.**
+
+## 👨‍💻 Sobre Deivison Santana
+
+**Técnico em Informática | Especialista em Sistemas Operacionais e Hardware**
+
+Com mais de 10 anos de experiência no mercado de tecnologia, Deivison Santana é especialista em:
+
+- **Sistemas Operacionais**: Profundo conhecimento em Windows (10/11), Linux (Ubuntu, Arch) e configurações otimizadas
+- **Hardware**: Diagnóstico e upgrades de componentes (RAM, SSD, processadores, placas-mãe)
+- **Otimização**: Overclocking seguro, limpeza de sistemas e maximização de performance
+- **Manutenção**: Recuperação de dados, backup e suporte técnico completo
+
+Formado em Técnico em Informática, com expertise prática em mais de 500 computadores formatados e otimizados.
 
 ## 🚀 Serviços Oferecidos
 
 ### 💻 Formatação Completa
-Reinstalação profissional com drivers atualizados e programas essenciais.
+Reinstalação profissional de sistemas operacionais com drivers atualizados e programas essenciais.
 
-| Sistema | Preço | Prazo | Destaque |
-|---------|-------|-------|----------|
-| Windows 11 Pro | R$ 120,00 | 24h | Segurança máxima |
-| Windows 10 Pro | R$ 100,00 | 24h | Compatibilidade total |
-| Ghost Spectre | R$ 150,00 | 24h | Ultra-otimizado |
-| Arch Linux | **Gratuito** | 48h | Sistema livre |
-| Dual Boot | R$ 250,00 | 48h | Windows + Linux |
+- **Windows 10/11**: Versões originais com ativação completa
+- **Ghost Spectre**: Sistema ultra-otimizado para máxima performance
+- **Linux**: Distribuições gratuitas (Ubuntu, Arch) para usuários avançados
+- **Dual Boot**: Configuração de Windows + Linux no mesmo PC
 
 ### 🔧 Hardware & Upgrades
-Componentes premium para performance máxima.
+Componentes premium para turbinar seu PC e melhorar performance.
 
-| Componente | Capacidade | Preço | Benefício |
-|------------|------------|-------|-----------|
-| RAM DDR4 | 8GB | R$ 120,00 | Multitarefas fluida |
-| SSD NVMe | 500GB | R$ 150,00 | Boot em segundos |
-| SSD SATA | 240GB | R$ 80,00 | Upgrade acessível |
+- **Memória RAM**: DDR2, DDR3, DDR4 e DDR5 para notebooks e desktops
+- **Armazenamento**: SSD NVMe/SATA e HDs tradicionais
+- **Instalação Profissional**: Montagem e configuração garantida
 
-### 🧠 Análise Técnica
-Diagnóstico inteligente via navegador ou formulário detalhado.
+### 🧠 Análise Técnica Inteligente
+Diagnóstico completo do seu hardware com recomendações personalizadas.
+
+- **Detecção Automática**: Via navegador (CPU, RAM, GPU, sistema operacional)
+- **Análise Manual**: Formulário detalhado para especificações completas
+- **Upload de Relatório**: Análise de arquivos de diagnóstico existentes
+
+### ⚙️ Sistemas & Otimização
+Comparação detalhada de sistemas operacionais e guia de overclocking.
+
+- **Comparativos**: Windows vs Linux vs Chrome OS
+- **Overclocking Seguro**: CPU, GPU e RAM com limites de segurança
+- **Otimização Personalizada**: Configurações para gaming, trabalho ou uso geral
 
 ### 📅 Agendamento Online
-Calendário interativo com confirmação instantânea.
+Sistema prático para marcar serviços com confirmação imediata.
+
+- **Calendário Interativo**: Escolha data e horário disponíveis
+- **Confirmação WhatsApp**: Notificação automática do agendamento
+- **Atendimento Domiciliar**: Conveniência no seu endereço
 
 ## ✨ Por que escolher a DeiviTech?
 
-- **Experiência**: 10+ anos formatando PCs
-- **Garantia**: 30 dias de cobertura total
-- **Rapidez**: Serviços em até 24 horas
-- **Conveniência**: Atendimento no seu endereço
-- **Transparência**: Preços claros, sem pegadinhas
+- **Especialização Técnica**: Conhecimento profundo em hardware e software
+- **Experiência Comprovada**: 10+ anos formatando e otimizando PCs
+- **Atendimento Personalizado**: Soluções adaptadas às suas necessidades
+- **Garantia de Qualidade**: 30 dias de cobertura para todos os serviços
+- **Rapidez e Eficiência**: Serviços entregues no prazo combinado
 
-## 🎨 Site com Design Moderno
+## 🎨 Site Moderno com Tecnologia Avançada
 
-O site apresenta:
-- **Animações suaves** em cards e transições
-- **Interface responsiva** para mobile e desktop
-- **Detecção automática** de hardware via navegador
-- **Carrinho inteligente** com cálculos em tempo real
-- **Agendamento visual** com calendário interativo
+O site apresenta design responsivo com animações suaves e funcionalidades inteligentes:
 
-**Acesse agora**: [deivisan.github.io/DeiviTech-Formatacao](https://deivisan.github.io/DeiviTech-Formatacao/)
+- **Interface Adaptável**: Progressive disclosure para melhor experiência
+- **Detecção em Tempo Real**: Hardware identificado automaticamente
+- **Carrinho Inteligente**: Cálculos automáticos e combos otimizados
+- **Agendamento Visual**: Calendário interativo e confirmações instantâneas
 
-## 📞 Contato
+**Acesse o site completo**: [deivisan.github.io/DeiviTech-Formatacao](https://deivisan.github.io/DeiviTech-Formatacao/)
+
+## 📞 Contato e Atendimento
 
 - **WhatsApp**: (75) 98123-1019
 - **Email**: deivilsantana@outlook.com
-- **Local**: Feira de Santana, BA
+- **Localização**: Feira de Santana, Bahia
+- **Atendimento**: Domiciliar ou balcão, segunda a sábado
 
 ---
 
-**DeiviTech - Transformando PCs em máquinas performáticas**
+**DeiviTech - Especialistas em Tecnologia da Informação**
