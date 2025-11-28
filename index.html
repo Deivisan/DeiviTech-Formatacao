@@ -307,37 +307,4 @@
       backToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
-
-      // Formulário de contato
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const phone = formData.get('phone');
-        const service = formData.get('service');
-        const message = formData.get('message');
-
-        const serviceNames = {
-          'formatacao': 'Formatação Completa',
-          'hardware': 'Hardware & Upgrade',
-          'sistemas': 'Sistemas & Overclocking',
-          'analise': 'Análise IA',
-          'agendamento': 'Agendamento',
-          'outros': 'Outros'
-        };
-
-        const whatsappMessage = `*Nova mensagem do site DeiviTech*%0A%0A👤 *Nome:* ${name}%0A📧 *E-mail:* ${email}%0A📱 *WhatsApp:* ${phone}%0A🛠️ *Serviço:* ${serviceNames[service]}%0A💬 *Mensagem:* ${message}%0A%0A--- Enviado via formulário do site ---`;
-
-        const whatsappUrl = `https://wa.me/5575981231019?text=${whatsappMessage}`;
-
-        window.open(whatsappUrl, '_blank');
-
-        // Reset form
-        this.reset();
-
-        // Show success message
-        alert('Mensagem enviada com sucesso! Você será redirecionado para o WhatsApp.');
-      });
     </script>

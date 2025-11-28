@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="css/common.css">
   </head>
-  <body class="bg-gray-900 text-white font-sans">
+  <body class="bg-gray-900 text-white font-sans pt-24">
     <!-- Navegação Seções - Menu Superior -->
     <nav class="bg-gray-800 text-white p-4 fixed top-0 left-0 right-0 z-50">
       <div class="container mx-auto flex justify-center space-x-4">
@@ -21,7 +21,7 @@
         <a href="formatacao.html" class="block bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-center text-sm font-semibold text-white" aria-label="Ir para página de Formatação">
           <i class="fas fa-desktop mr-2" aria-hidden="true"></i>Formatação
         </a>
-        <a href="hardware.html" class="block bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-center text-sm font-semibold text-white" aria-label="Ir para página de Hardware">
+        <a href="hardware.html" class="block bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-center text-sm font-semibold text-white ring-2 ring-white/60" aria-label="Ir para página de Hardware">
           <i class="fas fa-microchip mr-2" aria-hidden="true"></i>Hardware
         </a>
         <a href="sistemas.html" class="block bg-purple-500 hover:bg-purple-600 px-4 py-2 rounded text-center text-sm" aria-label="Ir para página de Sistemas">
@@ -42,6 +42,9 @@
       </div>
     </nav>
 
+    <!-- Header -->
+    <header class="hero-bg py-8">
+      <div class="container mx-auto px-6">
         <div class="text-center">
           <i class="fas fa-microchip text-5xl text-white mb-4"></i>
           <h1 class="text-4xl font-bold mb-4">Hardware & Componentes</h1>
@@ -1012,18 +1015,53 @@
         discount: 0,
       };
 
+      // Função de Detecção de Combo
+      function detectCombo() {
+        const comboDetector = document.getElementById('combo-detector');
+        
+        // Verifica se tem SSD/HD e RAM selecionados
+        if (selectedItems.storage && selectedItems.memory) {
+          comboDetector.classList.remove('hidden');
+          selectedItems.discount = 10;
+        } else {
+          comboDetector.classList.add('hidden');
+          selectedItems.discount = 0;
+        }
+      }
+
+      // Aplicar desconto de combo
+      document.getElementById('apply-combo')?.addEventListener('click', function() {
+        const comboDetector = document.getElementById('combo-detector');
+        
+        // Mostrar notificação
+        const notification = document.createElement('div');
+        notification.className = 'fixed top-16 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg z-50';
+        notification.innerHTML = `
+          <div class="flex items-center space-x-2">
+            <i class="fas fa-check-circle text-xl"></i>
+            <div>
+              <div class="font-semibold">Combo Ativado!</div>
+              <div class="text-sm">10% de desconto aplicado</div>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.remove();
+          comboDetector.classList.add('hidden');
+        }, 3000);
+      });
+
 
 
       // Lógica para seletores de RAM com sistema de combos
       document.querySelectorAll(".ram-select").forEach((select) => {
         select.addEventListener("change", function () {
           const container = this.closest(".bg-gray-700");
-          const quantitySelect = container.querySelector(".quantity-select");
           const addButton = container.querySelector(".add-ram-to-cart");
 
           if (this.value) {
-            quantitySelect.disabled = false;
-            quantitySelect.selectedIndex = 0;
             addButton.disabled = false;
 
             // Automaticamente selecionar para combo quando RAM for escolhida
@@ -1039,7 +1077,6 @@
             // Detectar combo
             detectCombo();
           } else {
-            quantitySelect.disabled = true;
             addButton.disabled = true;
 
             // Remover da seleção de combo
@@ -1058,33 +1095,29 @@
         btn.addEventListener("click", function () {
           const container = this.closest(".bg-gray-700");
           const ramSelect = container.querySelector(".ram-select");
-          const quantitySelect = container.querySelector(".quantity-select");
 
-          if (!ramSelect.value || !quantitySelect.value) return;
+          if (!ramSelect.value) return;
 
           const selectedOption = ramSelect.options[ramSelect.selectedIndex];
           const optionParts = selectedOption.text.split(" - R$ ");
           const ramType = container.querySelector("h4").textContent;
           const specification = optionParts[0];
           let price = parseFloat(optionParts[1].replace(",", "."));
-          const quantity = parseInt(quantitySelect.value);
 
           // Aplicar desconto de combo se ativo
           let discountText = "";
           if (selectedItems.discount > 0 && selectedItems.storage) {
-            const originalPrice = price;
             price = price * (1 - selectedItems.discount / 100);
             discountText = ` (Combo ${selectedItems.discount}% OFF)`;
           }
 
-          const name = `${ramType} ${specification} (${quantity}x)${discountText}`;
-          const totalPrice = price * quantity;
+          const name = `${ramType} ${specification}${discountText}`;
 
           const existingItem = cart.find((item) => item.name === name);
           if (existingItem) {
             existingItem.quantity += 1;
           } else {
-            cart.push({ name, price: totalPrice, quantity: 1 });
+            cart.push({ name, price: price, quantity: 1 });
           }
 
           updateCartDisplay();
@@ -1143,6 +1176,12 @@
           const productName = btn.dataset.name;
           let price = parseFloat(btn.dataset.price);
 
+          // Detectar se é armazenamento para combo
+          if (productName.includes("SSD") || productName.includes("HD")) {
+            selectedItems.storage = productName;
+            detectCombo();
+          }
+
           // Aplicar desconto de combo se ativo
           let discountText = "";
           if (
@@ -1150,7 +1189,6 @@
             selectedItems.memory &&
             (productName.includes("SSD") || productName.includes("HD"))
           ) {
-            const originalPrice = price;
             price = price * (1 - selectedItems.discount / 100);
             discountText = ` (Combo ${selectedItems.discount}% OFF)`;
           }
@@ -1537,5 +1575,30 @@
         window.open(whatsappUrl, "_blank");
       });
     </script>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-8">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="text-center md:text-left mb-4 md:mb-0">
+            <h3 class="text-xl font-bold text-green-400">DeiviTech</h3>
+            <p class="text-gray-400 text-sm">Hardware & Componentes de Qualidade</p>
+          </div>
+          <div class="flex space-x-4">
+            <a href="https://wa.me/5575981231019" class="text-green-400 hover:text-green-300">
+              <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+            <a href="https://instagram.com/deivitech" class="text-pink-400 hover:text-pink-300">
+              <i class="fab fa-instagram text-2xl"></i>
+            </a>
+          </div>
+        </div>
+        <div class="text-center mt-4 text-gray-500 text-sm">
+          © 2025 DeiviTech - Feira de Santana, BA | Todos os direitos reservados
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/header-offset.js"></script>
   </body>
 </html>
