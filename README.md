@@ -1,108 +1,63 @@
-# 🖥️ DeiviTech Formatação
+# DeiviTech Formatação
 
-**Site profissional especializado em formatação de PCs e notebooks**
+[![Site Online](https://img.shields.io/badge/🌐_Site_Online-Acesse_Aqui-blue?style=for-the-badge)](https://deivisan.github.io/DeiviTech-Formatacao/)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp_Contato-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5575981231019?text=Olá!%20Gostaria%20de%20agendar%20uma%20formatação%20DeiviTech)
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-green)](https://deivisan.github.io/DeiviTech-Formatacao/)
-[![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
-[![HTML5](https://img.shields.io/badge/HTML5-Valid-orange)](https://validator.w3.org/)
+**Serviços profissionais de formatação de PCs e manutenção técnica. Site moderno com animações e design responsivo. Atendimento domiciliar em Feira de Santana e região.**
 
-## 🚀 Especialidades
+## 🚀 Serviços Oferecidos
 
-### Windows 11 Pro
-- Versão original Microsoft
-- Drivers atualizados automaticamente
-- Microsoft Office incluído
-- Antivírus premium
-- Programas essenciais pré-instalados
+### 💻 Formatação Completa
+Reinstalação profissional com drivers atualizados e programas essenciais.
 
-### Windows 10 Pro
-- Sistema estável e confiável
-- Suporte estendido
-- Otimizado para games
-- Office 2021 incluído
+| Sistema | Preço | Prazo | Destaque |
+|---------|-------|-------|----------|
+| Windows 11 Pro | R$ 120,00 | 24h | Segurança máxima |
+| Windows 10 Pro | R$ 100,00 | 24h | Compatibilidade total |
+| Ghost Spectre | R$ 150,00 | 24h | Ultra-otimizado |
+| Arch Linux | **Gratuito** | 48h | Sistema livre |
+| Dual Boot | R$ 250,00 | 48h | Windows + Linux |
 
-### Ghost Spectre
-- Windows ultra-otimizado
-- Máxima performance para gaming
-- Sem bloatwares
-- Baixa latência
-- Foco em velocidade
+### 🔧 Hardware & Upgrades
+Componentes premium para performance máxima.
 
-### Arch Linux
-- Rolling release
-- Customização total
-- AUR repository
-- Performance máxima
-- Ideal para desenvolvedores
+| Componente | Capacidade | Preço | Benefício |
+|------------|------------|-------|-----------|
+| RAM DDR4 | 8GB | R$ 120,00 | Multitarefas fluida |
+| SSD NVMe | 500GB | R$ 150,00 | Boot em segundos |
+| SSD SATA | 240GB | R$ 80,00 | Upgrade acessível |
 
-### Dual Boot
-- Windows + Linux no mesmo PC
-- Boot loader seguro
-- Partições otimizadas
-- Treinamento incluído
+### 🧠 Análise Técnica
+Diagnóstico inteligente via navegador ou formulário detalhado.
 
-### Recovery & Backup
-- Recuperação de dados
-- Backup completo
-- Clonagem de HD
-- Migração para SSD
+### 📅 Agendamento Online
+Calendário interativo com confirmação instantânea.
 
-## 💰 Preços
+## ✨ Por que escolher a DeiviTech?
 
-| Serviço         | Valor     | Tempo |
-| --------------- | --------- | ----- |
-| Windows 11 Pro  | R$ 120,00 | 24h   |
-| Windows 10 Pro  | R$ 100,00 | 24h   |
-| Ghost Spectre   | R$ 150,00 | 24h   |
-| Arch Linux      | R$ 180,00 | 48h   |
-| Dual Boot       | R$ 250,00 | 48h   |
-| Recovery/Backup | R$ 80,00  | 12h   |
+- **Experiência**: 10+ anos formatando PCs
+- **Garantia**: 30 dias de cobertura total
+- **Rapidez**: Serviços em até 24 horas
+- **Conveniência**: Atendimento no seu endereço
+- **Transparência**: Preços claros, sem pegadinhas
 
-## ✨ Diferenciais
+## 🎨 Site com Design Moderno
 
-- ✅ **Garantia de 30 dias**
-- ✅ **150+ PCs formatados**
-- ✅ **98% de satisfação**
-- ✅ **Suporte técnico incluso**
-- ✅ **Atendimento em Feira de Santana e região**
+O site apresenta:
+- **Animações suaves** em cards e transições
+- **Interface responsiva** para mobile e desktop
+- **Detecção automática** de hardware via navegador
+- **Carrinho inteligente** com cálculos em tempo real
+- **Agendamento visual** com calendário interativo
 
-## 🌐 Acesse o Site
+**Acesse agora**: [deivisan.github.io/DeiviTech-Formatacao](https://deivisan.github.io/DeiviTech-Formatacao/)
 
-**[🔗 DeiviTech Formatação](https://deivisan.github.io/DeiviTech-Formatacao/)**
+## 📞 Contato
 
-## 📱 Contato
-
-- **WhatsApp:** [(75) 98123-1019](https://wa.me/5575981231019?text=Olá!%20Gostaria%20de%20agendar%20uma%20formatação%20DeiviTech.)
-- **Email:** deivilsantana@outlook.com
-- **Telefone:** (75) 98123-1019
+- **WhatsApp**: (75) 98123-1019
+- **Email**: deivilsantana@outlook.com
+- **Local**: Feira de Santana, BA
 
 ---
 
-### 🛡️ Garantias e Políticas
-
-- **Garantia:** 30 dias para problemas relacionados à formatação
-- **Backup:** Sempre recomendado antes do serviço
-- **Atendimento:** Feira de Santana, BA e região
-- **Pagamento:** Dinheiro, PIX ou cartão
-
-### 🔧 Tecnologias do Site
-
-- **Frontend:** HTML5, CSS3, JavaScript ES6+
-- **Framework CSS:** Tailwind CSS 2.2.19
-- **Icons:** Font Awesome 6.0.0
-- **Charts:** Chart.js (sistemas.html)
-- **Animation:** CSS3 keyframes + transitions
-- **APIs:** Navigator API para detecção de hardware
-- **Deploy:** GitHub Pages
-
-### 🎯 Funcionalidades
-
-- **Análise IA:** Detecção automática de hardware via navegador
-- **Carrinho Inteligente:** Sistema de compras com combos
-- **Agendamento Online:** Calendário interativo
-- **Progressive Disclosure:** Interface adaptável
-- **Responsivo:** Mobile-first design
-
----
-
-*Desenvolvido por **DeiviTech** - Especialistas em tecnologia*
+**DeiviTech - Transformando PCs em máquinas performáticas**
