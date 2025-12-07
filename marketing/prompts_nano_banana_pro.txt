@@ -1,0 +1,56 @@
+# Prompts para Nano Banana Pro - DeiviTech Marketing
+# Data: 07 de Dezembro de 2025
+
+---
+## 1. Banners Principais (Hero Images para Site/Facebook Cover)
+
+**Prompt 1: Identidade Visual Futurista**
+> "High-quality 3D render, wide banner format. A futuristic computer workshop desk with neon blue and green lighting. On the desk: a sleek gaming PC with RGB fans, a disassembled laptop showing high-tech components, and holographic displays floating above showing 'DeiviTech' logo and system diagnostics. Dark background, cyberpunk aesthetic, clean and professional. Text space on the right side."
+
+**Prompt 2: Foco em Velocidade e Performance**
+> "Dynamic composition, cinematic lighting. A computer processor chip transforming into a speeding rocket. Trails of binary code and neon purple light speed lines. Background is a dark circuit board texture. Represents speed, upgrades, and overclocking. High contrast, 8k resolution. Style: Tech advertisement."
+
+**Prompt 3: Serviço de Formatação Profissional**
+> "Split screen composition. Left side: Old, dusty, gray computer screen with glitch effects and 'slow' icon. Right side: Shiny, brand new monitor displaying a crisp, vibrant Windows 11 desktop with 'DeiviTech Optimized' wallpaper, emitting a bright blue aura. A glowing green progress bar in the middle connects the two, showing '100% Completed'. Professional photography style."
+
+---
+## 2. Banners para Serviços Específicos
+
+### Formatação e Sistemas
+**Prompt 4: Windows & Linux**
+> "Isometric 3D icon set. A glass platform floating in void. On top, 3D logos of Windows 10, Windows 11, Tux (Linux penguin), and Chrome logo, all glowing. They are connected by circuit lines to a central shield icon representing security. Purple and Blue color palette. Minimalist and modern."
+
+**Prompt 5: Ghost Spectre (Gamer)**
+> "Dark aggressive gamer aesthetic. A translucent ghost silhouette with glowing purple eyes holding a gaming controller. Background is a high-end gaming PC setup with aggressive red and purple RGB lighting. Smoke effects. Text overlay space: 'Ghost Spectre - Maximum FPS'."
+
+### Hardware & Upgrades
+**Prompt 6: SSD vs HD**
+> "Macro photography shot. A mechanical Hard Drive (HDD) looking heavy and metallic next to a slim, futuristic SSD with glowing SATA connectors. The SSD is emitting green speed sparks. '5x Faster' text implied by motion blur on the SSD. Dark background with gold accents."
+
+**Prompt 7: Memória RAM e Combos**
+> "Product showcase style. Two sticks of RGB DDR4 RAM crossing over a 2.5 inch SSD, forming an 'X' shape. They are floating against a blurred background of a motherboard. 'COMBO' text in 3D gold letters floating above. Sparkles and lens flare. High detailed texture."
+
+### Análise IA
+**Prompt 8: Cérebro Digital**
+> "Abstract tech art. A glowing digital brain made of circuit nodes and fiber optics in orange and blue. It is scanning a wireframe model of a computer tower. Data streams flowing from the PC to the brain. Represents 'AI Diagnostics'. Clean, medical-tech look."
+
+---
+## 3. Social Media (Instagram Stories / WhatsApp Status) - 9:16 Ratio
+
+**Prompt 9: Promoção Relâmpago**
+> "Vertical format. Bright yellow background with hazard tape borders. Big 3D red text: 'ALERTA DE OFERTA'. A gaming mouse and an SSD floating in the center. Confetti effects. Call to action arrow pointing down. High energy, vibrant colors."
+
+**Prompt 10: Antes e Depois (Velocidade)**
+> "Vertical split screen. Top half: Black and white photo of a person frustrated at a computer. Bottom half: Color photo of the same person happy, giving a thumbs up next to a glowing PC. Green arrow pointing from top to bottom. Text placeholder: 'Seu PC lento?' -> 'DeiviTech resolve'."
+
+**Prompt 11: Depoimento/Garantia**
+> "Vertical format. A 3D gold seal badge saying '30 Dias Garantia'. background is a dark blue gradient with subtle circuit patterns. Professional and trustworthy look. Space for text in the center."
+
+---
+## 4. Estilo "Nano Banana Pro" Específico (Artístico/Abstrato)
+
+**Prompt 12: A Mascote Tech**
+> "Cute 3D character design. A robotic banana character wearing a technician's headset and holding a screwdriver. The banana is yellow with metallic silver peel. It is standing on a motherboard city. Friendly, cartoonish, Pixar-style render. Good for stickers or brand mascot."
+
+**Prompt 13: O Futuro da Manutenção**
+> "Synthwave style landscape. A road made of motherboard traces leading to a sun that is a glowing power button. Retro 80s grid mountains. Text 'DeiviTech' written in chrome retro font in the sky. Purple and cyan neon colors."

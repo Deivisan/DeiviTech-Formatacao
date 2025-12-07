@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Office - Nano Banana Preview</title>
+    <style>
+        body { margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #222; font-family: 'Helvetica Neue', sans-serif; }
+        .ad-container {
+            width: 1080px;
+            height: 1920px; /* Stories Vertical */
+            background: #fff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            transform: scale(0.4); /* Preview scale */
+        }
+        
+        .split-top {
+            height: 50%;
+            background: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            filter: grayscale(100%);
+        }
+        .split-bottom {
+            height: 50%;
+            background: linear-gradient(to bottom, #fff, #f0f9ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .emoji-icon { font-size: 200px; }
+        
+        .lightning {
+            position: absolute;
+            top: 50%; left: 0; width: 100%; height: 10px;
+            background: #00ff00;
+            box-shadow: 0 0 20px #00ff00;
+            z-index: 10;
+        }
+        
+        .text-top {
+            position: absolute;
+            top: 100px;
+            color: #fff;
+            font-size: 80px;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .text-bottom {
+            position: absolute;
+            bottom: 200px;
+            color: #333;
+            font-size: 60px;
+            text-align: center;
+            width: 80%;
+        }
+        
+        .cta-sticker {
+            position: absolute;
+            bottom: 100px;
+            background: #007bff;
+            color: white;
+            padding: 30px 60px;
+            border-radius: 50px;
+            font-size: 50px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-container">
+        <div class="split-top">
+            <div class="text-top">ANTES</div>
+            <div class="emoji-icon">🐌⏳</div>
+        </div>
+        
+        <div class="lightning"></div>
+        
+        <div class="split-bottom">
+            <div class="emoji-icon">🚀✨</div>
+            <div class="text-bottom">
+                <strong>PC NOVO? NÃO.</strong><br>
+                É FORMATAÇÃO DEIVITECH.
+            </div>
+            <div class="cta-sticker">Ver Preços</div>
+        </div>
+    </div>
+</body>
+</html>

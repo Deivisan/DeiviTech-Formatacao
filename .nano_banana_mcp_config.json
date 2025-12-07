@@ -1,0 +1,15 @@
+{
+  "mcp_server": "nano-banana-core",
+  "version": "2.5-flash-turbo",
+  "capabilities": [
+    "visual_prompt_engineering",
+    "creative_marketing_generation",
+    "aesthetic_analysis"
+  ],
+  "extensions": {
+    "image_gen_bridge": "active",
+    "style_transfer": "cyberpunk_tech",
+    "tone": "energetic_professional"
+  },
+  "status": "MOUNTED"
+}
