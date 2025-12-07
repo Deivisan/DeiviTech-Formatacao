@@ -61,3 +61,8 @@ coverage/
 
 # Arquivos de documentação temporária
 temp-docs/
+
+# NotebookLM MCP
+chrome_profile_notebooklm/
+notebooklm-config.json
+mcp/notebooklm-mcp/.venv/

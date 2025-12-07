@@ -75,6 +75,11 @@ O site apresenta design responsivo com animações suaves e funcionalidades inte
 
 **Acesse o site completo**: [deivisan.github.io/DeiviTech-Formatacao](https://deivisan.github.io/DeiviTech-Formatacao/)
 
+## 🔗 Integração NotebookLM (MCP)
+
+Adicionamos um utilitário local para executar o NotebookLM como um servidor MCP e integrá-lo ao VS Code Insiders. Veja a pasta `mcp/` para guias rápidos, scripts de instalação e um `mcp.json` de exemplo para conexão local.
+
+
 ## 📞 Contato e Atendimento
 
 - **WhatsApp**: (75) 98123-1019
