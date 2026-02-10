@@ -211,7 +211,10 @@ Sem isso, os assets (CSS, JS) não carregam.
 
 ## 🐛 BUGS CONHECIDOS
 
-Nenhum! 🎉 Tudo funcionando conforme esperado.
+- ✅ TypeScript errors em animation variants - CORRIGIDO
+  - Removido cubic bezier arrays de `fadeInUp`, `fadeIn`, `scaleIn`
+  - Usando `duration` apenas (Framer Motion defaults)
+  - commit: c2fe991
 
 ---
 
