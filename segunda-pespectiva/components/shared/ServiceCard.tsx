@@ -58,7 +58,7 @@ export function ServiceCard({ servico, onAddToCart, tipo = 'b2c' }: ServiceCardP
 
       {/* Benefits */}
       <ul className="space-y-2 mb-6">
-        {servico.benefícios.slice(0, 3).map((beneficio, idx) => (
+        {servico.beneficios.slice(0, 3).map((beneficio, idx) => (
           <li key={idx} className="flex items-center gap-2 text-sm text-slate-300">
             <Check className="w-4 h-4 text-green-500 flex-shrink-0" />
             <span>{beneficio}</span>

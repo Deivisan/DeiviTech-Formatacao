@@ -1,0 +1,37 @@
+{
+  "app": {
+    "[project]/Projetos/DeiviTech-Formatacao/segunda-pespectiva/app/_not-found/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Projetos/DeiviTech-Formatacao/segunda-pespectiva/app/b2b/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Projetos/DeiviTech-Formatacao/segunda-pespectiva/app/b2b/planos/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Projetos/DeiviTech-Formatacao/segunda-pespectiva/app/b2b/produtos/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Projetos/DeiviTech-Formatacao/segunda-pespectiva/app/b2c/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Projetos/DeiviTech-Formatacao/segunda-pespectiva/app/b2c/produtos/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Projetos/DeiviTech-Formatacao/segunda-pespectiva/app/b2c/servicos/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Projetos/DeiviTech-Formatacao/segunda-pespectiva/app/cnpj/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Projetos/DeiviTech-Formatacao/segunda-pespectiva/app/cpf/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Projetos/DeiviTech-Formatacao/segunda-pespectiva/app/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

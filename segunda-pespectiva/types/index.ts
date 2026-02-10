@@ -24,7 +24,7 @@ export interface Servico {
   duracao: string;
   categoria: 'formatacao' | 'hardware' | 'consultoria' | 'manutencao';
   icon: string;
-  benefícios: string[];
+  beneficios: string[];
   garantia?: string;
 }
 

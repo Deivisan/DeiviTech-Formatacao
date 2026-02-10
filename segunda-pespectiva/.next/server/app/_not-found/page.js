@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_not-found/page.js")
+R.c("server/chunks/ssr/Projetos_DeiviTech-Formatacao_segunda-pespectiva_cc258adf._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__aaded84f._.js")
+R.c("server/chunks/ssr/e4fc1_next_dist_esm_build_templates_app-page_163ff39c.js")
+R.c("server/chunks/ssr/[root-of-the-server]__d0cc6b99._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__cc9a2448._.js")
+R.c("server/chunks/ssr/_67b75eb7._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__e9b8fad2._.js")
+R.c("server/chunks/ssr/e4fc1_next_dist_client_components_387914aa._.js")
+R.c("server/chunks/ssr/e4fc1_next_dist_client_components_builtin_forbidden_aa783214.js")
+R.c("server/chunks/ssr/94564_segunda-pespectiva__next-internal_server_app__not-found_page_actions_e60aa189.js")
+R.m(82780)
+module.exports=R.m(82780).exports

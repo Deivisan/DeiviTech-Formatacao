@@ -1,0 +1,13 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/b2b/page": "app/b2b/page.js",
+  "/b2b/planos/page": "app/b2b/planos/page.js",
+  "/b2b/produtos/page": "app/b2b/produtos/page.js",
+  "/b2c/page": "app/b2c/page.js",
+  "/b2c/produtos/page": "app/b2c/produtos/page.js",
+  "/b2c/servicos/page": "app/b2c/servicos/page.js",
+  "/cnpj/page": "app/cnpj/page.js",
+  "/cpf/page": "app/cpf/page.js",
+  "/page": "app/page.js"
+}

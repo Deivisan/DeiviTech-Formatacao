@@ -178,7 +178,7 @@ export default function B2CPage() {
                     </div>
                     
                     <ul className="space-y-2 mb-4">
-                      {servico.benefícios.slice(0, 3).map((b, i) => (
+                      {servico.beneficios.slice(0, 3).map((b, i) => (
                         <li key={i} className="flex items-center gap-2 text-xs text-slate-500">
                           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
                           {b}
