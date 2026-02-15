@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDs & SSDs Testados por IA — DeiviTech Formatação</title>
+    <meta name="description"
+        content="HDs e SSDs testados com ferramentas profissionais Linux e análise por IA. WD Blue, WD Black com case USB externo. Para Xbox 360, câmeras, PS4, NAS e mais.">
+    <meta name="keywords"
+        content="HD testado, SSD, WD Blue, WD Black, case USB, HD externo, Xbox 360 desbloqueio, DVR câmera, DeiviTech, Feira de Santana">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --bg: #0b1120;
+            --surface: #111827;
+            --card: #1a2332;
+            --border: #1e3a5f;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --primary: #3b82f6;
+            --accent: #06d6a0;
+            --gold: #f59e0b;
+            --danger: #ef4444;
+            --whatsapp: #25d366;
+            --gradient: linear-gradient(135deg, #3b82f6, #06d6a0);
+            --glow: 0 0 40px rgba(6, 214, 160, .15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        /* ── NAV ── */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(11, 17, 32, .92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: .75rem 0
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem
+        }
+
+        .nav-logo i {
+            color: var(--accent)
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center
+        }
+
+        .nav-links a {
+            font-size: .875rem;
+            font-weight: 500;
+            color: var(--muted);
+            transition: color .2s
+        }
+
+        .nav-links a:hover {
+            color: #fff
+        }
+
+        .nav-links a.active {
+            color: var(--accent)
+        }
+
+        .nav-cta {
+            background: var(--whatsapp);
+            color: #fff;
+            padding: .5rem 1rem;
+            border-radius: .5rem;
+            font-weight: 600;
+            font-size: .875rem;
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            transition: transform .2s, box-shadow .2s
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, .3)
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer
+        }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 8rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -25%;
+            width: 150%;
+            height: 200%;
+            background: radial-gradient(ellipse at 40% 30%, rgba(59, 130, 246, .08) 0%, transparent 60%);
+            pointer-events: none
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: rgba(59, 130, 246, .12);
+            border: 1px solid rgba(59, 130, 246, .25);
+            padding: .5rem 1.25rem;
+            border-radius: 2rem;
+            font-size: .8rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1rem
+        }
+
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        .hero p {
+            max-width: 640px;
+            margin: 0 auto 2rem;
+            color: var(--muted);
+            font-size: 1.1rem;
+            line-height: 1.7
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            padding: 4rem 1.5rem
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: auto
+        }
+
+        .section-label {
+            font-size: .75rem;
+            text-transform: uppercase;
+            letter-spacing: .15em;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: .5rem
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 800;
+            margin-bottom: 1rem
+        }
+
+        .section-sub {
+            color: var(--muted);
+            max-width: 600px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem
+        }
+
+        /* ── PRODUCT CARDS ── */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem
+        }
+
+        .product-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: transform .3s, box-shadow .3s, border-color .3s;
+            position: relative;
+            overflow: hidden
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--glow);
+            border-color: var(--accent)
+        }
+
+        .product-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity .3s
+        }
+
+        .product-card:hover::after {
+            opacity: 1
+        }
+
+        .card-badge {
+            display: inline-block;
+            padding: .25rem .75rem;
+            border-radius: 1rem;
+            font-size: .7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            margin-bottom: 1rem
+        }
+
+        .badge-tested {
+            background: rgba(6, 214, 160, .15);
+            color: var(--accent);
+            border: 1px solid rgba(6, 214, 160, .3)
+        }
+
+        .badge-premium {
+            background: rgba(245, 158, 11, .15);
+            color: var(--gold);
+            border: 1px solid rgba(245, 158, 11, .3)
+        }
+
+        .card-model {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: .25rem
+        }
+
+        .card-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: .75rem;
+            margin: 1.25rem 0
+        }
+
+        .spec-item {
+            background: var(--surface);
+            border-radius: .5rem;
+            padding: .5rem;
+            text-align: center
+        }
+
+        .spec-val {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff
+        }
+
+        .spec-label {
+            font-size: .65rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: .05em
+        }
+
+        .card-price {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--accent);
+            margin: .75rem 0 .25rem
+        }
+
+        .card-price-note {
+            font-size: .85rem;
+            color: var(--muted);
+            margin-bottom: 1rem
+        }
+
+        .card-price-note strong {
+            color: var(--gold)
+        }
+
+        .card-combo {
+            background: rgba(245, 158, 11, .08);
+            border: 1px solid rgba(245, 158, 11, .2);
+            border-radius: .75rem;
+            padding: .75rem 1rem;
+            margin-bottom: 1.25rem
+        }
+
+        .card-combo-title {
+            font-size: .75rem;
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: .25rem
+        }
+
+        .card-combo-price {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff
+        }
+
+        .card-actions {
+            display: flex;
+            gap: .75rem
+        }
+
+        .btn {
+            flex: 1;
+            padding: .75rem;
+            border-radius: .5rem;
+            font-weight: 700;
+            font-size: .85rem;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .4rem;
+            transition: transform .2s, box-shadow .2s
+        }
+
+        .btn:hover {
+            transform: translateY(-1px)
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 4px 20px rgba(59, 130, 246, .4)
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: #fff
+        }
+
+        .btn-whatsapp:hover {
+            box-shadow: 0 4px 20px rgba(37, 211, 102, .4)
+        }
+
+        /* ── USE CASES ── */
+        .uses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem
+        }
+
+        .use-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: transform .3s, border-color .3s
+        }
+
+        .use-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary)
+        }
+
+        .use-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: .75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1rem
+        }
+
+        .use-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: .5rem
+        }
+
+        .use-card p {
+            font-size: .85rem;
+            color: var(--muted);
+            line-height: 1.6
+        }
+
+        /* ── METHODOLOGY ── */
+        .method-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            counter-reset: step
+        }
+
+        .method-step {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.75rem;
+            text-align: center;
+            position: relative;
+            counter-increment: step
+        }
+
+        .method-step::before {
+            content: counter(step);
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: #fff;
+            font-size: .8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .method-step i {
+            font-size: 2rem;
+            margin-bottom: .75rem;
+            display: block
+        }
+
+        .method-step h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: .4rem
+        }
+
+        .method-step p {
+            font-size: .8rem;
+            color: var(--muted);
+            line-height: 1.5
+        }
+
+        /* ── W10 ALERT ── */
+        .w10-alert {
+            background: linear-gradient(135deg, rgba(239, 68, 68, .08), rgba(245, 158, 11, .08));
+            border: 1px solid rgba(239, 68, 68, .2);
+            border-radius: 1rem;
+            padding: 2rem
+        }
+
+        .w10-alert h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: .75rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem
+        }
+
+        .w10-alert p {
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            font-size: .9rem
+        }
+
+        .w10-solutions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem
+        }
+
+        .w10-sol {
+            background: var(--surface);
+            border-radius: .75rem;
+            padding: 1rem;
+            text-align: center
+        }
+
+        .w10-sol i {
+            font-size: 1.5rem;
+            margin-bottom: .5rem;
+            display: block
+        }
+
+        .w10-sol strong {
+            font-size: .85rem;
+            display: block;
+            margin-bottom: .25rem
+        }
+
+        .w10-sol span {
+            font-size: .75rem;
+            color: var(--muted)
+        }
+
+        /* ── AI SECTION ── */
+        .ai-section {
+            background: var(--surface);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden
+        }
+
+        .ai-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(59, 130, 246, .06), transparent);
+            pointer-events: none
+        }
+
+        .ai-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem
+        }
+
+        .ai-feat {
+            display: flex;
+            align-items: start;
+            gap: .75rem
+        }
+
+        .ai-feat i {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-top: .15rem
+        }
+
+        .ai-feat p {
+            font-size: .85rem;
+            line-height: 1.5
+        }
+
+        .ai-feat strong {
+            color: #fff;
+            display: block
+        }
+
+        /* ── CTA ── */
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, var(--surface), var(--card));
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            border: 1px solid var(--border)
+        }
+
+        .cta-section h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: .5rem
+        }
+
+        .cta-section p {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            font-size: .95rem
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: var(--whatsapp);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: .75rem;
+            font-weight: 800;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: transform .2s, box-shadow .2s
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, .35)
+        }
+
+        .cta-note {
+            font-size: .75rem;
+            color: var(--muted);
+            margin-top: 1rem
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: .8rem
+        }
+
+        footer a {
+            color: var(--accent)
+        }
+
+        /* ── SLOGAN ── */
+        .slogan {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 1rem;
+            color: var(--muted);
+            font-style: italic
+        }
+
+        .slogan span {
+            color: var(--accent);
+            font-weight: 700
+        }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .6s ease, transform .6s ease
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width:768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--surface);
+                flex-direction: column;
+                padding: 1rem;
+                gap: .75rem;
+                border-bottom: 1px solid var(--border)
+            }
+
+            .nav-links.open {
+                display: flex
+            }
+
+            .menu-toggle {
+                display: block
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr
+            }
+
+            .card-specs {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══ NAVIGATION ═══ -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo"><i class="fas fa-microchip"></i> DeiviTech</a>
+            <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links">
+                <a href="../index.html">Início</a>
+                <a href="../formatacao.html">Formatação</a>
+                <a href="../hardware.html">Hardware</a>
+                <a href="testes-hardware.html" class="active">Testes HD</a>
+                <a href="../analise.html">Análise IA</a>
+                <a href="https://wa.me/5575981231019?text=Olá! Vi o site e quero saber mais sobre os HDs testados."
+                    target="_blank" class="nav-cta">
+                    <i class="fab fa-whatsapp"></i> Falar Comigo
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+        <div class="hero-badge"><i class="fas fa-robot"></i> Testes automatizados por Inteligência Artificial</div>
+        <h1>O <span>Poder de um HD</span><br>na Palma da Sua Mão</h1>
+        <p>Cada HD e SSD que vendemos é rigorosamente testado com ferramentas profissionais Linux e análise por IA. Você
+            sabe exatamente o que está comprando — e para que serve.</p>
+    </section>
+
+    <!-- ═══ PRODUCTS ═══ -->
+    <section class="reveal">
+        <div class="section-inner">
+            <div class="section-label">Estoque Verificado</div>
+            <div class="section-title">HDs Disponíveis</div>
+            <div class="section-sub">Todos os nossos discos passam por teste completo: SMART, velocidade e varredura de
+                superfície. Converse comigo para saber disponibilidade e negociar.</div>
+
+            <div class="products-grid">
+
+                <!-- WD BLUE 500GB -->
+                <div class="product-card">
+                    <span class="card-badge badge-tested"><i class="fas fa-check-circle"></i> Testado por IA</span>
+                    <div class="card-model">WD Blue 500GB</div>
+                    <div style="font-size:.8rem;color:var(--muted)">WDC WD5000BPVT • 5400 RPM • SATA II</div>
+
+                    <div class="card-specs">
+                        <div class="spec-item">
+                            <div class="spec-val" style="color:var(--accent)">96%</div>
+                            <div class="spec-label">Saúde</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-val">81 MB/s</div>
+                            <div class="spec-label">Leitura</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-val" style="color:var(--accent)">0</div>
+                            <div class="spec-label">Bad Blocks</div>
+                        </div>
+                    </div>
+
+                    <div class="card-price">R$ 50</div>
+                    <div class="card-price-note">Somente o HD interno</div>
+
+                    <div class="card-combo">
+                        <div class="card-combo-title"><i class="fas fa-box-open"></i> Combo HD Externo</div>
+                        <div class="card-combo-price">R$ 100 <span
+                                style="font-size:.75rem;font-weight:400;color:var(--muted)">— HD + Case USB 3.0</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="reports/hd-report-WD-WXU1CA1L1134.html" class="btn btn-primary"><i
+                                class="fas fa-file-medical-alt"></i> Ver Relatório</a>
+                        <a href="https://wa.me/5575981231019?text=Olá! Quero saber sobre o HD WD Blue 500GB testado."
+                            target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Comprar</a>
+                    </div>
+                </div>
+
+                <!-- WD BLACK 500GB -->
+                <div class="product-card">
+                    <span class="card-badge badge-premium"><i class="fas fa-crown"></i> Linha Premium</span>
+                    <div class="card-model">WD Black 500GB</div>
+                    <div style="font-size:.8rem;color:var(--muted)">Série Performance • 7200 RPM • SATA III • Cache 32MB
+                    </div>
+
+                    <div class="card-specs">
+                        <div class="spec-item">
+                            <div class="spec-val">7200</div>
+                            <div class="spec-label">RPM</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-val">~120 MB/s</div>
+                            <div class="spec-label">Leitura Est.</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-val" style="color:var(--gold)">Pro</div>
+                            <div class="spec-label">Classe</div>
+                        </div>
+                    </div>
+
+                    <div class="card-price">R$ 70</div>
+                    <div class="card-price-note">Somente o HD interno</div>
+
+                    <div class="card-combo">
+                        <div class="card-combo-title"><i class="fas fa-box-open"></i> Combo HD Externo Premium</div>
+                        <div class="card-combo-price">R$ 120 <span
+                                style="font-size:.75rem;font-weight:400;color:var(--muted)">— HD + Case USB 3.0</span>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <a href="https://wa.me/5575981231019?text=Olá! Me interesso pelo WD Black 500GB. Qual o preço?"
+                            target="_blank" class="btn btn-whatsapp" style="flex:1"><i class="fab fa-whatsapp"></i>
+                            Falar sobre esse HD</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ PARA QUE SERVE ═══ -->
+    <section class="reveal" style="background:var(--surface)">
+        <div class="section-inner">
+            <div class="section-label">Versátil & Poderoso</div>
+            <div class="section-title">Um HD serve pra muito mais do que você imagina</div>
+            <div class="section-sub">De armazenamento básico a desbloquear consoles — um HD de qualidade abre portas
+                para dezenas de possibilidades.</div>
+
+            <div class="uses-grid">
+
+                <div class="use-card">
+                    <div class="use-icon" style="background:rgba(168,85,247,.15);color:#a855f7"><i
+                            class="fas fa-gamepad"></i></div>
+                    <h3>Xbox 360 — Desbloqueio via HD</h3>
+                    <p>Com o método <strong>HDD Exploit</strong>, é possível conectar um HD com firmware especial e
+                        desbloquear completamente o Xbox 360 — sem chip, sem solda. Ideal pra brasileiros que querem
+                        reviver o console com centenas de jogos.</p>
+                </div>
+
+                <div class="use-card">
+                    <div class="use-icon" style="background:rgba(59,130,246,.15);color:#3b82f6"><i
+                            class="fas fa-playstation"></i></div>
+                    <h3>PS3 & PS4 — Expansão de Armazenamento</h3>
+                    <p>O PS4 aceita trocar o HD interno por um de 500GB ou mais. O PS3 também suporta upgrade. Mais
+                        espaço = mais jogos instalados sem precisar ficar deletando.</p>
+                </div>
+
+                <div class="use-card">
+                    <div class="use-icon" style="background:rgba(239,68,68,.15);color:#ef4444"><i
+                            class="fas fa-video"></i></div>
+                    <h3>DVR / NVR — Câmeras de Segurança</h3>
+                    <p>Sistemas de câmeras usam HDs para armazenar gravações 24/7. Um HD de 500GB grava até <strong>15
+                            dias</strong> com 4 câmeras em qualidade SD. É a forma mais acessível de montar um sistema
+                        de segurança.</p>
+                </div>
+
+                <div class="use-card">
+                    <div class="use-icon" style="background:rgba(6,214,160,.15);color:#06d6a0"><i
+                            class="fas fa-server"></i></div>
+                    <h3>NAS — Servidor de Arquivos</h3>
+                    <p>Monte um mini-servidor pessoal (NAS) com HDs antigos para compartilhar arquivos em rede, fazer
+                        backup automático e até rodar seu próprio "Google Drive" em casa.</p>
+                </div>
+
+                <div class="use-card">
+                    <div class="use-icon" style="background:rgba(245,158,11,.15);color:#f59e0b"><i
+                            class="fas fa-briefcase"></i></div>
+                    <h3>Empresas — Armazenamento Corporativo</h3>
+                    <p>Para pequenas empresas, um HD externo é a solução mais simples para backup de documentos fiscais,
+                        notas, planilhas e dados de clientes. Seguro, offline e barato.</p>
+                </div>
+
+                <div class="use-card">
+                    <div class="use-icon" style="background:rgba(99,102,241,.15);color:#6366f1"><i
+                            class="fas fa-laptop-code"></i></div>
+                    <h3>SOs Portáteis — Linux, Windows To Go</h3>
+                    <p>Carregue um sistema operacional completo no HD externo. Plugue em qualquer PC e inicie seu
+                        ambiente personalizado — ótimo para técnicos, estudantes e profissionais de TI.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ COMBO HIGHLIGHT ═══ -->
+    <section class="reveal">
+        <div class="section-inner">
+            <div
+                style="background:linear-gradient(135deg,rgba(59,130,246,.08),rgba(6,214,160,.08));border:1px solid var(--border);border-radius:1.25rem;padding:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center">
+                <div>
+                    <div class="section-label">Melhor Negócio</div>
+                    <div class="section-title" style="margin-bottom:.75rem">HD + Case USB = HD Externo</div>
+                    <p style="color:var(--muted);line-height:1.7;margin-bottom:1.25rem;font-size:.9rem">
+                        Transforme qualquer HD interno em um <strong style="color:#fff">HD externo portátil</strong> com
+                        case USB 3.0.
+                        Plugue via USB em qualquer computador, notebook, Smart TV, PS4, Xbox ou DVR de câmeras.
+                    </p>
+                    <div style="display:flex;gap:1rem;flex-wrap:wrap">
+                        <div
+                            style="background:var(--card);border-radius:.75rem;padding:1rem 1.25rem;border:1px solid var(--border)">
+                            <div style="font-size:.7rem;color:var(--muted);text-transform:uppercase">HD Interno</div>
+                            <div style="font-size:1.5rem;font-weight:800">a partir de R$ 50</div>
+                        </div>
+                        <div
+                            style="background:var(--card);border-radius:.75rem;padding:1rem 1.25rem;border:1px solid var(--border)">
+                            <div style="font-size:.7rem;color:var(--muted);text-transform:uppercase">Case USB 3.0</div>
+                            <div style="font-size:1.5rem;font-weight:800;color:var(--gold)">+ R$ 50</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align:center">
+                    <i class="fas fa-hard-drive"
+                        style="font-size:5rem;color:var(--primary);opacity:.2;margin-bottom:1rem;display:block"></i>
+                    <p style="font-size:.85rem;color:var(--muted)">Case em alumínio USB 3.0 — compatível com SATA 2.5" e
+                        3.5"</p>
+                    <a href="https://wa.me/5575981231019?text=Olá! Quero montar um combo HD + Case. Qual a disponibilidade?"
+                        target="_blank" class="btn btn-whatsapp"
+                        style="display:inline-flex;margin-top:1rem;flex:unset;padding:.75rem 2rem">
+                        <i class="fab fa-whatsapp"></i> Montar Meu Combo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ METHODOLOGY ═══ -->
+    <section class="reveal" style="background:var(--surface)">
+        <div class="section-inner">
+            <div class="section-label"><i class="fas fa-flask"></i> Metodologia IA</div>
+            <div class="section-title">Como Testamos Cada Dispositivo</div>
+            <div class="section-sub">Processo em 4 etapas com ferramentas profissionais Linux e análise por Inteligência
+                Artificial.</div>
+
+            <div class="method-steps">
+                <div class="method-step">
+                    <i class="fas fa-clipboard-check" style="color:var(--primary)"></i>
+                    <h3>Análise SMART</h3>
+                    <p>Leitura completa dos dados SMART via smartctl. Verificamos setores realocados, horas de uso,
+                        temperatura e integridade geral.</p>
+                </div>
+                <div class="method-step">
+                    <i class="fas fa-tachometer-alt" style="color:var(--accent)"></i>
+                    <h3>Teste de Velocidade</h3>
+                    <p>Medição de leitura e escrita com hdparm — incluindo velocidade cached e real do buffer direto do
+                        disco.</p>
+                </div>
+                <div class="method-step">
+                    <i class="fas fa-search" style="color:var(--gold)"></i>
+                    <h3>Varredura de Superfície</h3>
+                    <p>Verificação não destrutiva com badblocks para detectar falhas na superfície magnética do disco.
+                    </p>
+                </div>
+                <div class="method-step">
+                    <i class="fas fa-brain" style="color:#a855f7"></i>
+                    <h3>Análise por IA</h3>
+                    <p>Inteligência Artificial analisa todos os resultados, calcula a saúde do disco, classifica o nível
+                        de reuso e gera um relatório completo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ AI EXPERTISE ═══ -->
+    <section class="reveal">
+        <div class="section-inner">
+            <div class="ai-section">
+                <div class="section-label"><i class="fas fa-robot"></i> Diferencial DeiviTech</div>
+                <div class="section-title">Formatação com Inteligência Artificial Incluída</div>
+                <p style="color:var(--muted);line-height:1.7;font-size:.9rem;max-width:700px">
+                    Toda formatação DeiviTech vai além do básico. Instalamos sistemas operacionais otimizados <strong
+                        style="color:#fff">com assistentes de IA integrados</strong> que melhoram o fluxo de trabalho do
+                    cliente — seja ele estudante, empresário ou gamer.
+                </p>
+
+                <div class="ai-features">
+                    <div class="ai-feat">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>Diagnóstico automatizado</strong>Análise completa de hardware antes de qualquer
+                            serviço</p>
+                    </div>
+                    <div class="ai-feat">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>Assistentes IA instalados</strong>Ferramentas de IA para produtividade no dia a dia
+                        </p>
+                    </div>
+                    <div class="ai-feat">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>Sistemas otimizados</strong>Ghost Spectre, Chrome OS, Linux — configurados sob medida
+                        </p>
+                    </div>
+                    <div class="ai-feat">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>Relatórios de teste</strong>Cada dispositivo vem com relatório técnico completo
+                            gerado por IA</p>
+                    </div>
+                    <div class="ai-feat">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>Consultoria personalizada</strong>Recomendações de upgrade e melhoria baseadas em
+                            dados reais</p>
+                    </div>
+                    <div class="ai-feat">
+                        <i class="fas fa-check-circle"></i>
+                        <p><strong>Amplificação do trabalho</strong>Configuração de IA para melhorar a qualidade do
+                            trabalho do cliente</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ WINDOWS 10 ALERT ═══ -->
+    <section class="reveal">
+        <div class="section-inner">
+            <div class="w10-alert">
+                <h3><i class="fas fa-exclamation-triangle" style="color:var(--danger)"></i> Windows 10 perdeu suporte em
+                    Outubro 2025</h3>
+                <p>A Microsoft encerrou oficialmente o suporte ao Windows 10 em 14 de outubro de 2025. Isso significa
+                    <strong style="color:#fff">zero atualizações de segurança</strong>, zero correções de bugs e
+                    vulnerabilidade a malware. Se você ainda usa Windows 10, é hora de agir.</p>
+                <p style="font-size:.85rem">Mas calma — temos soluções para <strong style="color:#fff">todos os bolsos e
+                        necessidades</strong>:</p>
+
+                <div class="w10-solutions">
+                    <div class="w10-sol">
+                        <i class="fas fa-ghost" style="color:#a855f7"></i>
+                        <strong>Ghost Spectre</strong>
+                        <span>Windows otimizado, leve e sem bloatware</span>
+                    </div>
+                    <div class="w10-sol">
+                        <i class="fab fa-chrome" style="color:#4285f4"></i>
+                        <strong>Chrome OS Flex</strong>
+                        <span>Gratuito, ideal para PCs antigos</span>
+                    </div>
+                    <div class="w10-sol">
+                        <i class="fab fa-linux" style="color:var(--accent)"></i>
+                        <strong>Linux Ubuntu</strong>
+                        <span>Poderoso, seguro e gratuito</span>
+                    </div>
+                    <div class="w10-sol">
+                        <i class="fab fa-windows" style="color:#0078d4"></i>
+                        <strong>Windows 11</strong>
+                        <span>Para hardware compatível (8ª gen+)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SLOGAN ═══ -->
+    <div class="slogan reveal">
+        "O céu é o limite" — <span>Até seu computador antigo merece uma segunda chance.</span>
+    </div>
+
+    <!-- ═══ CTA ═══ -->
+    <section class="reveal">
+        <div class="section-inner">
+            <div class="cta-section">
+                <h2>Quer saber mais ou negociar?</h2>
+                <p>Fale diretamente comigo no WhatsApp. Preços, disponibilidade, combos personalizados — tudo é
+                    conversado pessoalmente.</p>
+                <a href="https://wa.me/5575981231019?text=Olá! Vi o site de testes de hardware e quero saber mais."
+                    target="_blank" class="cta-btn">
+                    <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+                </a>
+                <div class="cta-note">DeiviTech Formatação — Feira de Santana, BA — Seg a Sáb 8h–18h</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+        <p>© 2025 <a href="../index.html">DeiviTech Formatação</a> — Feira de Santana, BA</p>
+        <p style="margin-top:.5rem">Testes • Hardware • Sistemas • IA</p>
+    </footer>
+
+    <!-- ═══ SCROLL REVEAL ═══ -->
+    <script>
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    </script>
+
+</body>
+
+</html>

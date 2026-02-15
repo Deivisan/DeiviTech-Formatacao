@@ -1,3 +1,0 @@
-module.exports=[68132,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(41676);a.n(d("[project]/Projetos/DeiviTech-Formatacao/segunda-pespectiva/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},3073,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(41676);a.n(d("[project]/Projetos/DeiviTech-Formatacao/segunda-pespectiva/node_modules/next/dist/client/components/builtin/global-error.js"))},2811,a=>{"use strict";a.i(68132);var b=a.i(3073);a.n(b)}];
-
-//# sourceMappingURL=e4fc1_next_dist_client_components_builtin_global-error_b04745ba.js.map

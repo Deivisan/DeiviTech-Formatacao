@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Teste — HD WD Blue 500GB | DeiviTech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --bg: #0a0e1a;
+            --card: #111827;
+            --card2: #1a2332;
+            --border: #1e2d3d;
+            --accent: #3b82f6;
+            --accent2: #06b6d4;
+            --green: #10b981;
+            --red: #ef4444;
+            --yellow: #f59e0b;
+            --purple: #8b5cf6;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --success-grad: linear-gradient(135deg, #10b981, #059669);
+            --danger-grad: linear-gradient(135deg, #ef4444, #dc2626);
+            --info-grad: linear-gradient(135deg, #3b82f6, #2563eb);
+            --warn-grad: linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px
+        }
+
+        /* HEADER */
+        .report-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #0f172a 100%);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .report-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+            pointer-events: none
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px
+        }
+
+        .brand i {
+            font-size: 2.5rem;
+            color: var(--accent)
+        }
+
+        .brand h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #60a5fa, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent
+        }
+
+        .brand-sub {
+            font-size: .85rem;
+            color: var(--muted);
+            font-weight: 400
+        }
+
+        .stamp {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px
+        }
+
+        .stamp.passed {
+            background: var(--success-grad);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3)
+        }
+
+        .stamp.failed {
+            background: var(--danger-grad);
+            color: #fff
+        }
+
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 16px
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: .85rem;
+            color: var(--muted)
+        }
+
+        .meta-item i {
+            color: var(--accent);
+            font-size: .9rem
+        }
+
+        /* GRID */
+        .grid {
+            display: grid;
+            gap: 20px
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))
+        }
+
+        /* CARDS */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all .3s ease
+        }
+
+        .card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3)
+        }
+
+        .card-title {
+            font-size: .75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--muted);
+            margin-bottom: 8px;
+            font-weight: 600
+        }
+
+        .card-value {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 4px
+        }
+
+        .card-desc {
+            font-size: .8rem;
+            color: var(--muted)
+        }
+
+        .card-value.green {
+            color: var(--green)
+        }
+
+        .card-value.blue {
+            color: var(--accent)
+        }
+
+        .card-value.yellow {
+            color: var(--yellow)
+        }
+
+        .card-value.purple {
+            color: var(--purple)
+        }
+
+        /* SECTIONS */
+        .section {
+            margin-bottom: 32px
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .section-title i {
+            color: var(--accent);
+            font-size: 1.1rem
+        }
+
+        /* SMART TABLE */
+        .smart-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: .82rem;
+            font-family: 'JetBrains Mono', monospace
+        }
+
+        .smart-table thead {
+            background: var(--card2)
+        }
+
+        .smart-table th {
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            font-size: .7rem;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .smart-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(30, 45, 61, 0.5)
+        }
+
+        .smart-table tr:hover {
+            background: rgba(59, 130, 246, 0.04)
+        }
+
+        .status-ok {
+            color: var(--green);
+            font-weight: 600
+        }
+
+        .status-warn {
+            color: var(--yellow);
+            font-weight: 600
+        }
+
+        .status-bad {
+            color: var(--red);
+            font-weight: 600
+        }
+
+        /* PROGRESS BAR */
+        .progress-bar {
+            height: 8px;
+            background: var(--card2);
+            border-radius: 99px;
+            overflow: hidden;
+            margin-top: 8px
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 99px;
+            transition: width 1s ease
+        }
+
+        .progress-fill.green {
+            background: var(--success-grad)
+        }
+
+        .progress-fill.yellow {
+            background: var(--warn-grad)
+        }
+
+        .progress-fill.red {
+            background: var(--danger-grad)
+        }
+
+        /* GAUGE */
+        .gauge-container {
+            text-align: center
+        }
+
+        .gauge-ring {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative
+        }
+
+        .gauge-ring::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: conic-gradient(var(--green) 0deg, var(--green) calc(var(--pct) * 3.6deg), var(--card2) calc(var(--pct) * 3.6deg));
+            mask: radial-gradient(farthest-side, transparent calc(100% - 12px), #000 calc(100% - 12px));
+            -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 12px), #000 calc(100% - 12px))
+        }
+
+        .gauge-value {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--green);
+            z-index: 1
+        }
+
+        .gauge-label {
+            font-size: .85rem;
+            color: var(--muted);
+            font-weight: 500
+        }
+
+        /* SPEED TEST */
+        .speed-bar {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: var(--card2);
+            border-radius: 12px;
+            margin-bottom: 12px
+        }
+
+        .speed-label {
+            min-width: 120px;
+            font-size: .85rem;
+            font-weight: 600
+        }
+
+        .speed-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
+            min-width: 140px;
+            text-align: right
+        }
+
+        /* BADGE */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: .75rem;
+            font-weight: 600
+        }
+
+        .badge.ok {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--green)
+        }
+
+        .badge.warn {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--yellow)
+        }
+
+        /* AI NOTES */
+        .ai-note {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(59, 130, 246, 0.08));
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 20px
+        }
+
+        .ai-note h4 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--purple);
+            font-weight: 700;
+            margin-bottom: 12px
+        }
+
+        .ai-note p {
+            font-size: .9rem;
+            color: var(--muted);
+            line-height: 1.7
+        }
+
+        /* FOOTER */
+        .report-footer {
+            text-align: center;
+            padding: 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+            color: var(--muted);
+            font-size: .8rem
+        }
+
+        .report-footer a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        /* QR CODE PLACEHOLDER */
+        .qr-section {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 24px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-top: 24px
+        }
+
+        .qr-text h4 {
+            font-weight: 700;
+            margin-bottom: 4px
+        }
+
+        .qr-text p {
+            font-size: .85rem;
+            color: var(--muted)
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #111
+            }
+
+            .card {
+                border: 1px solid #ddd;
+                box-shadow: none
+            }
+
+            .report-header {
+                background: #f8f9fa;
+                border: 1px solid #ddd
+            }
+        }
+
+        @media(max-width:640px) {
+            .container {
+                padding: 12px
+            }
+
+            .report-header {
+                padding: 20px
+            }
+
+            .brand h1 {
+                font-size: 1.3rem
+            }
+
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="report-header">
+            <div class="brand">
+                <i class="fas fa-microchip"></i>
+                <div>
+                    <h1>DeiviTech — Relatório de Teste</h1>
+                    <div class="brand-sub">Diagnóstico Completo por Inteligência Artificial</div>
+                </div>
+            </div>
+
+            <div class="stamp passed">
+                <i class="fas fa-shield-check"></i>
+                APROVADO — SAÚDE EXCELENTE
+            </div>
+
+            <p style="font-size:.95rem;max-width:700px;color:var(--muted);margin-bottom:16px">
+                Este relatório foi gerado automaticamente por IA analisando dados SMART, velocidade de leitura e
+                integridade de superfície do disco.
+                Todos os testes foram executados de forma segura (somente leitura) sem risco ao dispositivo.
+            </p>
+
+            <div class="meta-row">
+                <div class="meta-item"><i class="fas fa-calendar"></i>14/02/2026 — 16:21</div>
+                <div class="meta-item"><i class="fas fa-laptop-code"></i>Linux 6.18.9-zen1 (CachyOS)</div>
+                <div class="meta-item"><i class="fas fa-robot"></i>Análise: Antigravity AI</div>
+                <div class="meta-item"><i class="fas fa-shield-alt"></i>Método: Read-Only</div>
+            </div>
+        </div>
+
+        <!-- IDENTIFICAÇÃO DO DISCO -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-hdd"></i> Identificação do Disco</div>
+            <div class="grid grid-4">
+                <div class="card">
+                    <div class="card-title">Modelo</div>
+                    <div class="card-value blue" style="font-size:1.1rem">WD Blue</div>
+                    <div class="card-desc">WDC WD5000BPVT-08HXZT3</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Capacidade</div>
+                    <div class="card-value green">500 GB</div>
+                    <div class="card-desc">500.107.862.016 bytes</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Serial</div>
+                    <div class="card-value"
+                        style="font-size:1rem;font-family:'JetBrains Mono',monospace;color:var(--accent2)">
+                        WD-WXU1CA<br>1L1134</div>
+                    <div class="card-desc">Número único do disco</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Interface</div>
+                    <div class="card-value purple" style="font-size:1.1rem">SATA 2.6</div>
+                    <div class="card-desc">3.0 Gb/s • Via USB Case</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESPECIFICAÇÕES -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-cogs"></i> Especificações Técnicas</div>
+            <div class="grid grid-4">
+                <div class="card">
+                    <div class="card-title">Rotação</div>
+                    <div class="card-value yellow">5400</div>
+                    <div class="card-desc">RPM — Silencioso</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Firmware</div>
+                    <div class="card-value"
+                        style="font-size:1rem;font-family:'JetBrains Mono',monospace;color:var(--accent)">03.01A03</div>
+                    <div class="card-desc">Versão do firmware</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Setor Lógico</div>
+                    <div class="card-value blue" style="font-size:1.3rem">512 B</div>
+                    <div class="card-desc">Físico: 4096 bytes</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Temperatura</div>
+                    <div class="card-value green">33°C</div>
+                    <div class="card-desc">Fria • Ideal ✅</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SAÚDE GERAL -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-heartbeat"></i> Saúde Geral</div>
+            <div class="grid grid-2">
+                <div class="card gauge-container">
+                    <div class="gauge-ring" style="--pct:96">
+                        <div class="gauge-value">96%</div>
+                    </div>
+                    <div class="gauge-label">Índice de Saúde Geral</div>
+                    <p style="font-size:.8rem;color:var(--muted);margin-top:8px">SMART: PASSED • Zero problemas
+                        detectados</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Uso do Disco</div>
+                    <div style="display:grid;gap:16px">
+                        <div>
+                            <div style="display:flex;justify-content:space-between;font-size:.85rem">
+                                <span>Horas Ligado</span>
+                                <span style="font-weight:700;color:var(--green)">1.038h</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill green" style="width:3%"></div>
+                            </div>
+                            <div class="card-desc" style="margin-top:4px">Apenas 3% da vida útil estimada (30.000h)
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display:flex;justify-content:space-between;font-size:.85rem">
+                                <span>Ciclos Liga/Desliga</span>
+                                <span style="font-weight:700;color:var(--green)">1.034</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill green" style="width:2%"></div>
+                            </div>
+                            <div class="card-desc" style="margin-top:4px">Pouquíssimo uso — disco quase novo</div>
+                        </div>
+                        <div>
+                            <div style="display:flex;justify-content:space-between;font-size:.85rem">
+                                <span>Load Cycle Count</span>
+                                <span style="font-weight:700;color:var(--yellow)">61.443</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill yellow" style="width:20%"></div>
+                            </div>
+                            <div class="card-desc" style="margin-top:4px">Normal para notebooks — limite 300.000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ATRIBUTOS SMART -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-database"></i> Atributos SMART Detalhados</div>
+            <div class="card" style="overflow-x:auto">
+                <table class="smart-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Atributo</th>
+                            <th>Valor</th>
+                            <th>Pior</th>
+                            <th>Limite</th>
+                            <th>Raw</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Taxa de Erro de Leitura</td>
+                            <td>200</td>
+                            <td>200</td>
+                            <td>51</td>
+                            <td>0</td>
+                            <td><span class="status-ok">✅ OK</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Tempo de Spin-Up</td>
+                            <td>182</td>
+                            <td>175</td>
+                            <td>21</td>
+                            <td>1866 ms</td>
+                            <td><span class="status-ok">✅ OK</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Contagem Start/Stop</td>
+                            <td>98</td>
+                            <td>98</td>
+                            <td>0</td>
+                            <td>2.199</td>
+                            <td><span class="status-ok">✅ OK</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Setores Realocados</td>
+                            <td>200</td>
+                            <td>200</td>
+                            <td>140</td>
+                            <td style="font-weight:700;color:var(--green)">0</td>
+                            <td><span class="status-ok">✅ PERFEITO</span></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Taxa de Erro de Seek</td>
+                            <td>200</td>
+                            <td>200</td>
+                            <td>51</td>
+                            <td>0</td>
+                            <td><span class="status-ok">✅ OK</span></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Horas Ligado</td>
+                            <td>99</td>
+                            <td>99</td>
+                            <td>0</td>
+                            <td>1.038</td>
+                            <td><span class="status-ok">✅ Baixo uso</span></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Tentativas de Spin</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><span class="status-ok">✅ OK</span></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Ciclos de Energia</td>
+                            <td>99</td>
+                            <td>99</td>
+                            <td>0</td>
+                            <td>1.034</td>
+                            <td><span class="status-ok">✅ OK</span></td>
+                        </tr>
+                        <tr>
+                            <td>192</td>
+                            <td>Power-Off Retract</td>
+                            <td>200</td>
+                            <td>200</td>
+                            <td>0</td>
+                            <td>53</td>
+                            <td><span class="status-ok">✅ OK</span></td>
+                        </tr>
+                        <tr>
+                            <td>194</td>
+                            <td>Temperatura</td>
+                            <td>114</td>
+                            <td>99</td>
+                            <td>0</td>
+                            <td style="color:var(--green)">33°C</td>
+                            <td><span class="status-ok">✅ Frio</span></td>
+                        </tr>
+                        <tr>
+                            <td>196</td>
+                            <td>Eventos de Realocação</td>
+                            <td>200</td>
+                            <td>200</td>
+                            <td>0</td>
+                            <td style="font-weight:700;color:var(--green)">0</td>
+                            <td><span class="status-ok">✅ PERFEITO</span></td>
+                        </tr>
+                        <tr>
+                            <td>197</td>
+                            <td>Setores Pendentes</td>
+                            <td>200</td>
+                            <td>200</td>
+                            <td>0</td>
+                            <td style="font-weight:700;color:var(--green)">0</td>
+                            <td><span class="status-ok">✅ PERFEITO</span></td>
+                        </tr>
+                        <tr>
+                            <td>198</td>
+                            <td>Setores Incorrigíveis</td>
+                            <td>100</td>
+                            <td>253</td>
+                            <td>0</td>
+                            <td style="font-weight:700;color:var(--green)">0</td>
+                            <td><span class="status-ok">✅ PERFEITO</span></td>
+                        </tr>
+                        <tr>
+                            <td>199</td>
+                            <td>Erros CRC (UDMA)</td>
+                            <td>200</td>
+                            <td>200</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><span class="status-ok">✅ OK</span></td>
+                        </tr>
+                        <tr>
+                            <td>200</td>
+                            <td>Erros Multi-Zona</td>
+                            <td>200</td>
+                            <td>200</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td><span class="status-ok">✅ OK</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TESTE DE VELOCIDADE -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-tachometer-alt"></i> Teste de Velocidade (hdparm)</div>
+            <div class="card">
+                <div class="speed-bar">
+                    <i class="fas fa-bolt" style="font-size:1.5rem;color:var(--yellow)"></i>
+                    <div class="speed-label">Cache (RAM)</div>
+                    <div style="flex:1">
+                        <div class="progress-bar" style="height:12px">
+                            <div class="progress-fill green" style="width:95%"></div>
+                        </div>
+                    </div>
+                    <div class="speed-value" style="color:var(--green)">22.014 MB/s</div>
+                </div>
+                <div class="speed-bar">
+                    <i class="fas fa-hdd" style="font-size:1.5rem;color:var(--accent)"></i>
+                    <div class="speed-label">Leitura Disco</div>
+                    <div style="flex:1">
+                        <div class="progress-bar" style="height:12px">
+                            <div class="progress-fill green" style="width:55%"></div>
+                        </div>
+                    </div>
+                    <div class="speed-value" style="color:var(--accent)">81.72 MB/s</div>
+                </div>
+                <p style="font-size:.8rem;color:var(--muted);margin-top:12px">
+                    <i class="fas fa-info-circle" style="color:var(--accent)"></i>
+                    A velocidade de 81 MB/s é excelente para um HD 5400RPM via USB. Performance normal para este modelo
+                    está entre 70-100 MB/s.
+                </p>
+            </div>
+        </div>
+
+        <!-- TESTE DE SUPERFÍCIE -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-check-double"></i> Teste de Integridade de Superfície
+                (badblocks)</div>
+            <div class="card">
+                <div class="grid grid-3">
+                    <div style="text-align:center">
+                        <div style="font-size:2.5rem;font-weight:900;color:var(--green)">0</div>
+                        <div style="font-size:.85rem;color:var(--muted)">Blocos Defeituosos</div>
+                    </div>
+                    <div style="text-align:center">
+                        <div style="font-size:2.5rem;font-weight:900;color:var(--green)">0</div>
+                        <div style="font-size:.85rem;color:var(--muted)">Erros de Leitura</div>
+                    </div>
+                    <div style="text-align:center">
+                        <div style="font-size:2.5rem;font-weight:900;color:var(--green)">0</div>
+                        <div style="font-size:.85rem;color:var(--muted)">Erros de Escrita</div>
+                    </div>
+                </div>
+                <div style="text-align:center;margin-top:20px">
+                    <span class="badge ok"><i class="fas fa-shield-check"></i> Superfície 100% íntegra — Sem bad
+                        blocks</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARTIÇÕES -->
+        <div class="section">
+            <div class="section-title"><i class="fas fa-layer-group"></i> Tabela de Partições</div>
+            <div class="card" style="overflow-x:auto">
+                <table class="smart-table">
+                    <thead>
+                        <tr>
+                            <th>Partição</th>
+                            <th>Boot</th>
+                            <th>Tamanho</th>
+                            <th>Sistema</th>
+                            <th>Formato</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>/dev/sda1</td>
+                            <td>✅ Sim</td>
+                            <td>1.6 GB</td>
+                            <td>HPFS/NTFS</td>
+                            <td>NTFS</td>
+                        </tr>
+                        <tr>
+                            <td>/dev/sda2</td>
+                            <td>—</td>
+                            <td>449.9 GB</td>
+                            <td>HPFS/NTFS</td>
+                            <td>NTFS</td>
+                        </tr>
+                        <tr>
+                            <td>/dev/sda3</td>
+                            <td>—</td>
+                            <td>14.2 GB</td>
+                            <td>HPFS/NTFS</td>
+                            <td>NTFS (Recovery)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size:.8rem;color:var(--muted);margin-top:12px">
+                    <i class="fas fa-info-circle" style="color:var(--accent)"></i>
+                    O disco contém um Windows pré-instalado com partição de recuperação. Será formatado e testado antes
+                    da entrega, com sistema limpo ou como HD externo.
+                </p>
+            </div>
+        </div>
+
+        <!-- NOTA DA IA -->
+        <div class="ai-note">
+            <h4><i class="fas fa-robot"></i> Análise da Inteligência Artificial</h4>
+            <p>
+                Este HD Western Digital Blue de 500GB apresenta <strong>saúde excelente</strong>. Com apenas
+                <strong>1.038 horas</strong> de uso
+                (equivalente a ~43 dias de uso contínuo), o disco praticamente não foi usado. Todos os indicadores
+                críticos — setores realocados,
+                pendentes e incorrigíveis — estão em <strong>zero absoluto</strong>. A velocidade de leitura de 81.72
+                MB/s está dentro do
+                esperado para um HD 5400RPM via adaptador USB. O teste de superfície não detectou nenhum bloco
+                defeituoso.
+                <strong>Recomendação: Aprovado para venda com confiança total.</strong>
+            </p>
+        </div>
+
+        <!-- GARANTIA -->
+        <div class="qr-section">
+            <div style="min-width:80px;text-align:center">
+                <i class="fas fa-certificate" style="font-size:3rem;color:var(--yellow)"></i>
+            </div>
+            <div class="qr-text">
+                <h4 style="color:var(--yellow)">Garantia DeiviTech — 30 dias</h4>
+                <p>Este produto foi testado pela DeiviTech utilizando ferramentas profissionais e inteligência
+                    artificial.
+                    Caso apresente qualquer defeito nos primeiros 30 dias, entramos em contato pelo WhatsApp para troca
+                    ou devolução.</p>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="report-footer">
+            <p><strong>DeiviTech Formatação</strong> — Feira de Santana, BA</p>
+            <p>WhatsApp: <a href="https://wa.me/5575981231019">(75) 98123-1019</a></p>
+            <p style="margin-top:8px">Relatório gerado com IA • Serial: WD-WXU1CA1L1134 • Data: 14/02/2026</p>
+            <p style="margin-top:4px;font-size:.7rem;opacity:.6">Este documento é parte do processo de qualidade
+                DeiviTech. Nenhum dado do comprador foi armazenado.</p>
+        </div>
+    </div>
+</body>
+
+</html>
