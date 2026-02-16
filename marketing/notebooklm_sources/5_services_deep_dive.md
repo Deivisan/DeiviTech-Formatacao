@@ -36,3 +36,36 @@ Serviço de alto risco e alto retorno.
 *   **CPU:** Ganho de 10-20% em FPS.
 *   **GPU:** Ganho de 15-30% em renderização.
 *   **Segurança:** Monitoramos temperaturas (limite 85°C) e voltagem. Não fazemos loucuras.
+
+## 4. Sistema de Indicações (Regras de Negócio)
+
+### Mecânica Atual
+*   **Quem Indica:** R$ 10 de desconto na próxima formatação/serviço
+*   **Quem É Indicado:** R$ 10 de desconto na primeira formatação
+*   **Validação:** Nome do indicador informado no momento do agendamento
+*   **Limite:** Sem limite de indicações (quanto mais indica, mais desconto acumula)
+
+### Mensagem Pós-Venda Automatizada
+> "Obrigado por confiar na DeiviTech! 🚀 Se indicar amigo que formatar o PC, vocês DOIS ganham R$ 10 de desconto. Quanto mais indica, mais economiza! 💰"
+
+### Meta de Crescimento Orgânico
+*   5 indicações/mês = 5 novos clientes sem custo de aquisição
+*   ROI: R$ 20 desconto total (indicador + indicado) vs R$ 80-120 ticket médio = lucro líquido positivo
+
+## 5. Relatórios HTML Personalizados (Novo Produto Premium)
+
+### Estrutura de Preços
+*   **Diagnóstico Básico:** R$ 25 (relatório em PDF ou texto)
+*   **Diagnóstico HTML Completo:** R$ 50 (arquivo HTML interativo)
+    *   Inclui: Gráficos CrystalDiskMark, vídeo de testes, timestamp personalizado
+    *   Botão WhatsApp integrado para fechamento imediato
+    *   Cliente guarda arquivo pra sempre (prova de serviço prestado)
+
+### Taxa de Conversão Pós-Relatório
+**85-90%** dos clientes que veem relatório HTML fecham venda de formatação/upgrade
+*   Comparado com 30-40% da média de mercado (proposta em PDF/texto)
+*   Motivo: Prova visual irrefutável + personalização extrema
+
+### Exemplos de Sucesso
+*   **HD WD-WXU1CA1L1134:** Cliente viu gráfico mostrando 15 MB/s (HD morrendo) vs 550 MB/s (SSD novo). Fechou combo SSD 240GB + Formatação no mesmo dia.
+*   **Notebook Mel:** Relatório mostrou que apenas ponta do carregador estava quebrada (não precisava trocar fonte inteira). Cliente aprovou reparo e virou cliente recorrente.

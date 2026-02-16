@@ -38,3 +38,38 @@ Utilizamos um algoritmo proprietário (simulado na plataforma web) que analisa C
 *   **Agressivo na Performance:** "Seu PC é uma carroça, nós temos o motor de Ferrari."
 *   **Técnico mas Acessível:** Explicamos o difícil de forma fácil.
 *   **Futurista:** Usamos termos como "Nano Banana", "Cyberpunk", "Otimização IA".
+
+## 6. Metodologia Revolucionária: Relatórios HTML Personalizados
+**Diferencial Competitivo Único no Mercado**
+
+### O Que É
+A DeiviTech não hospeda relatórios de diagnóstico online. **Geramos arquivos `.html` personalizados** e enviamos **diretamente pelo WhatsApp** ao cliente. O cliente abre no navegador do celular (Chrome, Samsung Internet) e funciona **100% offline**.
+
+### Por Que Funciona (Taxa de Conversão: 85-90%)
+*   **Parece Site Particular:** Cliente pensa "Esse cara fez agora exclusivo pra mim"
+*   **Prova Visual Total:** Gráficos CrystalDiskMark, frames de vídeo, testes reais
+*   **Botão WhatsApp Integrado:** "Comprar agora" retorna ao WhatsApp com mensagem pronta
+*   **Timestamp Personalizado:** "Gerado em 15/02/2026 às 18:09 - DeiviTech" (reforça urgência)
+*   **Funciona Offline:** Sem precisar de internet após download, mais confiável
+
+### Exemplos Reais Implementados
+*   `hd-report-WD-WXU1CA1L1134.html` - Venda de HD com testes CrystalDiskMark profissionais
+*   `Diagnostico-Mel.html` - Notebook com ponta de carregador presa (design gradiente azul/verde)
+
+### Paleta Visual Atual
+*   **Azul Primary:** `#3498db` (confiança técnica)
+*   **Roxo Accent:** `#9b59b6` (inovação, premium)
+*   **Verde Success:** `#2ecc71` (ação, conversão)
+*   **Gradientes:** Azul→Verde para fundos, Roxo→Azul para headers
+
+## 7. Sistema de Indicações (Crescimento Orgânico)
+**Ambos Ganham R$ 10**
+*   Cliente que indica amigo: R$ 10 de desconto na próxima formatação
+*   Amigo indicado: R$ 10 de desconto na primeira formatação
+*   Mensagem pós-venda: "Se indicar amigo que formatar, vocês dois ganham R$10"
+*   Meta: 5 indicações/mês = 5 clientes novos garantidos
+
+## 8. Status Tecnológico (Fevereiro 2026)
+*   **OpenClaw Bot:** Rodando em sandbox no Ryzen 7 5700G + 16GB RAM
+*   **Futuro Próximo:** Triagem automática de leads no WhatsApp
+*   **Aguardando:** Confiança pra ativar com clientes reais

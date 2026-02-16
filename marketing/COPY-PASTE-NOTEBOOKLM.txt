@@ -1,0 +1,137 @@
+========================================
+COPY-PASTE NOTEBOOKLM - PROMPTS PRONTOS
+DeiviTech Formatação 2026
+========================================
+
+Instruções de Uso:
+1. Abra NotebookLM (notebooklm.google.com)
+2. Carregue os 6 arquivos da pasta notebooklm_sources/
+3. Escolha um dos 3 prompts abaixo (copie e cole direto)
+4. Aguarde geração (pode levar 2-5 minutos)
+
+========================================
+PROMPT 1: RÁPIDO (16 CARDS APENAS)
+========================================
+
+Use os arquivos carregados (1_dossie_mestre.md, 2_fabrica_conteudo.md, 3_metodologia_tecnica.md, 4_tech_stack_architecture.md, 5_services_deep_dive.md, 6_business_logic_&_sales.md). Analise todo o conteúdo e gere:
+
+**CONTEXTO CRÍTICO (Prioridade Máxima):**
+- Metodologia HTML personalizada (arquivos .html enviados via WhatsApp, não links)
+- Taxa conversão 85-90% (vs 30-40% mercado) - diferencial competitivo único
+- Timestamp obrigatório: 'Gerado em [DATA] às [HORA] - DeiviTech'
+- Paleta oficial: Azul #3498db, Roxo #9b59b6, Verde #2ecc71 (gradientes azul→verde)
+- Exemplos reais: hd-report-WD-WXU1CA1L1134.html (HD morrendo), Diagnostico-Mel.html (carregador)
+- Sistema indicações: R$ 10 ambos ganham (indicador + indicado)
+- OpenClaw Bot: sandbox, futuro triagem WhatsApp
+
+**ENTREGA:**
+- 16 imagens-card (square 1080x1080) com textos prontos, descrição textual para cada card, imagem-prompt foto-realista e ilustração (+ 2 variantes cada), e o arquivo sugerido (ex: card_01_formatacao.png). Garanta que todos os preços sejam os valores presentes nos arquivos. **OBRIGATÓRIO:** Cards 13-16 devem focar em: Relatório HTML Personalizado, CrystalDiskMark Gráficos, Sistema Indicações, OpenClaw Bot.
+
+Saída em JSON: {cards: [...], imagesPrompts: [...]}.
+
+Priorize: clareza, CTAs diretas para WhatsApp, design consistente com paleta #3498db (azul), #2ecc71 (verde), #9b59b6 (roxo). **TIMESTAMP OBRIGATÓRIO** em relatórios/slides técnicos: 'Gerado em [DATA] - DeiviTech' (rodapé pequeno, cor #95a5a6).
+
+========================================
+PROMPT 2: COMPLETO (16 CARDS + 13 SLIDES)
+========================================
+
+Use os arquivos carregados (1_dossie_mestre.md, 2_fabrica_conteudo.md, 3_metodologia_tecnica.md, 4_tech_stack_architecture.md, 5_services_deep_dive.md, 6_business_logic_&_sales.md). Analise todo o conteúdo e gere:
+
+**CONTEXTO CRÍTICO (Prioridade Máxima):**
+- Metodologia HTML personalizada (arquivos .html enviados via WhatsApp, não links)
+- Taxa conversão 85-90% (vs 30-40% mercado) - diferencial competitivo único
+- Timestamp obrigatório: 'Gerado em [DATA] às [HORA] - DeiviTech'
+- Paleta oficial: Azul #3498db, Roxo #9b59b6, Verde #2ecc71 (gradientes azul→verde)
+- Exemplos reais: hd-report-WD-WXU1CA1L1134.html (HD morrendo), Diagnostico-Mel.html (carregador)
+- Sistema indicações: R$ 10 ambos ganham (indicador + indicado)
+- OpenClaw Bot: sandbox, futuro triagem WhatsApp
+
+**ENTREGA:**
+1) 16 imagens-card (square 1080x1080) com textos prontos, descrição textual para cada card, imagem-prompt foto-realista e ilustração (+ 2 variantes cada), e o arquivo sugerido (ex: card_01_formatacao.png). Garanta que todos os preços sejam os valores presentes nos arquivos. **OBRIGATÓRIO:** Cards 13-16 devem focar em: Relatório HTML Personalizado, CrystalDiskMark Gráficos, Sistema Indicações, OpenClaw Bot.
+
+2) 1 deck com 13 slides (16:9) com títulos, bullet points, nota do apresentador (1 frase por slide), imagens sugeridas (image prompts), e sugestão de ordem/tempo de apresentação. **OBRIGATÓRIO:** Slides 11-13 devem focar em: Metodologia HTML (como vendemos 85-90% mais), Exemplos Reais (casos HD e Mel), Indicações + Bot.
+
+Estrutura dos slides:
+- Slide 1: Hero + slogan
+- Slide 2: Problema do público
+- Slide 3: O que oferece (service pillars)
+- Slide 4: Pacotes e preços (combos)
+- Slide 5: Processo em 4 passos
+- Slide 6: Benefícios e numbers (ex: 5x performance, 10% combos)
+- Slide 7: Testemunhos
+- Slide 8: Garantia 30 dias
+- Slide 9: CTA e formas de contato
+- Slide 10: Fechamento + mini-FAQ
+- Slide 11: Metodologia HTML (como vendemos 85-90% mais)
+- Slide 12: Exemplos Reais (casos HD e Mel)
+- Slide 13: Indicações + Bot Futuro
+
+Saída em JSON: {cards: [...], slides: [...], imagesPrompts: [...]}.
+
+Priorize: clareza, transformação dos ativos, CTAs diretas para WhatsApp, design consistente com paleta #3498db (azul), #2ecc71 (verde), #9b59b6 (roxo). **TIMESTAMP OBRIGATÓRIO** em relatórios/slides técnicos: 'Gerado em [DATA] - DeiviTech' (rodapé pequeno, cor #95a5a6).
+
+========================================
+PROMPT 3: CUSTOM (TEMPLATE EDITÁVEL)
+========================================
+
+Use os arquivos carregados (1_dossie_mestre.md, 2_fabrica_conteudo.md, 3_metodologia_tecnica.md, 4_tech_stack_architecture.md, 5_services_deep_dive.md, 6_business_logic_&_sales.md). Analise todo o conteúdo e gere:
+
+**CONTEXTO CRÍTICO:**
+- Metodologia HTML personalizada (arquivos .html via WhatsApp, não links)
+- Taxa conversão 85-90% (vs 30-40% mercado)
+- Timestamp obrigatório: 'Gerado em [DATA] às [HORA] - DeiviTech'
+- Paleta oficial: Azul #3498db, Roxo #9b59b6, Verde #2ecc71
+- Exemplos reais: hd-report-WD-WXU1CA1L1134.html, Diagnostico-Mel.html
+- Sistema indicações: R$ 10 ambos ganham
+- OpenClaw Bot: sandbox, futuro triagem WhatsApp
+
+**ENTREGA PERSONALIZADA:**
+[EDITE AQUI - Exemplos:]
+- Apenas cards 1, 5, 7, 13, 14, 15 (6 cards específicos)
+- Apenas slides 1-5 e 11-13 (8 slides)
+- Somente prompts de imagem foto-realista (sem ilustração)
+- Variantes high-contrast + minimal (sem cartoon)
+- Proporção Stories 9:16 ao invés de 1080x1080
+
+[FORMATOS DISPONÍVEIS:]
+- Cards: 1-16 (escolha quais)
+- Slides: 1-13 (escolha quais)
+- Proporções: 1080x1080 (square), 1200x628 (FB/Twitter), 9:16 (Stories), 16:9 (Slides)
+- Estilos: foto-realista, ilustração, minimal, cartoon, high-contrast
+- Cores: #3498db (azul), #2ecc71 (verde), #9b59b6 (roxo), gradientes
+
+Saída em JSON com campos personalizados conforme solicitado acima.
+
+**TIMESTAMP OBRIGATÓRIO** em todos relatórios/slides técnicos: 'Gerado em [DATA] - DeiviTech' (rodapé pequeno, cor #95a5a6).
+
+========================================
+DICAS IMPORTANTES
+========================================
+
+✅ SEMPRE incluir timestamp em relatórios técnicos
+✅ SEMPRE usar paleta oficial (azul #3498db, roxo #9b59b6, verde #2ecc71)
+✅ SEMPRE mencionar taxa conversão 85-90% (diferencial único)
+✅ Cards 13-16 devem focar em: Relatórios HTML, CrystalDiskMark, Indicações, Bot
+✅ Slides 11-13 devem focar em: Metodologia, Exemplos Reais, Futuro
+
+❌ EVITAR cores antigas (#3b82f6, #10b981, #7c3aed)
+❌ EVITAR contradizer preços dos arquivos carregados
+❌ EVITAR prompts genéricos (sempre contextualizar com DeiviTech)
+
+📱 CTAs Recomendados:
+- "📱 Agendar Diagnóstico Grátis"
+- "✨ Quero Meu Relatório HTML"
+- "🚀 Turbinar Meu PC Agora"
+- "💰 Ganhar R$ 10 Indicando Amigo"
+
+🎨 Proporções Recomendadas:
+- Instagram Posts: 1080x1080 (square)
+- Facebook/Twitter: 1200x628 (landscape)
+- Instagram/WhatsApp Stories: 1080x1920 (9:16 vertical)
+- Apresentações: 1920x1080 (16:9 landscape)
+
+========================================
+FIM DOS PROMPTS
+Gerado em 15/02/2026 - DeiviTech
+🦞 DevSan AGI
+========================================

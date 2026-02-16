@@ -1,5 +1,16 @@
 # Prompts para Nano Banana Pro - DeiviTech Marketing
-# Data: 07 de Dezembro de 2025
+# Data: 15 de Fevereiro de 2026
+# ATUALIZADO: Metodologia HTML Personalizada + Timestamp + Taxa Conversão 85-90%
+
+---
+## PALETA DE CORES OFICIAL (2026)
+- **Azul Primary:** #3498db (confiança técnica, fundos, headers)
+- **Roxo Accent:** #9b59b6 (inovação, premium, CTAs secundários)
+- **Verde Success:** #2ecc71 (ação, conversão, botões principais)
+- **Gradientes Padrão:**
+  - Fundo sutil: linear-gradient(135deg, #3498db, #2ecc71)
+  - Headers premium: linear-gradient(135deg, #9b59b6, #3498db)
+  - CTAs: solid #2ecc71 com hover #27ae60
 
 ---
 ## 1. Banners Principais (Hero Images para Site/Facebook Cover)
@@ -34,6 +45,12 @@
 **Prompt 8: Cérebro Digital**
 > "Abstract tech art. A glowing digital brain made of circuit nodes and fiber optics in orange and blue. It is scanning a wireframe model of a computer tower. Data streams flowing from the PC to the brain. Represents 'AI Diagnostics'. Clean, medical-tech look."
 
+**NOVO - Prompt 8B: Relatório HTML Personalizado (DIFERENCIAL ÚNICO)**
+> "Phone mockup showing a WhatsApp conversation. Technical hands holding smartphone displaying HTML diagnostic report on screen. Report has: gradient blue-to-green background (#3498db to #2ecc71), CrystalDiskMark bar charts in purple (#9b59b6), video frame thumbnail, and green 'Comprar agora' button. Bottom footer shows 'Gerado em 15/02/2026 às 18:09 - DeiviTech' timestamp. Photorealistic style, studio lighting, 1:1 ratio."
+
+**NOVO - Prompt 8C: Taxa de Conversão 85-90%**
+> "Infographic style. Large bold number '85-90%' in green (#2ecc71) at center. Around it: 10 small icons of happy customers (9 with checkmarks, 1 without). Background is gradient blue to purple (#3498db to #9b59b6). Text overlay: 'Taxa de Conversão Comprovada'. Professional, data-driven look."
+
 ---
 ## 3. Social Media (Instagram Stories / WhatsApp Status) - 9:16 Ratio
 
@@ -46,6 +63,12 @@
 **Prompt 11: Depoimento/Garantia**
 > "Vertical format. A 3D gold seal badge saying '30 Dias Garantia'. background is a dark blue gradient with subtle circuit patterns. Professional and trustworthy look. Space for text in the center."
 
+**NOVO - Prompt 11B: Sistema de Indicações**
+> "Vertical format. Two silhouettes of people facing each other with bright green coins (R$10) floating between them. Arrows connecting them labeled 'INDICAÇÃO'. Background gradient purple to blue (#9b59b6 to #3498db). Bold text: 'VOCÊS DOIS GANHAM R$10'. Modern, energetic style, 9:16 ratio."
+
+**NOVO - Prompt 11C: Timestamp Personalizado**
+> "Close-up macro shot of HTML code on screen, focused on line: '<footer>Gerado em 15/02/2026 às 18:09 - DeiviTech</footer>'. Soft blur on surrounding code. Green syntax highlighting (#2ecc71) on timestamp. Represents personalization. Developer/tech aesthetic, shallow DOF."
+
 ---
 ## 4. Estilo "Nano Banana Pro" Específico (Artístico/Abstrato)
 
@@ -54,3 +77,36 @@
 
 **Prompt 13: O Futuro da Manutenção**
 > "Synthwave style landscape. A road made of motherboard traces leading to a sun that is a glowing power button. Retro 80s grid mountains. Text 'DeiviTech' written in chrome retro font in the sky. Purple and cyan neon colors."
+
+---
+## 5. Novos Prompts: Exemplos Reais de Relatórios (Fevereiro 2026)
+
+**Prompt 14: CrystalDiskMark Gráfico (HD vs SSD)**
+> "Clean infographic comparison. Left side: Red bar chart showing '15 MB/s Read' (very short bar, danger zone). Right side: Green bar chart showing '550 MB/s Read' (full bar, success zone). Labels 'HD Antigo' vs 'SSD Novo'. Purple accent on title 'CrystalDiskMark Test'. Background gradient blue to green (#3498db to #2ecc71). Professional data visualization style."
+
+**Prompt 15: Relatório Mel - Design Completo**
+> "Full HTML report page mockup. Header gradient purple to blue (#9b59b6 to #3498db) with 'Diagnóstico - Notebook Mel' title. Body section with: laptop image, problem description card (carregador), solution card (reparo ponta), price tag R$50. Footer with timestamp 'Gerado em [DATE] - DeiviTech' and green CTA button 'Comprar agora'. Modern, professional, mobile-optimized layout."
+
+**Prompt 16: OpenClaw Bot (Futuro)**
+> "Futuristic WhatsApp chat interface mockup. Bot avatar is a glowing blue lobster (#3498db). Messages showing triaging conversation: '1️⃣ Formatação 2️⃣ Upgrade 3️⃣ Diagnóstico'. Green checkmark indicators. Background subtle circuit pattern. Represents AI automation. Clean UI design, dark mode aesthetic."
+
+---
+## 6. Elementos Visuais Obrigatórios (Todos os Prompts)
+
+### Timestamp Footer Template
+Adicionar em TODOS os relatórios/cards profissionais:
+> "Footer section: Small sans-serif text 'Gerado em [DD/MM/YYYY] às [HH:MM] - DeiviTech' in light gray (#95a5a6) on dark background. Discreet but visible. Reinforces personalization."
+
+### Paleta de Cores Consistency Check
+- **Primary Actions (CTAs):** Verde #2ecc71
+- **Backgrounds:** Azul #3498db ou gradientes azul→verde
+- **Premium/Accent:** Roxo #9b59b6
+- **Danger/Alerts:** Vermelho #e74c3c (apenas para problemas técnicos)
+- **Success/Positive:** Verde #27ae60 (hover state do #2ecc71)
+
+### Typography Standards
+- **Headlines:** Poppins Bold ou Inter Bold (Google Fonts)
+- **Body:** Inter Regular ou Roboto Regular
+- **Code/Tech:** Fira Code ou JetBrains Mono (para relatórios técnicos)
+
+---

@@ -30,3 +30,35 @@ A maioria para na instalação. Nós continuamos:
 É nossa metodologia de cruzar dados de hardware (Geração do Processador + Capacidade da RAM + Tipo de Disco) para oferecer a solução matemática ideal.
 *   *Exemplo:* Core i3 2ª Geração + 4GB RAM + HD = **Candidato a Chrome OS ou Linux.**
 *   *Exemplo:* Core i5 9ª Geração + 8GB RAM + SSD = **Candidato a Ghost Spectre.**
+
+## A Metodologia HTML Personalizada (Revolucionária)
+
+### Como Funciona (Do Diagnóstico à Venda)
+1.  **Diagnóstico Inicial:** Cliente envia fotos/vídeo do PC ou leva presencialmente
+2.  **Testes Profissionais:** CrystalDiskMark (velocidade disco), CPU-Z (processador), benchmarks
+3.  **Geração HTML (5 minutos):** Sistema automatizado cria arquivo `.html` personalizado:
+    *   Nome do cliente no título
+    *   Specs do PC dele (não template genérico)
+    *   Gráficos dos testes (CrystalDiskMark em barras)
+    *   Frames de vídeo dos testes rodando
+    *   Timestamp: "Gerado em 15/02/2026 às 18:09 - DeiviTech"
+    *   Botão "Comprar agora" com link WhatsApp pré-formatado
+4.  **Envio pelo WhatsApp:** Arquivo `.html` enviado como documento (não link)
+5.  **Cliente Abre Offline:** Funciona em qualquer navegador móvel (Chrome, Samsung Internet)
+6.  **Conversão:** Cliente clica "Comprar agora" → volta pro WhatsApp com mensagem pronta
+
+### Por Que Ninguém Faz Isso?
+*   Maioria envia link genérico (Notion, Google Docs) que parece impessoal
+*   Relatórios PDF são estáticos, sem interatividade
+*   Sites hospedados requerem internet constante
+*   **DeiviTech:** Arquivo HTML é "site particular" que cliente guarda pra sempre
+
+### Taxa de Conversão Comprovada
+**85-90% dos clientes que veem relatório HTML fecham venda**
+*   Muito acima da média de mercado (30-40%)
+*   Motivo: Prova visual total, sem como duvidar
+*   Cliente pensa: "Esse cara testou tudo, não tem enganação"
+
+### Exemplos de Relatórios em Produção
+*   `v2/reports/hd-report-WD-WXU1CA1L1134.html` - Venda de HD com gráficos CrystalDiskMark
+*   `Diagnostico-Mel.html` - Notebook com problema de carregador (design profissional, gradientes azul/verde)

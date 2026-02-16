@@ -23,3 +23,45 @@ Quando o cliente chega no WhatsApp com a mensagem pronta, o script de atendiment
 2.  **Diagnóstico Rápido:** "Qual o modelo exato do seu processador? Só para eu confirmar a compatibilidade."
 3.  **Upsell (Venda Adicional):** "Já que vamos abrir a máquina para por o SSD, não quer aproveitar e fazer a limpeza interna completa com troca de pasta térmica por apenas +R$ 30? Isso previne aquecimento."
 4.  **Fechamento:** "Posso agendar a busca do equipamento para amanhã às 10h?"
+
+## 4. Funil de Conversão com Relatório HTML (NOVO - Taxa 85-90%)
+
+### Jornada do Cliente Otimizada
+1.  **Primeiro Contato:** Cliente envia "Oi, quero orçamento" no WhatsApp
+2.  **Diagnóstico Inicial:** "Pode me enviar foto da tela de Informações do Sistema? Ou trazer o PC pra análise gratuita?"
+3.  **Geração do Relatório HTML (5 minutos):**
+    *   Técnico roda CrystalDiskMark, CPU-Z, benchmarks
+    *   Script automatizado injeta dados em template HTML
+    *   Adiciona timestamp: "Gerado em [DATA] às [HORA] - DeiviTech"
+    *   Gráficos mostram problema visual (HD lento = barras vermelhas baixas)
+4.  **Envio pelo WhatsApp:** Arquivo `.html` anexado (não link externo)
+5.  **Cliente Abre no Celular:**
+    *   Vê nome dele no título
+    *   Vê gráficos dos testes DO PC DELE (não template genérico)
+    *   Vê vídeo dos testes rodando
+    *   Lê recomendações técnicas personalizadas
+    *   Clica botão "Comprar agora" → Volta pro WhatsApp com mensagem pronta
+6.  **Fechamento:** 85-90% fecham venda no mesmo dia ou em até 48h
+
+### Gatilhos Mentais Ativados
+*   **Personalização Extrema:** Nome + specs únicos = "Fizeram isso só pra mim"
+*   **Prova Visual Irrefutável:** Gráficos CrystalDiskMark não mentem
+*   **Urgência Temporal:** Timestamp = "Foi feito agora, decisão precisa ser agora"
+*   **Confiança Offline:** Funciona sem internet = "Não vão apagar o relatório depois"
+*   **Facilidade de Ação:** Botão WhatsApp = 1 clique pra fechar
+
+## 5. Expansão Local: Panfletos na Faculdade
+
+### Estratégia Aprovada (Fevereiro 2026)
+*   **Local:** UFRB (Universidade Federal do Recôncavo da Bahia) - 2 laboratórios de informática
+*   **Quantidade:** 2-3 papéis discretos por laboratório
+*   **Design:** QR Code direto pro WhatsApp + "Análise IA Gratuita - DeiviTech"
+*   **Custo:** R$ 5-10 (20-30 impressões em papel couchê)
+*   **ROI Esperado:** 2-3 clientes/mês = R$ 160-360 (payback imediato)
+
+### Texto do Panfleto
+> "🖥️ SEU NOTEBOOK ESTÁ LENTO?  
+> Análise IA GRATUITA em 10 minutos  
+> 📍 Feira de Santana/BA  
+> 📲 [QR CODE] ou wa.me/5575992134212  
+> DeiviTech - Performance que você merece"

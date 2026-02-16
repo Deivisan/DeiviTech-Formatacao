@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes Reutilizáveis - DeiviTech Templates</title>
+    <style>
+        /* 
+         * 🧩 COMPONENTES REUTILIZÁVEIS - DEIVISTECH
+         * Atualizado: 15/02/2026
+         * Paleta Oficial: Azul #3498db, Roxo #9b59b6, Verde #2ecc71
+         * 
+         * USO: Copiar blocos HTML/CSS individuais para seus relatórios
+         */
+    </style>
+</head>
+<body>
+
+<!-- ========================================
+     COMPONENTE 1: HEADER COM GRADIENTE
+     Gradiente roxo→azul premium
+     ======================================== -->
+<div class="deivi-header-component">
+    <style>
+        .deivi-header {
+            background: linear-gradient(135deg, #9b59b6, #3498db);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 16px 16px 0 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .deivi-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .deivi-header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .deivi-header p {
+            font-size: 1rem;
+            opacity: 0.95;
+            margin: 0;
+        }
+        .deivi-brand-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+    </style>
+    
+    <header class="deivi-header">
+        <div class="deivi-brand-icon">💻</div>
+        <h1>Diagnóstico Completo - [NOME_CLIENTE]</h1>
+        <p>Análise técnica personalizada por DeiviTech</p>
+    </header>
+</div>
+
+<!-- ========================================
+     COMPONENTE 2: CARD DE STATUS (Aprovado/Reprovado)
+     Verde (#2ecc71) para PASSED, vermelho para FAILED
+     ======================================== -->
+<div class="deivi-status-component" style="margin-top: 30px;">
+    <style>
+        .status-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .status-passed {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+        }
+        .status-failed {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+        }
+        .status-icon {
+            font-size: 1.5rem;
+        }
+    </style>
+    
+    <!-- Opção 1: Aprovado -->
+    <div class="status-card status-passed">
+        <span class="status-icon">✓</span>
+        <span>Aprovado</span>
+    </div>
+    
+    <!-- Opção 2: Reprovado (comentado por padrão) -->
+    <!-- <div class="status-card status-failed">
+        <span class="status-icon">✗</span>
+        <span>Reprovado</span>
+    </div> -->
+</div>
+
+<!-- ========================================
+     COMPONENTE 3: GRÁFICO CHART.JS (CrystalDiskMark)
+     Barras roxas (#9b59b6) com gradiente
+     ======================================== -->
+<div class="deivi-chart-component" style="margin-top: 30px;">
+    <style>
+        .chart-container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .chart-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+    
+    <div class="chart-container">
+        <h3 class="chart-title">Velocidade de Leitura (MB/s)</h3>
+        <canvas id="speedChart" width="400" height="200"></canvas>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script>
+        // Gradiente responsivo (recalcula em resize)
+        let gradient;
+        const ctx = document.getElementById('speedChart').getContext('2d');
+        
+        function getGradient(chart) {
+            const {chartArea} = chart;
+            if (!chartArea) return null;
+            
+            const chartWidth = chartArea.right - chartArea.left;
+            const chartHeight = chartArea.bottom - chartArea.top;
+            
+            gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
+            gradient.addColorStop(0, '#9b59b6');  // Roxo base
+            gradient.addColorStop(1, '#c39bd3');  // Roxo claro topo
+            
+            return gradient;
+        }
+        
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['HD Antigo', 'SSD Novo'],
+                datasets: [{
+                    label: 'Velocidade Leitura',
+                    data: [15, 550],  // SUBSTITUIR pelos valores reais
+                    backgroundColor: function(context) {
+                        const chart = context.chart;
+                        return getGradient(chart) || '#9b59b6';
+                    },
+                    borderColor: '#8e44ad',
+                    borderWidth: 2,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {display: false},
+                    tooltip: {
+                        backgroundColor: 'rgba(52, 73, 94, 0.95)',
+                        padding: 12,
+                        titleFont: {size: 14, weight: 'bold'},
+                        bodyFont: {size: 13},
+                        callbacks: {
+                            label: function(context) {
+                                return context.parsed.y + ' MB/s';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + ' MB/s';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</div>
+
+<!-- ========================================
+     COMPONENTE 4: CTA WHATSAPP (Verde #2ecc71)
+     Botão fixo responsivo com mensagem pré-formatada
+     ======================================== -->
+<div class="deivi-cta-component" style="margin-top: 30px;">
+    <style>
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 6px 25px rgba(46, 204, 113, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            box-shadow: 0 8px 30px rgba(46, 204, 113, 0.6);
+            transform: translateY(-2px);
+        }
+        .cta-button:active {
+            transform: translateY(0);
+        }
+        .cta-icon {
+            font-size: 1.5rem;
+        }
+    </style>
+    
+    <a href="https://wa.me/5575992134212?text=Ol%C3%A1!%20Vi%20meu%20relat%C3%B3rio%20t%C3%A9cnico%20e%20gostaria%20de%20fechar%20o%20servi%C3%A7o.%20Pode%20me%20passar%20os%20detalhes%3F" 
+       class="cta-button" 
+       target="_blank">
+        <span class="cta-icon">💬</span>
+        <span>Comprar Agora</span>
+    </a>
+</div>
+
+<!-- ========================================
+     COMPONENTE 5: TIMESTAMP FOOTER (OBRIGATÓRIO)
+     Gerado automaticamente via JavaScript
+     ======================================== -->
+<div class="deivi-timestamp-component" style="margin-top: 50px;">
+    <style>
+        .timestamp-footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid #ecf0f1;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: #95a5a6;
+            font-family: 'Inter', sans-serif;
+        }
+        .timestamp-footer strong {
+            color: #7f8c8d;
+        }
+    </style>
+    
+    <footer class="timestamp-footer">
+        <p>
+            <strong>Gerado em <span id="reportDate"></span> às <span id="reportTime"></span></strong> - DeiviTech
+        </p>
+        <p style="margin-top: 8px; font-size: 0.75rem;">
+            Relatório personalizado exclusivo para você
+        </p>
+    </footer>
+    
+    <script>
+        // Timestamp automático em PT-BR
+        const agora = new Date();
+        const opcoes = {
+            day: '2-digit',
+            month: '2-digit', 
+            year: 'numeric'
+        };
+        const opcoesHora = {
+            hour: '2-digit',
+            minute: '2-digit'
+        };
+        
+        document.getElementById('reportDate').textContent = agora.toLocaleDateString('pt-BR', opcoes);
+        document.getElementById('reportTime').textContent = agora.toLocaleTimeString('pt-BR', opcoesHora);
+    </script>
+</div>
+
+<!-- ========================================
+     COMPONENTE 6: TABELA COMPARATIVA (Before/After)
+     Estilo minimalista com cores da paleta
+     ======================================== -->
+<div class="deivi-table-component" style="margin-top: 30px;">
+    <style>
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .comparison-table thead {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+        }
+        .comparison-table th {
+            padding: 16px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        .comparison-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #ecf0f1;
+            color: #2c3e50;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        .value-before {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+        .value-after {
+            color: #2ecc71;
+            font-weight: 600;
+        }
+    </style>
+    
+    <table class="comparison-table">
+        <thead>
+            <tr>
+                <th>Métrica</th>
+                <th>Antes</th>
+                <th>Depois</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Velocidade Leitura</td>
+                <td class="value-before">15 MB/s</td>
+                <td class="value-after">550 MB/s</td>
+            </tr>
+            <tr>
+                <td>Tempo de Boot</td>
+                <td class="value-before">2min 30s</td>
+                <td class="value-after">18s</td>
+            </tr>
+            <tr>
+                <td>Abertura Apps</td>
+                <td class="value-before">Lento</td>
+                <td class="value-after">Instantâneo</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ========================================
+     COMPONENTE 7: SEÇÃO DE ESPECIFICAÇÕES
+     Grid responsivo 2 colunas
+     ======================================== -->
+<div class="deivi-specs-component" style="margin-top: 30px;">
+    <style>
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .spec-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        .spec-label {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .spec-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+    </style>
+    
+    <div class="specs-grid">
+        <div class="spec-card">
+            <div class="spec-label">Marca/Modelo</div>
+            <div class="spec-value">[MARCA_HD]</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-label">Capacidade</div>
+            <div class="spec-value">[CAPACIDADE]</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-label">Saúde SMART</div>
+            <div class="spec-value">[STATUS_SMART]</div>
+        </div>
+        <div class="spec-card">
+            <div class="spec-label">Horas de Uso</div>
+            <div class="spec-value">[HORAS_USO]</div>
+        </div>
+    </div>
+</div>
+
+<!-- ========================================
+     INSTRUÇÕES DE USO
+     ======================================== -->
+<div style="margin-top: 60px; padding: 30px; background: #ecf0f1; border-radius: 12px;">
+    <h2 style="color: #2c3e50; margin-bottom: 15px;">📖 Como Usar Este Arquivo</h2>
+    
+    <ol style="color: #34495e; line-height: 1.8;">
+        <li><strong>Copiar Componentes:</strong> Cada bloco HTML+CSS acima é independente. Copie o bloco completo (incluindo `<style>`) para seu relatório.</li>
+        
+        <li><strong>Substituir Placeholders:</strong> Procure por `[NOME_CLIENTE]`, `[MARCA_HD]`, etc. e substitua pelos dados reais.</li>
+        
+        <li><strong>Ajustar Dados do Gráfico:</strong> No Componente 3 (Chart.js), edite a linha:<br>
+        <code>data: [15, 550]</code> com os valores reais do CrystalDiskMark.</li>
+        
+        <li><strong>Testar Responsividade:</strong> Abra o HTML no navegador desktop e mobile (Chrome DevTools ou dispositivo real).</li>
+        
+        <li><strong>Timestamp Automático:</strong> O Componente 5 gera data/hora automaticamente ao abrir o arquivo. Não precisa editar.</li>
+        
+        <li><strong>Paleta de Cores:</strong> Todos os componentes já usam a paleta oficial:<br>
+        Azul <code>#3498db</code>, Roxo <code>#9b59b6</code>, Verde <code>#2ecc71</code></li>
+    </ol>
+    
+    <hr style="margin: 25px 0; border: none; border-top: 2px solid #bdc3c7;">
+    
+    <h3 style="color: #2c3e50; margin-bottom: 10px;">🎨 Combinações Recomendadas</h3>
+    
+    <ul style="color: #34495e; line-height: 1.8;">
+        <li><strong>Relatório HD:</strong> Componentes 1 + 2 + 3 + 6 + 4 + 5</li>
+        <li><strong>Relatório Notebook:</strong> Componentes 1 + 2 + 7 + 4 + 5</li>
+        <li><strong>Relatório Completo:</strong> Todos os 7 componentes</li>
+    </ul>
+    
+    <p style="margin-top: 20px; padding: 15px; background: white; border-left: 4px solid #3498db; border-radius: 6px; color: #2c3e50;">
+        <strong>💡 Dica:</strong> Sempre inclua o Componente 5 (Timestamp) no final de TODOS os relatórios. É o diferencial visual que reforça personalização.
+    </p>
+</div>
+
+</body>
+</html>
