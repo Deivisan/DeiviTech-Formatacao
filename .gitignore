@@ -66,3 +66,8 @@ temp-docs/
 chrome_profile_notebooklm/
 notebooklm-config.json
 mcp/notebooklm-mcp/.venv/
+
+# Imagens geradas automaticamente (temporárias)
+marketing/generated/Gemini_Generated_*
+*.ai
+*.psd
