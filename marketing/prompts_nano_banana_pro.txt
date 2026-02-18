@@ -1,6 +1,20 @@
+# ⚠️ ATENÇÃO: ARQUIVO ANTIGO - USE A VERSÃO 3.0!
 # Prompts para Nano Banana Pro - DeiviTech Marketing
-# Data: 15 de Fevereiro de 2026
-# ATUALIZADO: Metodologia HTML Personalizada + Timestamp + Taxa Conversão 85-90%
+# =====================================================
+# Este arquivo contém prompts ANTIGOS que foram SUBSTITUÍDOS.
+# 
+# 📂 NOVA VERSÃO: v2/prompts/nano_banana_pro/prompts_marketing_v3.md
+#
+# A versão 3.0 inclui:
+# - Prompts otimizados para Nano Banana Pro (Gemini API)
+# - Estrutura 7-Pillar Framework
+# - Fórmulas de copy/paste
+# - 22 prompts premium (vs 16 antigos)
+# - Paletas de cores atualizadas
+# - Configurações por plataforma
+# =====================================================
+
+# Prompts antigos mantidos apenas para referência (não recomendados)
 
 ---
 ## PALETA DE CORES OFICIAL (2026)
