@@ -28,17 +28,7 @@ const PROMPTS = {
   
   os_logos: `Elegant isometric 3D product shot of floating glass platform in void. On platform: Windows 10, Windows 11, Tux Linux, Chrome logos connected by glowing circuit traces to golden shield. Deep purple to blue gradient background volumetric lighting, glass refraction, product photography style, shallow DOF.`,
   
-  ghost_spectre: `Aggressive high-energy gaming setup, dark room, intense cyan and electric green RGB lighting. Sleek PC tower with custom loop liquid cooling glowing in brand colors, 'DT' monogram badge pulsing. Gaming monitor showing 144Hz, mechanical keyboard, RGB mouse. Volumetric cyan smoke, lens flare. Eye-level wide angle, 8k hyper-realistic.`,
-  
-  deivitech_gamer: `Aggressive high-energy gaming setup, dark room with cyan #3498db and green #2ecc71 RGB lighting. Sleek PC tower with custom loop liquid cooling in DeiviTech brand colors, translucent 'DT' logo badge glowing. Gaming monitor 144Hz, mechanical keyboard, RGB mouse, cyberpunk desk. Volumetric cyan smoke, lens flare. Cinematic, 8k hyper-realistic.`,
-
-  deivitech_dev: `Sleek developer workspace overhead shot. Dual monitors: VS Code with cyan terminal prompt 'DeiviTech OS', Docker containers running. Desk: mechanical keyboard RGB, wireless mouse, coffee. Cyan ambient LED. Clean, organized, professional. Overhead, sharp focus, product photography, 16:9.`,
-
-  deivitech_corporate: `Professional corporate IT environment. Laptop showing Windows login with DeiviTech OS logo, BitLocker icon, security shield with green checkmark 'Sistema Protegido'. Modern office background blurred, glass walls. Corporate, trust-inspiring blue tones. Professional corporate photography.`,
-
-  deivitech_basic: `Friendly lifestyle photo of casual user in bright living room. Laptop showing simplified DeiviTech OS interface with large icons, tutorials overlay, warm colors. User smiling while browsing. Natural window light, warm temperature, shallow DOF. Lifestyle photography, inviting, 4:5.`,
-
-  deivitech_badge: `Prestigious 3D badge. Metallic shield with 'DeiviTech' chrome text and 'OS' subscript in cyan to green gradient. Shield has subtle glow, metallic reflections. Deep void black background with circuit patterns. Professional badge photography, rim lighting, lens flare. Premium, trustworthy, technological.`,
+  ghost_s. Softpectre: `Aggressive high-energy gaming setup, dark room, intense purple and crimson RGB lighting. Translucent ghost with glowing purple eyes hovers over gaming PC with liquid cooling, holding controller. Background: gaming desk with keyboard, mouse, headset, RGB strips. Volumetric purple fog, lens flare. Eye-level wide angle, 8k hyper-realistic.`,
   
   ssd_vs_hd: `Professional product comparison studio photograph. Left: heavy industrial HDD, metallic gray, utilitarian. Right: slim modern M.2 NVMe SSD with golden pins, green LED sparks. SSD floating slightly. Dark charcoal background, soft product lighting, catchlights. Speed motion blur only on SSD. Commercial photography, 8k.`,
   
@@ -146,12 +136,7 @@ Comandos disponíveis:
   speed_transformation - Transformação Velocidade
   diagnostic_report - Relatório Diagnóstico
   os_logos         - Logos SO (Windows/Linux/Chrome)
-  ghost_spectre    - Ghost Spectre Gamer (Legado)
-  deivitech_gamer  - DeiviTech OS Gamer
-  deivitech_dev    - DeiviTech OS Dev Workspace
-  deivitech_corporate - DeiviTech OS Corporate
-  deivitech_basic  - DeiviTech OS Basic
-  deivitech_badge  - DeiviTech OS Badge
+  ghost_spectre    - Ghost Spectre Gamer
   ssd_vs_hd        - SSD vs HD Comparativo
   ram_combo        - RAM Combo Upgrade
   ai_brain         - Cérebro IA
