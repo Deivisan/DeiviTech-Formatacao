@@ -231,3 +231,71 @@ O website DeiviTech Formatação agora apresenta:
 - ✅ **Integração WhatsApp** para pedidos diretos
 
 **🚀 Pronto para atender clientes em todo o Brasil com profissionalismo e transparência!**
+
+---
+
+## 🚀 DEIVITECH OS - EXTENSÃO/SEGUNDA OPÇÃO (FEVEREIRO 2026)
+
+### 📋 VISÃO GERAL
+**Objetivo**: Criar uma segunda opção/variante de sistema operacional personalizado ao lado do Ghost Spectre (legado).
+
+**Estrutura**: DeiviTech OS como marca própria, mantendo Ghost Spectre como opção legada para clientes existentes.
+
+**Status**: ✅ Implementado na página de Sistemas
+
+---
+
+### ✅ IMPLEMENTAÇÃO REALIZADA
+
+#### 1. Integração na Página de Sistemas (sistemas.html)
+- ✅ Card DeiviTech OS adicionado como segunda opção
+- ✅ Localizado após Ghost Spectre na seção "Versões Modificadas"
+- ✅ Link no menu para acesso rápido via âncora
+- ✅ Preços: R$80 (Basic) até R$200 (Corporate)
+
+#### 2. Quatro Perfis Disponíveis
+| Perfil | Público | Preço | Diferenciais |
+|--------|---------|--------|--------------|
+| Gamer | Jogadores | R$150 | Game Mode, +15% FPS |
+| Dev | Desenvolvedores | R$180 | VS Code, Docker, WSL2 |
+| Corporate | Empresas | R$200 | BitLocker, políticas segurança |
+| Basic | Usuários comuns | R$80 | Interface simplificada |
+
+---
+
+### 📝 PLANEJAMENTO DE IMPLEMENTAÇÃO
+
+#### Fase 1: Estrutura de Scripts (Próximos Passos)
+- [ ] `install-deivitech-os.ps1` - Script principal de instalação
+- [ ] Scripts de configuração por perfil
+- [ ] Sistema de validação pós-instalação
+
+#### Fase 2: Branding Visual
+- [ ] Logo e identidade DeiviTech OS
+- [ ] Wallpapers oficiais
+- [ ] Ícones customizados
+
+#### Fase 3: Documentação
+- [ ] Guia de instalação
+- [ ] FAQ técnico
+- [ ] Vídeos tutoriais
+
+---
+
+### 🔗 LIGAÇÃO COM CÓDIGO LEGADO
+
+O Ghost Spectre permanece como:
+- ✅ Opção para clientes que já conhecem
+- ✅ Referência técnica validada
+- ✅ Alternativa comprovada
+
+O DeiviTech OS adiciona:
+- ✅ Marca própria nacional
+- ✅ Personalização por perfil
+- ✅ Suporte dedicado
+- ✅ Scripts automatizados
+
+---
+
+**Data Implementação**: 19 de Fevereiro 2026
+**Status**: 🟢 EM DESENVOLVIMENTO
