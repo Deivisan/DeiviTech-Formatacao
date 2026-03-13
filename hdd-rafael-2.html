@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔧 HD #2 Testado - DeiviTech Formatação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .spec-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .spec-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .spec-card h3 {
+            color: #2a5298;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .spec-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #1e3c72;
+        }
+        
+        .spec-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .test-results {
+            background: #f9fafb;
+            border-left: 5px solid #10b981;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .test-results h2 {
+            color: #10b981;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .test-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .test-row:last-child {
+            border-bottom: none;
+        }
+        
+        .test-label {
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .test-value {
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .price-section {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #2d3436;
+            margin: 20px 0;
+        }
+        
+        .price small {
+            font-size: 0.5em;
+            opacity: 0.8;
+        }
+        
+        .buy-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            border: 2px solid #e5e7eb;
+        }
+        
+        .input-group {
+            margin: 20px 0;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1.1em;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .btn-buy {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border-radius: 15px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+        }
+        
+        .btn-buy:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+        
+        .btn-buy:active {
+            transform: translateY(0);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f9fafb;
+            color: #6b7280;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px;
+        }
+        
+        .badge.warning {
+            background: #f59e0b;
+        }
+        
+        .badge.info {
+            background: #3b82f6;
+        }
+        
+        .badge.star {
+            background: #fbbf24;
+        }
+        
+        .comparison {
+            background: linear-gradient(135deg, #e0e7ff 0%, #ddd6fe 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .comparison h3 {
+            color: #5b21b6;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .comparison table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison th, .comparison td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #c4b5fd;
+        }
+        
+        .comparison th {
+            background: #8b5cf6;
+            color: white;
+        }
+        
+        .comparison .winner {
+            color: #fbbf24;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔧 HD #2 Profissionalmente Testado</h1>
+            <p>DeiviTech Formatação • Qualidade Garantida</p>
+        </div>
+        
+        <div class="content">
+            <h2 style="color: #2a5298; margin-bottom: 20px;">📊 Especificações do Disco</h2>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3>💾 Capacidade</h3>
+                    <div class="spec-value">500</div>
+                    <div class="spec-label">Gigabytes</div>
+                </div>
+                
+                <div class="spec-card">
+                    <h3>🏷️ Modelo</h3>
+                    <div class="spec-value" style="font-size: 1.2em;">WD Blue 500GB</div>
+                    <div class="spec-label">Fabricante e Série</div>
+                </div>
+                
+                <div class="spec-card">
+                    <h3>🔄 Interface</h3>
+                    <div class="spec-value" style="font-size: 1.5em;">SATA III</div>
+                    <div class="spec-label">Tipo de Conexão</div>
+                </div>
+                
+                <div class="spec-card">
+                    <h3>📅 Estado</h3>
+                    <div class="spec-value" style="font-size: 1.3em;">100%</div>
+                    <div class="spec-label">Saúde do Disco</div>
+                </div>
+            </div>
+            
+            <div class="test-results">
+                <h2>✅ Resultados dos Testes</h2>
+                
+                <div class="test-row">
+                    <span class="test-label">🔍 SMART Status</span>
+                    <span class="test-value">✅ PASSED</span>
+                </div>
+                
+                <div class="test-row">
+                    <span class="test-label">⚡ Velocidade de Leitura</span>
+                    <span class="test-value">79.12 MB/s ⭐</span>
+                </div>
+                
+                <div class="test-row">
+                    <span class="test-label">📝 Velocidade de Escrita</span>
+                    <span class="test-value">~72 MB/s</span>
+                </div>
+                
+                <div class="test-row">
+                    <span class="test-label">🔬 Teste de Setores Ruins</span>
+                    <span class="test-value">0 (Perfeito)</span>
+                </div>
+                
+                <div class="test-row">
+                    <span class="test-label">🏥 Horas de Uso</span>
+                    <span class="test-value">2.896h (~121 dias) ⭐</span>
+                </div>
+                
+                <div class="test-row">
+                    <span class="test-label">🌡️ Temperatura Atual</span>
+                    <span class="test-value">30°C (Excelente) ⭐</span>
+                </div>
+            </div>
+            
+            <div class="comparison">
+                <h3>📊 Comparação HD #1 vs HD #2</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>HD #1</th>
+                            <th>HD #2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>🔢 Serial</td>
+                            <td>WXK1CB170030</td>
+                            <td>WXF1C2279984</td>
+                        </tr>
+                        <tr>
+                            <td>⏱️ Horas de Uso</td>
+                            <td>4.369h</td>
+                            <td class="winner">2.896h ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>🌡️ Temperatura</td>
+                            <td>32°C</td>
+                            <td class="winner">30°C ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>📖 Leitura</td>
+                            <td>77.31 MB/s</td>
+                            <td class="winner">79.12 MB/s ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>🏥 Saúde SMART</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="text-align: center; margin-top: 15px; color: #5b21b6; font-weight: bold;">
+                    ⭐ HD #2 apresenta MENOR USO e MELHOR PERFORMANCE!
+                </p>
+            </div>
+            
+            <div style="text-align: center; margin: 20px 0;">
+                <span class="badge">✅ 100% Testado</span>
+                <span class="badge">🔧 Formatado NTFS</span>
+                <span class="badge info">🛡️ Garantia de Qualidade</span>
+                <span class="badge star">⭐ Menos Uso</span>
+            </div>
+            
+            <div class="price-section">
+                <h2 style="color: #2d3436; margin-bottom: 10px;">💰 Valor Promocional</h2>
+                <div class="price">
+                    R$ 40<small>,00</small>
+                </div>
+                <p style="color: #636e72; font-size: 1.1em;">
+                    💡 <strong>Combo 2 HDs por R$ 80,00</strong>
+                </p>
+            </div>
+            
+            <div class="buy-section">
+                <h2 style="color: #2a5298; margin-bottom: 20px; text-align: center;">
+                    📱 Confirmar Compra pelo WhatsApp
+                </h2>
+                
+                <div class="input-group">
+                    <label for="whatsapp">📞 Seu WhatsApp:</label>
+                    <input 
+                        type="tel" 
+                        id="whatsapp" 
+                        placeholder="(75) 98123-1019"
+                        value="(75) 98123-1019"
+                    >
+                </div>
+                
+                <button class="btn-buy" onclick="confirmarCompra()">
+                    💬 Confirmar Compra via WhatsApp
+                </button>
+                
+                <p style="text-align: center; margin-top: 15px; color: #6b7280;">
+                    🚚 <strong>Entrega:</strong> Retirada no local ou Uber Flash (custo do cliente)
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>DeiviTech Formatação</strong></p>
+            <p>Testes profissionais com tecnologia de ponta</p>
+            <p style="margin-top: 10px;">
+                🦞 Powered by DevSan AGI • 2026
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        function confirmarCompra() {
+            const whatsapp = document.getElementById('whatsapp').value.replace(/\D/g, '');
+            
+            const mensagem = `🔧 *DeiviTech Formatação*\n\n` +
+                `Olá! Gostaria de confirmar a compra do HD #2:\n\n` +
+                `💾 *Modelo:* WD Blue 500GB\n` +
+                `📊 *Capacidade:* 500 GB\n` +
+                `⭐ *Destaque:* Menor uso e melhor performance!\n` +
+                `💰 *Valor:* R$ 40,00 (ou R$ 80,00 os 2 HDs)\n\n` +
+                `📱 *Meu WhatsApp:* ${whatsapp}\n\n` +
+                `Aguardo retorno! 🚀`;
+            
+            const url = `https://wa.me/5575981231019?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+        
+        // Máscara de telefone
+        document.getElementById('whatsapp').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/^(\d{2})(\d{5})(\d{4}).*/, '($1) $2-$3');
+                e.target.value = value;
+            }
+        });
+    </script>
+</body>
+</html>
