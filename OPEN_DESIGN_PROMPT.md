@@ -36,6 +36,13 @@ Crie um MVP estático e moderno, orientado a conversão por WhatsApp, com autori
 8. A chave NVIDIA será inserida no código pelo usuário; forneça `config.js` ou equivalente com `NVIDIA_API_KEY = 'COLOQUE_SUA_CHAVE_AQUI'`.
 9. Use HTML semântico e CSS moderno, mantendo o código enxuto e leve.
 10. Evite complexidade desnecessária; otimize para um MVP claro e eficaz.
+11. Mostre preços de referência simples em pontos estratégicos (por exemplo, a partir de R$ 25 / R$ 50 / R$ 100), mas sem virar catálogo ou loja.
+12. Adicione prova social inicial: 2-3 depoimentos curtos de clientes satisfeitos.
+13. Inclua botão WhatsApp flutuante fixo no canto inferior direito.
+14. Inclua SEO local básico: título claro, descrição meta e palavras-chave com foco em Feira de Santana e formatação de PC.
+15. Use a metodologia diferencial de Relatórios HTML Personalizados: destaque que o cliente recebe relatório visual via WhatsApp no formato HTML, gerado em minutos.
+16. Inclua timestamp como diferencial visual no rodapé ou relatórios: “Gerado em DD/MM/YYYY às HH:MM - DeiviTech”.
+17. Inclua menção a sistema de indicações simples: "Indique um amigo e ambos ganham R$10".
 
 ## Design e tom
 - Paleta escura com ciano, púrpura e verde como destaques.
@@ -61,8 +68,14 @@ Crie um MVP estático e moderno, orientado a conversão por WhatsApp, com autori
 - Seção corporativa: formatação em massa, padronização de laboratórios, atualização de PCs empresariais, automação e escala.
 - Seção de IA: assistente de chat, análise inteligente e recomendações.
 - FAQ curto sobre formatação, hardware, sistemas e agendamento.
-- Contato: WhatsApp, localização e horário de atendimento.
+- Contato: WhatsApp, localização, horário de atendimento.
 - Botão flutuante de WhatsApp e navegação sticky.
+- Prova social inicial com 2-3 depoimentos curtos.
+- Destaque a Metodologia HTML Personalizada como diferencial principal.
+- Referência visual à paleta oficial: azul #3498db, roxo #9b59b6, verde #2ecc71, cinza #95a5a6.
+- Botão CTA verde de ação e seção de urgência suave para “relatório rápido”.
+- Mini bloco com valores de referência simples e claros (a partir de R$ 25 / R$ 50 / R$ 100).
+
 
 ## Output esperado
 - Artefato final em `index.html` (ou equivalente) com CSS e JS necessários.
@@ -75,4 +88,7 @@ Crie um MVP estático e moderno, orientado a conversão por WhatsApp, com autori
 - Não mencione GitHub Pages ou limitações de deploy.
 - Otimize para criar o MVP mais eficaz possível com o mínimo de complexidade.
 - Use o Open Design web workflow: `web-prototype` / `saas-landing` skill + `Tech Utility` / `Modern Minimal` visual direction.
+- Inclua o diferencial de `Relatórios HTML Personalizados enviados via WhatsApp` como comprovadamente de alta conversão.
+- Use a paleta oficial e evite cores antigas depreciadas (não use #3b82f6, #10b981, #7c3aed).
+- Inclua tags de SEO local: “formatação de PC Feira de Santana”, “técnico informática Feira de Santana”, “relatório HTML personalizado”.
 
