@@ -33,7 +33,7 @@ Crie um MVP estático e moderno, orientado a conversão por WhatsApp, com autori
    - contato e agendamento
 6. Não entregue o site como e-commerce. Não transformar em catálogo de preços, carrinho ou loja.
 7. Inclua widget de chat IA no cliente, consumindo um endpoint NVIDIA com Llama 3.1b.
-8. A chave NVIDIA será inserida no código pelo usuário; forneça `config.js` ou equivalente com `NVIDIA_API_KEY = 'COLOQUE_SUA_CHAVE_AQUI'`.
+8. A chave NVIDIA será inserida no código pelo usuário; forneça `config.js` ou equivalente com `NVIDIA_API_KEY = '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'`.
 9. Use HTML semântico e CSS moderno, mantendo o código enxuto e leve.
 10. Evite complexidade desnecessária; otimize para um MVP claro e eficaz.
 11. Mostre preços de referência simples em pontos estratégicos (por exemplo, a partir de R$ 25 / R$ 50 / R$ 100), mas sem virar catálogo ou loja.
