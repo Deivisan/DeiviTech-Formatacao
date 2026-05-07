@@ -1,325 +1,427 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta name="description" content="Serviços especializados em formatação de PCs, upgrades de hardware e análise IA inteligente. Formatação profissional com garantia de 30 dias.">
-    <meta name="keywords" content="formatação PC, upgrade hardware, análise IA, Windows, Linux, SSD, RAM">
-    <meta name="author" content="DeiviTech">
-    <meta property="og:title" content="DeiviTech Formatação - Serviços Especializados">
-    <meta property="og:description" content="Formatação • Hardware • Sistemas Otimizados">
-    <meta property="og:image" content="https://deivisan.github.io/DeiviTech-Formatacao/preview.jpg">
-    <meta property="og:url" content="https://deivisan.github.io/DeiviTech-Formatacao/">
-    <meta name="twitter:card" content="summary_large_image">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/common.css">
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-  </head>
-  <body class="bg-gray-900 text-white font-sans pt-16">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeiviTech | Técnico & Analista de Sistemas em Feira de Santana</title>
+  <meta name="description" content="DeiviTech: Técnico e Analista de Sistemas em Feira de Santana. Formatação, upgrades, desenvolvimento de sistemas personalizados, otimização de PCs, Notebooks e Celulares com IA.">
+  <meta name="keywords" content="técnico informática Feira de Santana, analista de sistemas, formatação PC, upgrade notebook, desenvolvedor de sistemas, manutenção celular, IA para negócios">
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="40" height="40" rx="10" fill="url(#logo-gradient)"/>
+          <path d="M10 12h8v4h-4v12h-4V12zm12 0h4v16h-4V12zm8 4h4v12h-4V16zm-12 4h4v8h-4v-8z" fill="#000"/>
+          <defs>
+            <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00d4ff"/>
+              <stop offset="1" stop-color="#9d5cfa"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        DeiviTech
+      </a>
+      <nav class="nav">
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#publicos" class="nav-link">Para Quem</a>
+        <a href="celular.html" class="nav-link">Celular</a>
+        <a href="loja.html" class="nav-link">Loja</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+      <a href="#contato" class="btn btn-primary">Fale Comigo</a>
+    </div>
+  </header>
 
-    <!-- Navegação Seções - Menu Superior -->
-    <nav class="bg-gray-800 text-white p-4 fixed top-0 left-0 right-0 z-50">
-      <div class="container mx-auto flex justify-center space-x-4">
-        <a href="index.html" class="bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded">Início</a>
-        <a href="formatacao.html" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">Formatação</a>
-        <a href="hardware.html" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded">Hardware</a>
-        <a href="sistemas.html" class="bg-purple-500 hover:bg-purple-600 px-4 py-2 rounded">Sistemas</a>
-        <a href="analise.html" class="bg-orange-600 hover:bg-orange-700 px-4 py-2 rounded">Análise IA</a>
-        <a href="https://wa.me/5575981231019?text=Olá! Gostaria de agendar um serviço." target="_blank" class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded"><i class="fab fa-whatsapp mr-1"></i>Agendar</a>
-        <a href="faq.html" class="bg-indigo-500 hover:bg-indigo-600 px-4 py-2 rounded">FAQ</a>
-        <a href="sobre.html" class="bg-pink-500 hover:bg-pink-600 px-4 py-2 rounded">Sobre</a>
-      </div>
-    </nav>
-
-    <!-- Header -->
-    <header class="hero-bg py-12">
-      <div class="container mx-auto px-6 text-center">
-        <div class="flex items-center justify-center mb-6">
-          <i class="fas fa-microchip text-4xl text-white mr-4"></i>
-          <h1 class="text-4xl font-bold">DeiviTech Formatação</h1>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-bg"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Técnico & Analista de Sistemas | Feira de Santana
         </div>
-
-        <h2 class="text-2xl mb-4">🚀 Serviços Especializados em TI</h2>
-        <p class="text-lg opacity-90 mb-8">Formatação • Hardware • Sistemas Otimizados</p>
-
-        <div class="flex justify-center space-x-8 text-center">
-          <div>
-            <div class="text-2xl font-bold text-green-400">Atendendo clientes</div>
-            <div class="text-sm opacity-75">em todo Brasil</div>
+        
+        <h1>
+          Seu PC, Notebook ou Celular
+          <span class="text-gradient">funcionando no máximo</span>
+        </h1>
+        
+        <p class="hero-description">
+          Não sou só técnico — sou <strong style="color: var(--accent-cyan);">analista de sistemas</strong> e <strong style="color: var(--accent-purple);">desenvolvedor</strong>. Uso IA para criar soluções personalizadas, automatizar processos e entregar resultados. Formatação, upgrades, manutenção em PCs, Notebooks e Celulares — com inteligência técnica e analítica.
+        </p>
+        
+        <!-- Stats de Impacto -->
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number counter" data-target="10">0</div>
+            <div class="stat-label">Anos de Experiência</div>
           </div>
-          <div>
-            <div class="text-2xl font-bold text-blue-400">24h</div>
-            <div class="text-sm opacity-75">Entrega Máxima</div>
+          <div class="stat">
+            <div class="stat-number counter" data-target="500">0</div>
+            <div class="stat-label">Clientes Atendidos</div>
           </div>
-          <div>
-            <div class="text-2xl font-bold text-purple-400">30 dias</div>
-            <div class="text-sm opacity-75">Garantia</div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Serviços Principais -->
-    <section class="py-12">
-      <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12">Nossos Serviços</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-
-          <!-- Formatação -->
-          <div class="bg-gray-800 rounded-xl p-8 card-hover cursor-pointer animate-fadeInUp" onclick="window.location='formatacao.html'">
-            <div class="text-center">
-              <i class="fas fa-desktop text-5xl text-blue-400 mb-6"></i>
-              <h3 class="text-2xl font-bold mb-4">Formatação Completa</h3>
-              <p class="text-gray-300 mb-4">Reinstalação do sistema operacional com otimizações e programas essenciais</p>
-
-              <div class="space-y-2 mb-6">
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-green-400">✓</span> Windows 10/11 Ativado
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-purple-400">⚡</span> Versões modificadas
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-green-400">🆓</span> Chrome OS (Gratuito)
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-orange-400">🐧</span> Linux
-                </div>
-              </div>
-
-              <div class="text-sm text-gray-300 mb-4">Instalação profissional de sistemas operacionais</div>
-              <button class="bg-blue-500 hover:bg-blue-600 px-6 py-3 rounded-lg w-full">
-                Ver Opções
-              </button>
-            </div>
-          </div>
-
-          <!-- Hardware -->
-          <div class="bg-gray-800 rounded-xl p-8 card-hover cursor-pointer animate-fadeInUp animate-delay-200" onclick="window.location='hardware.html'">
-            <div class="text-center">
-              <i class="fas fa-microchip text-5xl text-green-400 mb-6"></i>
-              <h3 class="text-2xl font-bold mb-4">Hardware & Upgrade</h3>
-              <p class="text-gray-300 mb-4">Turbine seu PC com componentes de qualidade</p>
-
-              <div class="space-y-2 mb-6">
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-blue-400">🧠</span> Diagnóstico completo
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-purple-400">💾</span> RAM DDR2/3/4/5 (Desktop/Notebook)
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-yellow-400">💿</span> SSD/HD de alta qualidade
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-green-400">🔧</span> Instalação profissional
-                </div>
-              </div>
-
-              <div class="text-sm text-gray-300 mb-4">Componentes e upgrades</div>
-              <button class="bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg w-full">
-                Ver Produtos
-              </button>
-            </div>
-          </div>
-
-          <!-- Sistemas -->
-          <div class="bg-gray-800 rounded-xl p-8 card-hover cursor-pointer animate-fadeInUp animate-delay-400" onclick="window.location='sistemas.html'">
-            <div class="text-center">
-              <i class="fas fa-cog text-5xl text-purple-400 mb-6"></i>
-              <h3 class="text-2xl font-bold mb-4">Sistemas & Overclocking</h3>
-              <p class="text-gray-300 mb-4">Conheça as diferenças entre sistemas e extraia 100% do seu hardware</p>
-
-              <div class="space-y-2 mb-6">
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-blue-400">📊</span> Comparação detalhada
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-red-400">🔥</span> Guia de overclocking seguro
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-green-400">⚡</span> +30% performance
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-purple-400">🛡️</span> Limites de segurança
-                </div>
-              </div>
-
-              <div class="text-3xl font-bold text-purple-400 mb-4">Otimização Personalizada</div>
-              <button class="bg-purple-500 hover:bg-purple-600 px-6 py-3 rounded-lg w-full">
-                Explorar Sistemas
-              </button>
-            </div>
-          </div>
-
-          <!-- Análise IA -->
-          <div class="bg-gray-800 rounded-xl p-8 card-hover cursor-pointer animate-fadeInUp animate-delay-600" onclick="window.location='analise.html'">
-            <div class="text-center">
-              <i class="fas fa-brain text-5xl text-orange-400 mb-6"></i>
-              <h3 class="text-2xl font-bold mb-4">Análise IA Inteligente</h3>
-              <p class="text-gray-300 mb-4">3 formas de analisar seu PC e receber recomendações personalizadas</p>
-
-              <div class="space-y-2 mb-6">
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-green-400">🤖</span> Detecção automática
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-blue-400">📝</span> Análise manual
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-purple-400">📄</span> Upload de relatório
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-yellow-400">🎯</span> Recomendações personalizadas
-                </div>
-              </div>
-
-              <div class="text-sm text-gray-300 mb-4">Análise profissional do seu hardware</div>
-              <button class="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-lg w-full">
-                Analisar PC
-              </button>
-            </div>
-          </div>
-
-          <!-- Agendamento Online -->
-          <div class="bg-gray-800 rounded-xl p-8 card-hover cursor-pointer animate-fadeInUp animate-delay-800" onclick="window.location='agendamento.html'">
-            <div class="text-center">
-              <i class="fas fa-calendar-check text-5xl text-purple-400 mb-6"></i>
-              <h3 class="text-2xl font-bold mb-4">Agendamento Online</h3>
-              <p class="text-gray-300 mb-4">Agende seu atendimento de forma rápida e prática pelo site</p>
-
-              <div class="space-y-2 mb-6">
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-green-400">📅</span> Escolha data e horário
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-blue-400">🏠</span> Atendimento domiciliar
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-yellow-400">💰</span> Orçamentos via WhatsApp
-                </div>
-                <div class="bg-gray-700 p-2 rounded text-sm">
-                  <span class="text-purple-400">✅</span> Confirmação instantânea
-                </div>
-              </div>
-
-              <div class="text-sm text-gray-300 mb-4">Agendamento fácil e rápido</div>
-              <button class="bg-teal-500 hover:bg-teal-600 px-6 py-3 rounded-lg w-full">
-                Agendar Agora
-              </button>
-            </div>
+          <div class="stat">
+            <div class="stat-number counter" data-target="100">0</div>
+            <div class="stat-label">Sistemas Criados</div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Diferenciais -->
-    <section class="py-12 bg-gray-800">
-      <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12">Por que escolher a DeiviTech?</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div class="text-center">
-            <i class="fas fa-clock text-3xl text-yellow-400 mb-4"></i>
-            <h3 class="text-lg font-bold mb-2">Rapidez</h3>
-            <p class="text-sm text-gray-300">Serviço em até 24 horas</p>
-          </div>
-
-          <div class="text-center">
-            <i class="fas fa-shield-alt text-3xl text-green-400 mb-4"></i>
-            <h3 class="text-lg font-bold mb-2">Garantia</h3>
-            <p class="text-sm text-gray-300">30 dias de garantia</p>
-          </div>
-
-          <div class="text-center">
-            <i class="fas fa-home text-3xl text-purple-400 mb-4"></i>
-            <h3 class="text-lg font-bold mb-2">Atendimento</h3>
-            <p class="text-sm text-gray-300">Domicílio ou balcão</p>
-          </div>
-
-          <div class="text-center">
-            <i class="fas fa-star text-3xl text-blue-400 mb-4"></i>
-            <h3 class="text-lg font-bold mb-2">Expertise</h3>
-            <p class="text-sm text-gray-300">Experiência comprovada</p>
-          </div>
+        
+        <!-- Serviços Tags -->
+        <div class="hero-services">
+          <span class="service-tag"><span class="service-tag-icon">💻</span> PCs</span>
+          <span class="service-tag"><span class="service-tag-icon">📱</span> Notebooks</span>
+          <span class="service-tag"><span class="service-tag-icon">📲</span> Celulares</span>
+          <span class="service-tag"><span class="service-tag-icon">🖥️</span> Formatação</span>
+          <span class="service-tag"><span class="service-tag-icon">⚡</span> Upgrades</span>
+          <span class="service-tag"><span class="service-tag-icon">🤖</span> IA & Sistemas</span>
+        </div>
+        
+        <!-- CTA Principal -->
+        <div class="hero-cta">
+          <a href="#servicos" class="btn btn-primary">Conhecer Serviços →</a>
+          <a href="celular.html" class="btn btn-secondary">Serviços Celular</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Contato -->
-    <section class="py-12">
-      <div class="container mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-8">Entre em Contato</h2>
+  <!-- Serviços -->
+  <section class="section" id="servicos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">O Que Eu Faço</span>
+        <h2>Soluções Completas em <span class="text-gradient">Tecnologia</span></h2>
+        <p>Seja manutenção, desenvolvimento ou otimização — cada projeto é tratado com análise técnica profundidade e soluções sob medida.</p>
+      </div>
+      
+      <div class="features-grid">
+        <article class="card reveal">
+          <div class="card-icon card-icon-cyan">💾</div>
+          <h3>Formatação & Instalação</h3>
+          <p>Instalação limpa do Windows, Linux ou sistemas personalizados. Backup seguro, recuperação de dados e configuração otimizada para performance máxima.</p>
+        </article>
+        
+        <article class="card reveal">
+          <div class="card-icon card-icon-purple">⚡</div>
+          <h3>Upgrades & Hardware</h3>
+          <p>Instalação de SSD NVMe, expansão de RAM, troca de processador, upgrade de placa gráfica. Tudo testado e otimizado para seu uso específico.</p>
+        </article>
+        
+        <article class="card reveal">
+          <div class="card-icon card-icon-green">🔍</div>
+          <h3>Diagnóstico & Análise</h3>
+          <p>Análise técnica completa: identifico gargalos, falhas de hardware, problemas de software e dou um relatório claro do que precisa ser feito.</p>
+        </article>
+        
+        <article class="card reveal">
+          <div class="card-icon card-icon-orange">🤖</div>
+          <h3>Sistemas com IA</h3>
+          <p>Criação de sistemas personalizados para seu negócio. Integração de IA para automatizar tarefas, análise de dados e tomada de decisão.</p>
+        </article>
+        
+        <article class="card reveal">
+          <div class="card-icon card-icon-pink">📊</div>
+          <h3>Otimização de Sistemas</h3>
+          <p>Limpeza profunda, remoção de malwares, otimização de inicialização, ajustes de registry e configurações para seu PC voar.</p>
+        </article>
+        
+        <article class="card reveal">
+          <div class="card-icon card-icon-yellow">🛡️</div>
+          <h3>Segurança & Backup</h3>
+          <p>Antivírus profissionais, Firewall configurado, backup automatizado em nuvem e proteção de dados sensíveis para sua tranquilidade.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        <div class="max-w-md mx-auto space-y-4">
-          <a href="https://wa.me/5575981231019?text=Olá! Gostaria de solicitar um orçamento para formatação."
-             class="block bg-green-500 hover:bg-green-600 px-8 py-4 rounded-lg text-lg font-bold">
-            <i class="fab fa-whatsapp mr-3"></i>WhatsApp
+  <!-- Para Quem -->
+  <section class="section" id="publicos" style="background: var(--bg-surface);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Públicos</span>
+        <h2>Soluções para <span class="text-gradient">Cada Perfil</span></h2>
+        <p>Cada pessoa tem necessidades diferentes. Eu adapto o serviço para você, não o contrário.</p>
+      </div>
+      
+      <div class="audience-grid">
+        <article class="audience-card reveal">
+          <div class="audience-icon">🎮</div>
+          <h4>Gamers</h4>
+          <p>Otimização para FPS máximo, configuração de jogos, overclock seguro, redução de input lag e limpeza de sistema.</p>
+        </article>
+        
+        <article class="audience-card reveal">
+          <div class="audience-icon">💼</div>
+          <h4>Profissionais</h4>
+          <p>Notebooks para trabalho remoto, VPN configurada, Office otimizado, Teams/Zoom sem travamentos.</p>
+        </article>
+        
+        <article class="audience-card reveal">
+          <div class="audience-icon">📚</div>
+          <h4>Estudantes</h4>
+          <p>PCs acessíveis para estudos, instalação de softwares acadêmicos, configuração de impressora e rede Wi-Fi.</p>
+        </article>
+        
+        <article class="audience-card reveal">
+          <div class="audience-icon">🏢</div>
+          <h4>Empresas</h4>
+          <p>Formatação em massa, padronização de estações, automação de tarefas e relatórios gerenciais.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Processo -->
+  <section class="section" id="processo">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Como Funciona</span>
+        <h2>Processo Simples e <span class="text-gradient">Transparente</span></h2>
+        <p>Do primeiro contato à entrega final, você sabe exatamente o que está acontecendo.</p>
+      </div>
+      
+      <div class="process-steps reveal">
+        <article class="process-step">
+          <div class="step-number">1</div>
+          <h4>Diagnóstico</h4>
+          <p>Você me descreve o problema ou me envia o equipamento. Faço uma análise técnica completa.</p>
+        </article>
+        
+        <article class="process-step">
+          <div class="step-number">2</div>
+          <h4>Proposta</h4>
+          <p>Te apresento as opções de solução com custos claros. Você escolhe o que faz sentido.</p>
+        </article>
+        
+        <article class="process-step">
+          <div class="step-number">3</div>
+          <h4>Execução</h4>
+          <p>Com sua aprovação, executo o serviço com qualidade e te entrego funcionando 100%.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais -->
+  <section class="section" id="diferenciais" style="background: var(--bg-surface);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Por Que Me Escolher</span>
+        <h2>Diferenciais <span class="text-gradient">Que Fazem Diferença</span></h2>
+      </div>
+      
+      <div class="features-grid reveal">
+        <article class="card">
+          <div class="card-icon card-icon-cyan">🧠</div>
+          <h3>Técnico + Analista</h3>
+          <p>Além de consertar, analiso processos e proponho melhorias com IA para seu negócio funcionar melhor.</p>
+        </article>
+        
+        <article class="card">
+          <div class="card-icon card-icon-purple">⚡</div>
+          <h3>Uso Intensivo de IA</h3>
+          <p>Crio automações, otimizo sistemas e desenvolvo soluções que antigamente custariam caro com empresas tradicionais.</p>
+        </article>
+        
+        <article class="card">
+          <div class="card-icon card-icon-green">🎯</div>
+          <h3>Resultado, Não Promessa</h3>
+          <p>Entrego o que combino, no prazo certo e com a qualidade que você espera. Simples assim.</p>
+        </article>
+        
+        <article class="card">
+          <div class="card-icon card-icon-orange">💰</div>
+          <h3>Preço Justo</h3>
+          <p>Trabalho com transparência total. Você sabe o que está pagando e por quê, sem surpresas.</p>
+        </article>
+        
+        <article class="card">
+          <div class="card-icon card-icon-pink">🔧</div>
+          <h3>PCs, Notebooks & Celulares</h3>
+          <p>Atendo todos os dispositivos. Do PC gamer ao celular Android, passando pelo notebook do trabalho.</p>
+        </article>
+        
+        <article class="card">
+          <div class="card-icon card-icon-yellow">📍</div>
+          <h3>Atendimento Local</h3>
+          <p>Feira de Santana e região. Você não precisa viajar ou enviar equipamento para outra cidade.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loja -->
+  <section class="section" id="loja">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Loja</span>
+        <h2>Produtos & <span class="text-gradient">Peças</span></h2>
+        <p>Em breve: vendas de peças, periféricos e componentes para upgrade.</p>
+      </div>
+      
+      <div class="pricing-grid reveal">
+        <article class="pricing-card">
+          <div class="pricing-price">R$ 25</div>
+          <div class="pricing-label">a partir de</div>
+          <h4 style="margin-bottom: var(--space-md);">Serviços Básicos</h4>
+          <ul class="pricing-features">
+            <li>Limpeza de sistema</li>
+            <li>Otimização de inicialização</li>
+            <li>Instalação de programas</li>
+            <li>Remoção de vírus</li>
+          </ul>
+          <a href="#contato" class="btn btn-secondary" style="width: 100%;">Solicitar</a>
+        </article>
+        
+        <article class="pricing-card featured">
+          <div class="pricing-price">R$ 50</div>
+          <div class="pricing-label">a partir de</div>
+          <h4 style="margin-bottom: var(--space-md);">Upgrades & Manutenção</h4>
+          <ul class="pricing-features">
+            <li>Instalação de SSD/RAM</li>
+            <li>Formatação completa</li>
+            <li>Upgrade de hardware</li>
+            <li>Testes e benchmark</li>
+          </ul>
+          <a href="#contato" class="btn btn-primary" style="width: 100%;">Solicitar</a>
+        </article>
+        
+        <article class="pricing-card">
+          <div class="pricing-price">Sob consulta</div>
+          <div class="pricing-label">personalizado</div>
+          <h4 style="margin-bottom: var(--space-md);">Sistemas & IA</h4>
+          <ul class="pricing-features">
+            <li>Sistemas personalizados</li>
+            <li>Integração com IA</li>
+            <li>Automação de processos</li>
+            <li>Projetos sob medida</li>
+          </ul>
+          <a href="#contato" class="btn btn-secondary" style="width: 100%;">Solicitar</a>
+        </article>
+      </div>
+      
+      <!-- Loja em Breve -->
+      <div class="card reveal" style="margin-top: var(--space-xl); text-align: center; padding: var(--space-xl);">
+        <div style="font-size: 3rem; margin-bottom: var(--space-md);">🏪</div>
+        <h3>Loja de Produtos em Breve!</h3>
+        <p style="max-width: 500px; margin: var(--space-md) auto;">Em breve vou vender peças de PC, notebooks, periféricos e componentes. Fique de olho para os lançamentos!</p>
+        <a href="loja.html" class="btn btn-primary" style="margin-top: var(--space-md);">Saiba Mais →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section class="section" id="contato" style="background: var(--bg-surface);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Contato</span>
+        <h2>Fale <span class="text-gradient">Comigo</span></h2>
+        <p>Prontopara resolver seu problema? Entre em contato.</p>
+      </div>
+      
+      <div class="contact-grid reveal">
+        <div class="contact-info">
+          <h3>Informações</h3>
+          
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-item-icon">📱</div>
+              <div class="contact-item-text">
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/5575981231019">(75) 98123-1019</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div class="contact-item-text">
+                <strong>Localização</strong>
+                <span>Feira de Santana, BA</span>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-item-icon">⏰</div>
+              <div class="contact-item-text">
+                <strong>Horário</strong>
+                <span>Seg - Sex: 8h às 18h</span>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-item-icon">🎁</div>
+              <div class="contact-item-text">
+                <strong>Programa de Indicações</strong>
+                <span>Indique um amigo e ambos ganham R$10 na próxima manutenção!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="whatsapp-cta">
+          <h3>💬 Prefere WhatsApp?</h3>
+          <p>Me mande uma mensagem e te respondo o mais rápido possível.</p>
+          <a href="https://wa.me/5575981231019?text=Olá%20DeiviTech!%20Vim%20pelo%20site." class="whatsapp-btn" target="_blank">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Abrir WhatsApp
           </a>
-
-          <div class="text-gray-300">
-            <p><i class="fas fa-map-marker-alt mr-2"></i>Feira de Santana, BA</p>
-            <p><i class="fas fa-clock mr-2"></i>Segunda a Sábado: 8h às 18h</p>
-          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 border-t border-gray-800 py-8">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <div class="text-center md:text-left mb-4 md:mb-0">
-            <h3 class="text-xl font-bold text-blue-400">
-              <i class="fas fa-microchip mr-2"></i>DeiviTech
-            </h3>
-            <p class="text-gray-400 text-sm">Formatação • Hardware • Sistemas Otimizados</p>
-          </div>
-          <div class="flex space-x-4">
-            <a href="https://wa.me/5575981231019" target="_blank" class="text-green-400 hover:text-green-300 transition-colors">
-              <i class="fab fa-whatsapp text-2xl"></i>
-            </a>
-            <a href="https://github.com/Deivisan" target="_blank" class="text-gray-400 hover:text-white transition-colors">
-              <i class="fab fa-github text-2xl"></i>
-            </a>
-          </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <svg class="footer-brand-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="40" height="40" rx="10" fill="url(#logo-gradient-footer)"/>
+            <path d="M10 12h8v4h-4v12h-4V12zm12 0h4v16h-4V12zm8 4h4v12h-4V16zm-12 4h4v8h-4v-8z" fill="#000"/>
+            <defs>
+              <linearGradient id="logo-gradient-footer" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00d4ff"/>
+                <stop offset="1" stop-color="#9d5cfa"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          DeiviTech
         </div>
-        <div class="text-center mt-4 text-gray-500 text-sm">
-          © 2025 DeiviTech Formatação - Feira de Santana, BA
+        
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="celular.html">Celular</a>
+          <a href="loja.html">Loja</a>
+          <a href="#contato">Contato</a>
         </div>
       </div>
-    </footer>
-
-    <!-- Botão Voltar ao Topo -->
-    <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300" style="display: none;" aria-label="Voltar ao topo">
-      <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </button>
-
-    <script>
-      // Botão voltar ao topo
-      const backToTopBtn = document.getElementById('backToTop');
       
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-          backToTopBtn.style.display = 'block';
-          setTimeout(() => backToTopBtn.classList.remove('opacity-0'), 10);
-        } else {
-          backToTopBtn.classList.add('opacity-0');
-          setTimeout(() => backToTopBtn.style.display = 'none', 300);
-        }
-      });
-      
-      backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    </script>
+      <div class="footer-copy">
+        <p>DeiviTech © <span id="currentYear"></span> — Todos os direitos reservados | Feira de Santana, BA</p>
+        <p class="footer-timestamp">Gerado em <span id="timestamp"></span> - DeiviTech</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Flutuante (Discreto) -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/5575981231019?text=Olá%20DeiviTech!%20Vim%20pelo%20site." target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+
+  <script src="site.js"></script>
+</body>
+</html>
