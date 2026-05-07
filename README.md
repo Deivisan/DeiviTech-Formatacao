@@ -3,90 +3,105 @@
 [![Site Online](https://img.shields.io/badge/🌐_Site_Online-Acesse_Aqui-blue?style=for-the-badge)](https://deivisan.github.io/DeiviTech-Formatacao/)
 [![WhatsApp](https://img.shields.io/badge/WhatsApp_Contato-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5575981231019?text=Olá!%20Gostaria%20de%20agendar%20uma%20formatação%20DeiviTech)
 
-**Serviços especializados em formatação de PCs, upgrades de hardware e manutenção técnica. Atendimento domiciliar em Feira de Santana e região.**
+**Serviços especializados em tecnologia: PCs, Notebooks, Celulares. Técnico & Analista de Sistemas com uso de IA. Atendimento em Feira de Santana e região.**
 
 ## 👨‍💻 Sobre Deivison Santana
 
-**Técnico em Informática | Especialista em Sistemas Operacionais e Hardware**
+**Técnico & Analista de Sistemas | Especialista em Hardware e Software**
 
-Com mais de 10 anos de experiência no mercado de tecnologia, Deivison Santana é especialista em:
-
-- **Sistemas Operacionais**: Profundo conhecimento em Windows (10/11), Linux (Ubuntu, Arch) e configurações otimizadas
-- **Hardware**: Diagnóstico e upgrades de componentes (RAM, SSD, processadores, placas-mãe)
-- **Otimização**: Overclocking seguro, limpeza de sistemas e maximização de performance
-- **Manutenção**: Recuperação de dados, backup e suporte técnico completo
-
-Formado em Técnico em Informática, com expertise prática em mais de 500 computadores formatados e otimizados.
+Com mais de 10 anos de experiência, ofereço:
+- Formatação e instalação de sistemas (Windows, Linux)
+- Upgrades de hardware (SSD, RAM, processadores)
+- Manutenção de celulares Android
+- Desenvolvimento de sistemas com IA
+- Diagnóstico e otimização de performance
 
 ## 🚀 Serviços Oferecidos
 
-### 💻 Formatação Completa
-Reinstalação profissional de sistemas operacionais com drivers atualizados e programas essenciais.
+### 💻 PCs & Notebooks
+- Formatação completa (Windows, Linux, sistemas personalizados)
+- Upgrades de hardware (SSD NVMe, RAM, placas)
+- Otimização de performance
+- Diagnóstico técnico
 
-- **Windows 10/11**: Versões originais com ativação completa
-- **Ghost Spectre**: Sistema ultra-otimizado para máxima performance
-- **Linux**: Distribuições gratuitas (Ubuntu, Arch) para usuários avançados
-- **Dual Boot**: Configuração de Windows + Linux no mesmo PC
+### 📱 Celulares Android
+- Manutenção de hardware (tela, bateria, conector)
+- Otimização de Android
+- Apps personalizados e automações com IA
 
-### 🔧 Hardware & Upgrades
-Componentes premium para turbinar seu PC e melhorar performance.
+### 🤖 Sistemas & IA
+- Desenvolvimento de sistemas personalizados
+- Integração de IA para automação
+- Análise de processos e tomada de decisão
 
-- **Memória RAM**: DDR2, DDR3, DDR4 e DDR5 para notebooks e desktops
-- **Armazenamento**: SSD NVMe/SATA e HDs tradicionais
-- **Instalação Profissional**: Montagem e configuração garantida
-
-### 🧠 Análise Técnica Inteligente
-Diagnóstico completo do seu hardware com recomendações personalizadas.
-
-- **Detecção Automática**: Via navegador (CPU, RAM, GPU, sistema operacional)
-- **Análise Manual**: Formulário detalhado para especificações completas
-- **Upload de Relatório**: Análise de arquivos de diagnóstico existentes
-
-### ⚙️ Sistemas & Otimização
-Comparação detalhada de sistemas operacionais e guia de overclocking.
-
-- **Comparativos**: Windows vs Linux vs Chrome OS
-- **Overclocking Seguro**: CPU, GPU e RAM com limites de segurança
-- **Otimização Personalizada**: Configurações para gaming, trabalho ou uso geral
-
-### 📅 Agendamento Online
-Sistema prático para marcar serviços com confirmação imediata.
-
-- **Calendário Interativo**: Escolha data e horário disponíveis
-- **Confirmação WhatsApp**: Notificação automática do agendamento
-- **Atendimento Domiciliar**: Conveniência no seu endereço
+### 💰 Preços de Referência
+- **Serviços Básicos**: a partir de R$ 25
+- **Upgrades & Manutenção**: a partir de R$ 50
+- **Sistemas & IA**: sob consulta (personalizado)
 
 ## ✨ Por que escolher a DeiviTech?
 
-- **Especialização Técnica**: Conhecimento profundo em hardware e software
-- **Experiência Comprovada**: 10+ anos formatando e otimizando PCs
-- **Atendimento Personalizado**: Soluções adaptadas às suas necessidades
-- **Garantia de Qualidade**: 30 dias de cobertura para todos os serviços
-- **Rapidez e Eficiência**: Serviços entregues no prazo combinado
+- **Técnico + Analista**: não só conserto, mas também analiso e proponho melhorias
+- **Uso Intensivo de IA**: automações e soluções que antigamente custariam caro
+- **Resultado, Não Promessa**: entrego o que combino
+- **Preço Justo**: transparência total nos custos
+- **PCs, Notebooks & Celulares**: atendo todos os dispositivos
+- **Atendimento Local**: você não precisa viajar ou enviar equipamento
+- **Garantia**: 30 dias de cobertura para todos os serviços
 
-## 🎨 Site Moderno com Tecnologia Avançada
+## 📁 Estrutura do Repositório
 
-O site apresenta design responsivo com animações suaves e funcionalidades inteligentes:
+```
+DeiviTech-Formatacao/
+├── index.html          # Página principal (MVP novo)
+├── celular.html        # Serviços para celulares
+├── loja.html           # Loja (em breve)
+├── style.css           # Design system completo
+├── site.js             # JavaScript do site
+├── config.js           # Configurações + chave NVIDIA
+├── deprecated/
+│   └── pages/          # Old site (v1) - deprecated
+├── marketing/          # Assets e prompts de marketing
+├── transcricoes/       # Transcrições de sessões IA
+├── mcp/                # Configuração NotebookLM MCP
+├── v2/                  # Projetos experimentais v2
+└── OPEN_DESIGN_PROMPT.md  # Prompt para Open Design
+```
 
-- **Interface Adaptável**: Progressive disclosure para melhor experiência
-- **Detecção em Tempo Real**: Hardware identificado automaticamente
-- **Carrinho Inteligente**: Cálculos automáticos e combos otimizados
-- **Agendamento Visual**: Calendário interativo e confirmações instantâneas
+## 🎨 Design System
 
-**Acesse o site completo**: [deivisan.github.io/DeiviTech-Formatacao](https://deivisan.github.io/DeiviTech-Formatacao/)
+Paleta de cores atual:
+- **Primary Cyan**: #00d4ff
+- **Accent Purple**: #9d5cfa
+- **Success Green**: #10e07a
+- **Background Dark**: #080810
 
-## 🔗 Integração NotebookLM (MCP)
+Fontes: Poppins (display), Inter (body), JetBrains Mono (código)
 
-Adicionamos um utilitário local para executar o NotebookLM como um servidor MCP e integrá-lo ao VS Code Insiders. Veja a pasta `mcp/` para guias rápidos, scripts de instalação e um `mcp.json` de exemplo para conexão local.
+## 🔧 Funcionalidades do Site
 
+- Design responsivo e moderno
+- WhatsApp integrado com mensagem pré-formatada
+- Botão flutuante de WhatsApp
+- Animações de reveal ao scroll
+- Contadores animados
+- SEO otimizado (meta tags, palavras-chave locais)
+- Timestamp dinâmico no rodapé
+- Programa de Indicações (R$10 para ambos)
 
-## 📞 Contato e Atendimento
+## 🤖 Integração NVIDIA AI (Opcional)
+
+O site suporta integração com IA NVIDIA via Llama 3.1b. A chave API está em `config.js`. Para ativar:
+
+1. Edite `config.js` com sua chave NVIDIA
+2. O chat de IA está preparado para consumo do endpoint
+
+## 📞 Contato
 
 - **WhatsApp**: (75) 98123-1019
-- **Email**: deivilsantana@outlook.com
-- **Localização**: Feira de Santana, Bahia
-- **Atendimento**: Domiciliar ou balcão, segunda a sábado
+- **Localização**: Feira de Santana, BA
+- **Atendimento**: Seg - Sex: 8h às 18h
 
 ---
 
-**DeiviTech - Especialistas em Tecnologia da Informação**
+**DeiviTech © 2026 — Todos os direitos reservados | Feira de Santana, BA**
